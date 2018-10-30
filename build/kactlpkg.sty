@@ -25,9 +25,11 @@
 \newcommand{\subtitle}[1]{
 	\def\@subtitle{#1}
 }
-\newcommand{\team}[2]{
+\newcommand{\team}[4]{
 	\def\@teamname{#1}
-	\def\@teammembers{#2}
+	\def\@teammemberone{#2}
+	\def\@teammembertwo{#3}
+	\def\@teammemberthree{#4}
 }
 \newcommand{\contest}[2]{
 	\def\@contestname{#1}
@@ -189,9 +191,11 @@
 		\vspace{3cm}\\
 		\includegraphics[width=3cm]{\@unilogo}\\
 		{\Huge \@unilong\\}
-		{\fontsize{60}{60}\selectfont \@teamname\\}
-		\vspace{0.5cm}
-		{\Large \@teammembers\\}
+		{\fontsize{50}{50}\selectfont \@teamname\\}
+		\vspace{1cm}
+		{\Large \@teammemberone\\}
+		{\Large \@teammembertwo\\}
+		{\Large \@teammemberthree\\}
 		\vfill
 		{\huge \@contestname}\\
 		\vspace{0.5cm}
