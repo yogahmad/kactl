@@ -25,11 +25,12 @@
 \newcommand{\subtitle}[1]{
 	\def\@subtitle{#1}
 }
-\newcommand{\team}[4]{
+\newcommand{\team}[5]{
 	\def\@teamname{#1}
-	\def\@teammemberone{#2}
-	\def\@teammembertwo{#3}
-	\def\@teammemberthree{#4}
+	\def\@teamtitle{#2}
+	\def\@teammemberone{#3}
+	\def\@teammembertwo{#4}
+	\def\@teammemberthree{#5}
 }
 \newcommand{\contest}[2]{
 	\def\@contestname{#1}
@@ -193,9 +194,20 @@
 		{\Huge \@unilong\\}
 		{\fontsize{50}{50}\selectfont \@teamname\\}
 		\vspace{1cm}
-		{\Large \@teammemberone\\}
-		{\Large \@teammembertwo\\}
-		{\Large \@teammemberthree\\}
+		{\Large \@teamtitle\\}
+		\vspace{0.7cm}
+		\begin{minipage}{.4\textwidth}
+			\begin{itemize}
+				\item {\Large \@teammemberone\\}
+				\item {\Large \@teammembertwo\\}
+				\item {\Large \@teammemberthree\\}
+			\end{itemize}
+		\end{minipage}
+		% \begin{itemize}
+		% 	\item {\Large \@teammemberone\\}
+		% 	\item {\Large \@teammembertwo\\}
+		% 	\item {\Large \@teammemberthree\\}
+		% \end{itemize}
 		\vfill
 		{\huge \@contestname}\\
 		\vspace{0.5cm}
