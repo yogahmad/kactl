@@ -3,52 +3,64 @@
  * Date: 2017-04-17
  * License: CC0
  * Source: folklore
- * Description: Finds all biconnected components in an undirected graph, and
- *  runs a callback for the edges in each. In a biconnected component there
- *  are at least two distinct paths between any two nodes. Note that a node can
- *  be in several components. An edge which is not in a component is a bridge,
- *  i.e., not part of any cycle.
+ * Description: Ntar isinya comps itu vector of vector setiap  
+ *	vector jadi satu komponen, kalok dia AP maka dia jadi edge 
+ *	yang menghubungkan komponen yang mempunyai AP tersebut
  * Time: O(E + V)
  * Status: tested during MIPT ICPC Workshop 2017
  * Usage:
- *  int eid = 0; ed.resize(N);
- *  for each edge (a,b) {
- *    ed[a].emplace_back(b, eid);
- *    ed[b].emplace_back(a, eid++); }
- *  bicomps([\&](const vi\& edgelist) {...});
+ *  comps vector of vector
  */
-#pragma once
 
-vi num, st;
-vector<vector<pii>> ed;
-int Time;
-template<class F>
-int dfs(int at, int par, F f) {
-	int me = num[at] = ++Time, e, y, top = me;
-	trav(pa, ed[at]) if (pa.second != par) {
-		tie(y, e) = pa;
-		if (num[y]) {
-			top = min(top, num[y]);
-			if (num[y] < me)
-				st.push_back(e);
-		} else {
-			int si = sz(st);
-			int up = dfs(y, e, f);
-			top = min(top, up);
-			if (up == me) {
-				st.push_back(e);
-				f(vi(st.begin() + si, st.end()));
-				st.resize(si);
+void dfs(int now,int par){
+	sudah[now]=true;
+	disc[now]=low[now]=++idx;
+	int anak=0;
+	stk.pb(now);
+	for(int i:g[now]){
+		if(i==par)continue;
+		if(!sudah[i]){
+			dfs(i,now);
+			anak++;
+			low[now]=min(low[now],low[i]);
+			if(low[i]>=disc[now]){
+				comps.pb({now});
+				while(comps.back().back()!=i){
+					comps.back().pb(stk.back());
+					stk.pop_back();
+				}
 			}
-			else if (up < me) st.push_back(e);
-			else { /* e is a bridge */ }
+			if(now==1 && anak>1)
+				ap[now]=true;
+			if(now!=1 && low[i]>=disc[now])
+				ap[now]=true;
 		}
+		else low[now]=min(low[now],disc[i]);
 	}
-	return top;
 }
 
-template<class F>
-void bicomps(F f) {
-	num.assign(sz(ed), 0);
-	rep(i,0,sz(ed)) if (!num[i]) dfs(i, -1, f);
+int main(){
+	dfs(1,0);
+	idx=0;
+	for(auto i:comps){
+		idx++;
+		for(int j:i){
+			if(ap[j]){
+				ve[j].pb(idx);
+			}
+			else{
+				di[j]=idx;
+			}
+		}
+	}
+	for(int i=1;i<=n;i++){
+		if(ap[i]){
+			di[i]=++idx;
+			ya[idx]=true;
+			for(int j:ve[i]){
+				G[idx].pb(j);
+				G[j].pb(idx);
+			}
+		}
+	}
 }
