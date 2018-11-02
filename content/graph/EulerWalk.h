@@ -4,8 +4,7 @@
  * License: CC0
  * Source: folklore
  * Description: Eulerian undirected/directed path/cycle algorithm.
- * Usage: 
- * For eulerian path, should pass cur with odd degree to eulerian().
+ * Usage: For eulerian path, should pass cur with odd degree to eulerian().
  * Time: O(E) where E is the number of edges.
  * Status: tested
  */
