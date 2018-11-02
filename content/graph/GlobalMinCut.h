@@ -2,7 +2,7 @@
  * Author: Stanford
  * Date: Unknown
  * Source: Stanford Notebook, http://www.cs.tau.ac.il/~zwick/grad-algo-08/gmc.pdf
- * Description: Find a global minimum cut in an undirected graph, as represented by an adjacency matrix.
+ * Description: Stoer-Wagner. Find a global minimum cut in an undirected graph, as represented by an adjacency matrix.
  * Time: O(V^3)
  * Status: Lightly tested
  */
