@@ -5,11 +5,9 @@
  * Source: folklore
  * Description: Ntar isinya comps itu vector of vector setiap  
  *	vector jadi satu komponen, kalok dia AP maka dia jadi edge 
- *	yang menghubungkan komponen yang mempunyai AP tersebut
+ *	yang menghubungkan komponen yang mempunyai AP tersebut.
  * Time: O(E + V)
- * Status: tested during MIPT ICPC Workshop 2017
- * Usage:
- *  comps vector of vector
+ * Status: not tested by yoga
  */
 
 void dfs(int now,int par){
