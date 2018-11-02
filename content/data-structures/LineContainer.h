@@ -1,5 +1,5 @@
 /**
- * Author: Simon Lindholm
+ * Author: Yusuf Sholeh
  * Date: 2017-04-20
  * License: CC0
  * Source: own work
@@ -7,38 +7,44 @@
  *  Useful for dynamic programming.
  * Time: O(\log N)
  * Status: tested
+ * Usage:
+ * For minimum: change m,c to negative. 
+ * Then, the result of the query change to -result.
  */
 #pragma once
 
-bool Q;
+const ll is_query = -(1LL<<62);
 struct Line {
-	mutable ll k, m, p;
-	bool operator<(const Line& o) const {
-		return Q ? p < o.p : k < o.k;
+	ll m, b;
+	mutable function<const Line*()> succ;
+	bool operator<(const Line& rhs) const {
+		if (rhs.b != is_query) return m < rhs.m;
+		const Line* s = succ();
+		if (!s) return 0;
+		ll x = rhs.m;
+		return b - s->b < (s->m - m) * x;
 	}
 };
-
-struct LineContainer : multiset<Line> {
-	// (for doubles, use inf = 1/.0, div(a,b) = a/b)
-	const ll inf = LLONG_MAX;
-	ll div(ll a, ll b) { // floored division
-		return a / b - ((a ^ b) < 0 && a % b); }
-	bool isect(iterator x, iterator y) {
-		if (y == end()) { x->p = inf; return false; }
-		if (x->k == y->k) x->p = x->m > y->m ? inf : -inf;
-		else x->p = div(y->m - x->m, x->k - y->k);
-		return x->p >= y->p;
+struct HullDynamic : public multiset<Line> { // will maintain upper hull for maximum
+	bool bad(iterator y) {
+		auto z = next(y);
+		if (y == begin()) {
+				if (z == end()) return 0;
+				return y->m == z->m && y->b <= z->b;
+		}
+		auto x = prev(y);
+		if (z == end()) return y->m == x->m && y->b <= x->b;
+		return (x->b - y->b)*(z->m - y->m) >= (y->b - z->b)*(y->m - x->m);// beware overflow!
 	}
-	void add(ll k, ll m) {
-		auto z = insert({k, m, 0}), y = z++, x = y;
-		while (isect(y, z)) z = erase(z);
-		if (x != begin() && isect(--x, y)) isect(x, y = erase(y));
-		while ((y = x) != begin() && (--x)->p >= y->p)
-			isect(x, erase(y));
+	void insert_line(ll m, ll b) {
+		auto y = insert({ m, b });
+		y->succ = [=] { return next(y) == end() ? 0 : &*next(y); };
+		if (bad(y)) { erase(y); return; }
+		while (next(y) != end() && bad(next(y))) erase(next(y));
+		while (y != begin() && bad(prev(y))) erase(prev(y));
 	}
-	ll query(ll x) {
-		assert(!empty());
-		Q = 1; auto l = *lower_bound({0,0,x}); Q = 0;
-		return l.k * x + l.m;
+	ll eval(ll x) {
+		auto l = *lower_bound((Line) { x, is_query });
+		return l.m * x + l.b;
 	}
 };
