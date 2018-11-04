@@ -26,3 +26,17 @@ double segDist(P& s, P& e, P& p) {
 	auto d = (e-s).dist2(), t = min(d,max(.0,(p-s).dot(e-s)));
 	return ((p-s)*d-(e-s)*t).dist()/d;
 }
+
+// return the distance and point at c, cannot 3D:
+double segDist(const P& a, const P& b, const P& p, P& c) {
+  double u = (p-a).dot(b-a) / (b-a).dist2();
+	if (u < 0.0) {
+		c = a;
+		return (p - a).dist();
+	} else if (u > 1.0) {
+		c = b;
+		return (p - b).dist();
+	}
+  c = a + ((b - a) * u);
+  return (c - p).dist();
+}

@@ -20,3 +20,10 @@ template<class P>
 double lineDist(const P& a, const P& b, const P& p) {
 	return (double)(b-a).cross(p-a)/(b-a).dist();
 }
+
+// return the distance and point at c, cannot 3D
+double lineDist(const P& a, const P& b, const P& p, P& c) {
+  double u = (p-a).dot(b-a) / (b-a).dist2();
+  c = a + ((b - a) * u);
+  return (c - p).dist();
+}
