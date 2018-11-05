@@ -99,4 +99,12 @@ struct LinkCut {
 		}
 		return u;
 	}
+
+	// use this to aggregate:
+	int aggregate(int a, int b) {
+		make_root(&node[a]);
+		make_root(&node[b]);
+		access(&node[1]);
+		return node[b].aggr;
+	}
 };
