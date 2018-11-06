@@ -9,8 +9,17 @@
  */
 #pragma once
 
-#include <bits/extc++.h> /** keep-include */
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/rope>
+
 using namespace __gnu_pbds;
+using namespace __gnu_cxx;
+
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
+ordered_set S;
+// S.find_by_order(x) -> return pointer to the x-th element
+// (int)S.order_of_key(x) -> return the position of lower_bound(x)
 
 template<class T>
 using Tree = tree<T, null_type, less<T>, rb_tree_tag,
@@ -23,5 +32,8 @@ void example() {
 	assert(t.order_of_key(10) == 1);
 	assert(t.order_of_key(11) == 2);
 	assert(*t.find_by_order(0) == 8);
+	cout<<*X.find_by_order(1)<<endl;          // array index ke-1
+  cout<<(end(X)==X.find_by_order(6))<<endl; // end(X) = pointer
+  cout<<X.order_of_key(400)<<endl;          // idx lower_bound 400
 	t.join(t2); // assuming T < T2 or T > T2, merge t2 into t
 }

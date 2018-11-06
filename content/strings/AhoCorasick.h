@@ -3,82 +3,125 @@
  * Date: 2015-02-18
  * License: CC0
  * Source: marian's (TC) code
- * Description: Aho-Corasick tree is used for multiple pattern matching.
- * Initialize the tree with create(patterns). find(word) returns for each position
- * the index of the longest word that ends there, or -1 if none. findAll(\_, word) finds all words
- * (up to $N \sqrt N$ many if no duplicate patterns) that start at each position (shortest first).
- * Duplicate patterns are allowed; empty patterns are not.
- * To find the longest words that start at each position, reverse all input.
+ * Description: Aho-Corasick tree is used for dictionary matching.
+ * Initialize the tree like the example at main below.
  * Time: Function create is $O(26N)$ where $N$ is the sum of length of patterns.
- * find is $O(M)$ where $M$ is the length of the word. findAll is $O(NM)$.
+ * Becareful if the pattern allow duplicate. If not, the worst case is $N \sqrt N$.
  * Status: lightly tested
  */
 #pragma once
 
-struct AhoCorasick {
-	enum {alpha = 26, first = 'A'};
-	struct Node {
-		// (nmatches is optional)
-		int back, next[alpha], start = -1, end = -1, nmatches = 0;
-		Node(int v) { memset(next, v, sizeof(next)); }
-	};
-	vector<Node> N;
-	vector<int> backp;
-	void insert(string& s, int j) {
-		assert(!s.empty());
-		int n = 0;
-		trav(c, s) {
-			int& m = N[n].next[c - first];
-			if (m == -1) { n = m = sz(N); N.emplace_back(-1); }
-			else n = m;
-		}
-		if (N[n].end == -1) N[n].start = j;
-		backp.push_back(N[n].end);
-		N[n].end = j;
-		N[n].nmatches++;
-	}
-	AhoCorasick(vector<string>& pat) {
-		N.emplace_back(-1);
-		rep(i,0,sz(pat)) insert(pat[i], i);
-		N[0].back = sz(N);
-		N.emplace_back(0);
-
-		queue<int> q;
-		for (q.push(0); !q.empty(); q.pop()) {
-			int n = q.front(), prev = N[n].back;
-			rep(i,0,alpha) {
-				int &ed = N[n].next[i], y = N[prev].next[i];
-				if (ed == -1) ed = y;
-				else {
-					N[ed].back = y;
-					(N[ed].end == -1 ? N[ed].end : backp[N[ed].start])
-						= N[y].end;
-					N[ed].nmatches += N[y].nmatches;
-					q.push(ed);
-				}
-			}
-		}
-	}
-	vi find(string word) {
-		int n = 0;
-		vi res; // ll count = 0;
-		trav(c, word) {
-			n = N[n].next[c - first];
-			res.push_back(N[n].end);
-			// count += N[n].nmatches;
-		}
-		return res;
-	}
-	vector<vi> findAll(vector<string>& pat, string word) {
-		vi r = find(word);
-		vector<vi> res(sz(word));
-		rep(i,0,sz(word)) {
-			int ind = r[i];
-			while (ind != -1) {
-				res[i - sz(pat[ind]) + 1].push_back(ind);
-				ind = backp[ind];
-			}
-		}
-		return res;
-	}
+#include<bits/stdc++.h> 
+const int NALPHABET = 26;
+struct Node {
+  Node** children, go;
+  bool leaf;
+  char charToParent;
+  Node* parent, suffLink, dictSuffLink;
+  int count, value;
+ 
+  Node(){
+    children = new Node*[NALPHABET];
+    go = new Node*[NALPHABET];
+    for(int i = 0; i < NALPHABET;++i){
+      children[i] = go[i] = NULL;
+    }
+    parent = suffLink = dictSuffLink = NULL;
+    leaf = false;
+    count = 0;
+  }
 };
+ 
+Node* createRoot() {
+  Node* node = new Node();
+  node->suffLink = node;
+  return node;
+}
+ 
+void addString(Node* node, const string& s, int value =-1) {
+  for(int i = 0; i < s.length(); ++i){
+    int c = s[i] - 'a';
+    if(node->children[c] == NULL){
+      Node* n = new Node();
+      n->parent = node;
+      n->charToParent = s[i];
+      node->children[c] = n;
+    }
+    node = node->children[c];
+  }
+  node->leaf = true;
+  node->count++;
+  node->value = value;
+}
+ 
+Node* suffLink(Node* node);
+Node* dictSuffLink(Node* node);
+Node* go(Node* node, char ch);
+int calc(Node* node);
+ 
+Node* suffLink(Node* node) {
+  if (node->suffLink == NULL){
+    if (node->parent->parent == NULL){
+      node->suffLink = node->parent;
+    } else {
+      node->suffLink = go(suffLink(node->parent),node->charToParent);
+    }
+  }
+  return node->suffLink;
+}
+ 
+Node* dictSuffLink(Node* node) {
+  if(node->dictSuffLink == NULL){
+    Node* n = suffLink(node);
+    if (node == n){
+      node->dictSuffLink = node;
+    } else {
+      while (!n->leaf && n->parent != NULL){
+        n = dictSuffLink(n);
+      }
+      node->dictSuffLink = n;
+    }
+  }
+  return node->dictSuffLink;
+}
+ 
+Node* go(Node* node, char ch) {
+  int c = ch -'a';
+  if (node->go[c] == NULL){
+    if (node->children[c] != NULL) {
+      node->go[c]= node->children[c];
+    } else {
+      node->go[c]= node->parent == NULL? node : go(suffLink(node), ch);
+    }
+  }
+  return node->go[c];
+}
+
+int calc(Node* node) {
+  if (node->parent == NULL) {
+    return 0;
+  } else {
+    return node->count + calc(dictSuffLink(node));
+  }
+}
+ 
+int main() {
+  Node* root = createRoot();
+  addString(root,"a",0);
+  addString(root,"aa",1);
+  addString(root,"abc",2);
+ 
+  string s("abcaadc");
+  Node* node = root;
+  for (int i = 0; i < s.length(); ++i){
+    node = go(node, s[i]);
+    Node* temp = node;
+    while (temp != root) {
+      if (temp->leaf) {
+        printf("string (%d) occurs at position %d\n", temp->value, i);
+      }
+      temp = dictSuffLink(temp);
+    }
+  }
+  return 0;
+}
