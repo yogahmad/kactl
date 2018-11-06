@@ -43,7 +43,7 @@ struct HullDynamic : public multiset<Line> { // will maintain upper hull for max
 		while (next(y) != end() && bad(next(y))) erase(next(y));
 		while (y != begin() && bad(prev(y))) erase(prev(y));
 	}
-	ll eval(ll x) {
+	ll eval(ll x) { // becareful when there is no line returned.
 		auto l = *lower_bound((Line) { x, is_query });
 		return l.m * x + l.b;
 	}
