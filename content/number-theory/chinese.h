@@ -2,11 +2,6 @@
  * Author: Mattias de Zalenski, Per Austrin, Lukas Polacek
  * Date: 2003-02-16
  * Description: Chinese Remainder Theorem.
- *
- * \texttt{chinese(a, m, b, n)} returns a number $x$, such that
- * $x\equiv a \pmod m$ and $x\equiv b \pmod n$. For not
- * coprime $n, m$, use \texttt{chinese\_common}. Note that all numbers must be less than
- * $2^{31}$ if you have Z = unsigned long long.
  * Status: Works
  * Time: $\log(m + n)$
  */
@@ -14,16 +9,25 @@
 
 #include "euclid.h"
 
-template<class Z> Z chinese(Z a, Z m, Z b, Z n) {
-	Z x, y; euclid(m, n, x, y);
-	Z ret = a * (y + m) % m * n + b * (x + n) % n * m;
-	if (ret >= m * n) ret -= m * n;
-	return ret;
+// Chinese remainder theorem (special case): find z such that
+// z % x = a, z % y = b.  Here, z is unique modulo M = lcm(x,y).
+// Return (z,M).  On failure, M = -1.
+PII chinese_remainder_theorem(int x, int a, int y, int b) {
+  int s, t;
+  int d = extended_euclid(x, y, s, t);
+  if (a%d != b%d) return make_pair(0, -1);
+  return make_pair(mod(s*b*x+t*a*y,x*y)/d, x*y/d);
 }
-
-template<class Z> Z chinese_common(Z a, Z m, Z b, Z n) {
-	Z d = gcd(m, n);
-	if (((b -= a) %= n) < 0) b += n;
-	if (b % d) return -1; // No solution
-	return d * chinese(Z(0), m/d, b/d, n/d) + a;
+// Chinese remainder theorem: find z such that
+// z % x[i] = a[i] for all i.  Note that the solution is
+// unique modulo M = lcm_i (x[i]).  Return (z,M).  On 
+// failure, M = -1.  Note that we do not require the a[i]'s
+// to be relatively prime.
+PII chinese_remainder_theorem(const VI &x, const VI &a) {
+  PII ret = make_pair(a[0], x[0]);
+  for (int i = 1; i < x.size(); i++) {
+    ret = chinese_remainder_theorem(ret.second, ret.first, x[i], a[i]);
+    if (ret.second == -1) break;
+  }
+  return ret;
 }
