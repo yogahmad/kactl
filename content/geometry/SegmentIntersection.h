@@ -48,6 +48,6 @@ int segmentIntersection(const P& s1, const P& e1,
 	if (a < 0) { a = -a; a1 = -a1; a2 = -a2; }
 	if (0<a1 || a<-a1 || 0<a2 || a<-a2)
 		return 0;
-	r1 = s1-v1*a2/a; // BEWARE OVERFLOW 3 POINT PRODUCT!!
+	r1 = s1-v1*(a2/a); // BEWARE OVERFLOW 3 POINT PRODUCT!!
 	return 1;
 }
