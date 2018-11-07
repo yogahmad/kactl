@@ -48,3 +48,36 @@ For $p = 2, a > 2$, the group $\mathbb Z_{2^a}^\times$ is instead isomorphic to 
 $\sum_{d|n} d = O(n \log \log n)$.
 
 The number of divisors of $n$ is at most around 100 for $n < 5e4$, 500 for $n < 1e7$, 2000 for $n < 1e10$, 200\,000 for $n < 1e19$.
+
+\section{Mobius Inversion}
+\subsection{Definition}
+\[\mu(n) =
+	\left\{\begin{matrix}
+	0 & n\,isn't\,square\,free\,\\ 
+	1 & if\,n\,is\,equal\,to\,1  \\ 
+	(-1)^{k} & n\,has\,k\,distinct\,prime    
+	\end{matrix}\right.\]
+	If f ang d are arithmetic function satisfying
+	\[g(n)=\sum_{d|n}^{\,}f(d)\]
+	Then
+	\[f(n)=\sum_{d|n}^{\,}\mu(d)g(\frac{n}{d})\]
+	\subsection{Example}
+	Find:
+	\[\sum_{i=1}^{n} \sum_{j=i+1}^{n} gcd(i,j)\]
+	Can be transformed into:
+	\[G = \sum_{g=1}^{n} h(g) * cnt(g)\]
+	In this example, $h(g) = g$. Present $h(g)$ as mobius with:
+	\[rep(i,1,n) rep(j,i,n,i) f[j]=h[i]*\mu(\frac{j}{i})\]
+	Then:
+	\[G = \sum_{g=1}^{n}(\sum_{d|g}f(d)) * cnt(g)\]
+	\[G = \sum_{d=1}^{n} f(d) * cnt2(d)\] 
+	here $cnt2(d) =$ how many $d$ such that $gcd(i,j)$ is multiple of d. This is easy to count:
+	\[G = \sum_{d=1}^{n} f(d)\binom{\frac{n}{d}}{2}\] 
+  $f(d)$ is happened to be totient here. Note that we can calculate f using 2 for loops above.
+
+  \subsection{Example 2}
+  Find $triplet(i,j,k)$ such that $gcd(a[i], a[j], a[k])=1$.
+  Like the step above, but $h(g) = 1$ only if $g=1$ else $h(g)=0$.
+
+	
+							
