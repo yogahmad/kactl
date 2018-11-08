@@ -11,19 +11,52 @@
  */
 #pragma once
 
-void FST(vi& a, bool inv) {
-	for (int n = sz(a), step = 1; step < n; step *= 2) {
-		for (int i = 0; i < n; i += 2 * step) rep(j,i,i+step) {
-			int &u = a[j], &v = a[j + step]; tie(u, v) =
-				inv ? pii(v - u, u) : pii(v, u + v); // AND
-				inv ? pii(v, u - v) : pii(u + v, u); // OR
-				pii(u + v, u - v);                   // XOR
-		}
-	}
-	if (inv) trav(x, a) x /= sz(a); // XOR only
+void FWHT(vi &P,int bits ,bool inverse = false) { //FWHT xor on vector P
+	int x = 1<<bits ,u,v;
+    for (int len = 1; 2 * len <= x ; len <<= 1)
+        for (int i = 0; i < x; i += 2 * len)
+            for (int j = 0; j < len; j++){
+                u = P[i + j] ;
+                v = P[i + len + j] ;
+                P[i + j] = (u + v)%mod ;
+                P[i + len + j] = (u - v + mod)%mod ;
+            }
+    if (inverse){
+	int xinv = pmod(x,mod-2) ;
+	for (int i = 0; i < x ; i++) P[i] = ((ll)P[i]*(ll)xinv)%mod ;
+     }
 }
-vi conv(vi a, vi b) {
-	FST(a, 0); FST(b, 0);
-	rep(i,0,sz(a)) a[i] *= b[i];
-	FST(a, 1); return a;
+FWHT(P,16); 
+	FN(i,1<<16) P[i] = pmod(P[i],N) ; //pmod(x,y)=x^y
+FWHT(P,16,true);
+void to_transform(ll dim, ll *data) { // and transform
+    ll len, i, j, u, v;
+    for (len = 1; 2 * len <= dim; len <<= 1) {
+        for (i = 0; i < dim; i += 2 * len) {
+            for (j = 0; j < len; j++) {
+                u = data[i + j];
+                v = data[i + len + j];
+                data[i + j] = v;
+                data[i + len + j] = (u + v);
+                moddo(data[i + len + j]);
+            }
+        }
+    }
 }
+void inv_transform(ll dim, ll *data) {
+    ll len, i, j, u, v;
+    for (len = 1; 2 * len <= dim; len <<= 1) {
+        for (i = 0; i < dim; i += 2 * len) {
+            for (j = 0; j < len; j++) {
+                u = data[i + j];
+                v = data[i + len + j];
+                data[i + j] = mod - u + v;
+                data[i + len + j] = u;
+                moddo(data[i + j]);
+            }
+        }
+    }
+}
+And matrices : {0 1; 1 1;} Or matrices : {1 1; 1 0}  
+inv And : {-1 1; 1 0}  inv Or : {0 1; 1 -1}
+                                      
