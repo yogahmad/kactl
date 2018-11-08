@@ -1,54 +1,79 @@
 /**
- * Author: Simon Lindholm
- * Date: 2016-09-10
- * License: CC0
- * Source: based on KACTL's FFT
- * Description: Can be used for convolutions modulo specific nice primes
- * of the form $2^a b+1$, where the convolution result has size at most $2^a$.
- * For other primes/integers, use two different primes and combine with CRT.
- * May return negative values.
- * Time: O(N \log N)
- * Status: Somewhat tested
- */
+* Author: Simon Lindholm
+* Date: 2016-09-10
+* License: CC0
+* Source: based on KACTL's FFT
+* Description: Can be used for convolutions modulo specific nice primes
+* of the form $2^a b+1$, where the convolution result has size at most $2^a$.
+* For other primes/integers, use two different primes and combine with CRT.
+* May return negative values.
+* Time: O(N \log N)
+* Status: Somewhat tested
+*/
 #pragma once
 
-#include "ModPow.h"
-
-const ll mod = (119 << 23) + 1, root = 3; // = 998244353
-// For p < 2^30 there is also e.g. (5 << 25, 3), (7 << 26, 3),
-// (479 << 21, 3) and (483 << 21, 5). The last two are > 10^9.
-
-typedef vector<ll> vl;
-void ntt(ll* x, ll* temp, ll* roots, int N, int skip) {
-	if (N == 1) return;
-	int n2 = N/2;
-	ntt(x     , temp, roots, n2, skip*2);
-	ntt(x+skip, temp, roots, n2, skip*2);
-	rep(i,0,N) temp[i] = x[i*skip];
-	rep(i,0,n2) {
-		ll s = temp[2*i], t = temp[2*i+1] * roots[skip*i];
-		x[skip*i] = (s + t) % mod; x[skip*(i+n2)] = (s - t) % mod;
+// just check if g^((p-1)/r) % p != 1 for every possible r (r = prime factor of p-1) 
+// instead of find g such that g^1, g^2, g^3, ... g^p-1 are the permutation of {1, 2, 3, ..., p-1}.
+bool check_generator_version_langrage(ll g) { 
+	for(int i = 1; i <= top; i++) {
+		ll value = power(g, (p-1) / prime_factors[i]);
+		if (value == 1) return false;
+	}
+	return true;
+}
+/** FFT Modular Arithmetic **/
+const int mod = 7340033; // c * 2^k + 1 
+const ll root = 5; // root = g ^ c % mod 
+const ll root_1 = 4404020; // root_l = (root)^-1 % mod
+const ll root_pw = 1<<20; // root_pw = (1 << k)
+int rev_element[7340033];
+ll getmod(ll a, ll tmod) {return ((a%tmod)+tmod)%tmod;}
+void fft (vector<ll> & a, bool invert) {
+	int n = (int) a.size();
+	for (int i=1, j=0; i<n; ++i) {
+		int bit = n >> 1;
+		for (; j>=bit; bit>>=1)
+			j -= bit;
+		j += bit;
+		if (i < j)
+			swap (a[i], a[j]);
+	}
+	for (int len=2; len<=n; len<<=1) {
+		ll wlen = invert ? root_1 : root;
+		for (int i=len; i<root_pw; i<<=1)
+			wlen = ll (wlen * 1ll * wlen % mod);
+		for (int i=0; i<n; i+=len) {
+			ll w = 1;
+			for (int j=0; j<len/2; ++j) {
+				ll u = a[i+j],  v = ll (a[i+j+len/2] * 1ll * w % mod);
+				a[i+j] = getmod(u+v,mod);
+				a[i+j+len/2] = getmod(u-v,mod);
+				w = ll (w * 1ll * wlen % mod);
+			}
+		}
+	}
+	if (invert) {
+		ll nrev = rev_element[n];
+		for (int i=0; i<n; ++i)
+			a[i] = int (a[i] * 1ll * nrev % mod);
 	}
 }
-void ntt(vl& x, bool inv = false) {
-	ll e = modpow(root, (mod-1) / sz(x));
-	if (inv) e = modpow(e, mod-2);
-	vl roots(sz(x), 1), temp = roots;
-	rep(i,1,sz(x)) roots[i] = roots[i-1] * e % mod;
-	ntt(&x[0], &temp[0], &roots[0], sz(x), 1);
+void precalc(){ // calculate inverse of MOD in O(MOD)
+	rev_element[1] = 1;
+	for (int i=2; i<mod; i++)
+		rev_element[i] = (mod - (mod/i) * rev_element[mod%i] % mod) % mod;
 }
-vl conv(vl a, vl b) {
-	int s = sz(a) + sz(b) - 1; if (s <= 0) return {};
-	int L = s > 1 ? 32 - __builtin_clz(s - 1) : 0, n = 1 << L;
-	if (s <= 200) { // (factor 10 optimization for |a|,|b| = 10)
-		vl c(s);
-		rep(i,0,sz(a)) rep(j,0,sz(b))
-			c[i + j] = (c[i + j] + a[i] * b[j]) % mod;
-		return c;
-	}
-	a.resize(n); ntt(a);
-	b.resize(n); ntt(b);
-	vl c(n); ll d = modpow(n, mod-2);
-	rep(i,0,n) c[i] = a[i] * b[i] % mod * d % mod;
-	ntt(c, true); c.resize(s); return c;
+void multiply (const vector<ll> & a, const vector<ll> & b, vector<ll> & res) {
+	vector <ll> fa (a.begin(), a.end()),  fb (b.begin(), b.end());
+	size_t n = 1;
+	while (n < max (a.size(), b.size()))  n <<= 1;
+	n <<= 1;
+	fa.resize (n),  fb.resize (n);
+	fft (fa, false),  fft (fb, false);
+	forn(i,n)
+		fa[i] *= fb[i];
+	fft (fa, true);
+	res.resize (n);
+	forn(i,n) // for(i=0;i<n;)
+		res[i] = fa[i] % mod;
 }

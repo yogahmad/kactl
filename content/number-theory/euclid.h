@@ -8,8 +8,9 @@
 
 ll gcd(ll a, ll b) { return __gcd(a, b); }
 
+// beware overflow when get the actual result (x * c/gcd). Use bezout identity to make the result small. (by using mod b/gcd(a,b))
 ll euclid(ll a, ll b, ll &x, ll &y) {
 	if (b) { ll d = euclid(b, a % b, y, x);
 		return y -= a/b * x, d; }
 	return x = 1, y = 0, a;
-}
+} 
