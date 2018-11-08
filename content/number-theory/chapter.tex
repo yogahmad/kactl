@@ -87,7 +87,7 @@ The number of divisors of $n$ is at most around 100 for $n < 5e4$, 500 for $n < 
 	\[g(l) = \sum_{d|l} \mu(d)ld\]
 	\[f(n)=\sum_{l=1}^{n}\binom{\frac{n}{l}+1}{2}^2g(l)\]
 			
-	\subsection{Helper}
+	\subsection{Helper $O(2\sqrt{n})$}
 	Loop through different values of n/d. \\
 	for(int $i = 1; la; i <= n; i = la+1$)  
 	la = n / (n / i); \\
