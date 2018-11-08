@@ -73,11 +73,22 @@ The number of divisors of $n$ is at most around 100 for $n < 5e4$, 500 for $n < 
 	\[G = \sum_{d=1}^{n} f(d) * cnt2(d)\] 
 	here $cnt2(d) =$ how many $d$ such that $gcd(i,j)$ is multiple of d. This is easy to count:
 	\[G = \sum_{d=1}^{n} f(d)\binom{\frac{n}{d}}{2}\] 
-  $f(d)$ is happened to be totient here. Note that we can calculate f using 2 for loops above.
+	$f(d)$ is happened to be totient here. Note that we can calculate f using 2 for loops above.
+		
+	\subsection{Example 2}
+	Find $triplet(i,j,k)$ such that $gcd(a[i], a[j], a[k])=1$. \\
+	Same as step above, but $h(g) = 1$ only if $g=1$ else $h(g)=0$. \\
+	After some calculation, $cnt2(d) = gcd(a[i], a[j], a[k])$ is multiple of d. \\
+	If $dp[x]$ is the number of i such that $x | a[i]$, then $cnt2[d] = C(dp[x], 3)$
 
-  \subsection{Example 2}
-  Find $triplet(i,j,k)$ such that $gcd(a[i], a[j], a[k])=1$.
-  Like the step above, but $h(g) = 1$ only if $g=1$ else $h(g)=0$.
-
-	
-							
+	\subsection{Example 3}
+	Find out sum of $lcm(x,y)$ for each pair $(x,y)$ in range $(1,n)$
+	Answer: 
+	\[g(l) = \sum_{d|l} \mu(d)ld\]
+	\[f(n)=\sum_{l=1}^{n}\binom{\frac{n}{l}+1}{2}^2g(l)\]
+			
+	\subsection{Helper}
+	Loop through different values of n/d. \\
+	for(int $i = 1; la; i <= n; i = la+1$)  
+	la = n / (n / i); \\
+	n/x yields the same value for $i <= x <= la$
