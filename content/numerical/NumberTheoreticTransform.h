@@ -26,7 +26,7 @@ const int mod = 7340033; // c * 2^k + 1
 const ll root = 5; // root = g ^ c % mod 
 const ll root_1 = 4404020; // root_l = (root)^-1 % mod
 const ll root_pw = 1<<20; // root_pw = (1 << k)
-int rev_element[7340033];
+int rev[7340033];
 ll getmod(ll a, ll tmod) {return ((a%tmod)+tmod)%tmod;}
 void fft (vector<ll> & a, bool invert) {
 	int n = (int) a.size();
@@ -53,15 +53,14 @@ void fft (vector<ll> & a, bool invert) {
 		}
 	}
 	if (invert) {
-		ll nrev = rev_element[n];
 		for (int i=0; i<n; ++i)
-			a[i] = int (a[i] * 1ll * nrev % mod);
+			a[i] = int (a[i] * 1ll * rev[n] % mod);
 	}
 }
 void precalc(){ // calculate inverse of MOD in O(MOD)
-	rev_element[1] = 1;
+	rev[1] = 1;
 	for (int i=2; i<mod; i++)
-		rev_element[i] = (mod - (mod/i) * rev_element[mod%i] % mod) % mod;
+		rev[i] = (mod - (mod/i) * rev[mod%i] % mod) % mod;
 }
 void multiply (const vector<ll> & a, const vector<ll> & b, vector<ll> & res) {
 	vector <ll> fa (a.begin(), a.end()),  fb (b.begin(), b.end());
