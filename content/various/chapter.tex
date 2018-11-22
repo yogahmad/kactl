@@ -30,13 +30,13 @@
 \kactlimport{DivideAndConquerDP.h}
 \kactlimport{KnuthDP.h}
 
-\section{Debugging tricks}
-\begin{itemize}
-	\item \texttt{signal(SIGSEGV, [](int) \{ \_Exit(0); \});} converts segfaults into Wrong Answers.
-	      Similarly one can catch SIGABRT (assertion failures) and SIGFPE (zero divisions).
-	      \texttt{\_GLIBCXX\_DEBUG} violations generate SIGABRT (or SIGSEGV on gcc 5.4.0 apparently).
-	\item \texttt{feenableexcept(29);} kills the program on NaNs (\texttt 1), 0-divs (\texttt 4), infinities (\texttt 8) and denormals (\texttt{16}).
-\end{itemize}
+% \section{Debugging tricks}
+% \begin{itemize}
+% 	\item \texttt{signal(SIGSEGV, [](int) \{ \_Exit(0); \});} converts segfaults into Wrong Answers.
+% 	      Similarly one can catch SIGABRT (assertion failures) and SIGFPE (zero divisions).
+% 	      \texttt{\_GLIBCXX\_DEBUG} violations generate SIGABRT (or SIGSEGV on gcc 5.4.0 apparently).
+% 	\item \texttt{feenableexcept(29);} kills the program on NaNs (\texttt 1), 0-divs (\texttt 4), infinities (\texttt 8) and denormals (\texttt{16}).
+% \end{itemize}
 
 \section{Optimization tricks}
 \subsection{Bit hacks}
