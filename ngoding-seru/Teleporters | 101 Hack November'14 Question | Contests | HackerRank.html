@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<!-- First they ignore you, then they laugh at you, then they fight you, then you win. - Mohandas Karamchand Gandhi -->
+<html class=" mod_js mod_flexbox mod_flexboxlegacy mod_canvas mod_canvastext mod_webgl mod_no-touch mod_geolocation mod_history mod_draganddrop mod_rgba mod_hsla mod_multiplebgs mod_backgroundsize mod_borderimage mod_borderradius mod_boxshadow mod_textshadow mod_opacity mod_cssanimations mod_csscolumns mod_cssgradients mod_no-cssreflections mod_csstransforms mod_csstransforms3d mod_csstransitions mod_fontface mod_generatedcontent mod_video mod_audio mod_applicationcache mod_svg mod_inlinesvg mod_smil mod_svgclippaths mod_csscalc mod_fullscreen mod_cssresize mod_no-ie8compat" lang="en"><head>
+    <script type="text/javascript" async="" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/BizibleAcct.js"></script><script id="twitter-wjs" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/widgets.js"></script><script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/bizible.js"></script><script type="text/javascript" async="" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/filepicker.js"></script><script type="text/javascript" async="" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/mixpanel-2.js"></script><script type="text/javascript" async="" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/ga.js"></script><script async="" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/gtm.js"></script><script type="text/javascript">
+        function set_manifest(manifest) {
+            HR.MANIFEST = manifest;
+        }
+    </script>
+    <script type="text/javascript">
+  window.PRODUCT_NAMESPACE = 'hackerrank'
+  window.APP_METRIC_TRACKING_ENABLED = false
+  window.PERF_METRICS = {
+    tracked_initial_view_load_tti: {},
+    tracked_view_load_tti: {}
+  }
+    if ((window.PRODUCT_NAMESPACE == 'hackerrank' || window.PRODUCT_NAMESPACE == 'hackerrankx') && (Math.floor(Math.random() * 2) + 1) == 1) {
+      window.APP_METRIC_TRACKING_ENABLED = true
+    }
+</script>
+
+<script type="text/javascript">
+  window.HR = window.HR || {}
+  HR.development = false
+  HR.production = true
+  HR.DESIGN_SUBDOMAIN_PREFIX = 'design'
+  HR.DESIGN_DOMAIN = 'hrcdn.net'
+</script>
+
+<!-- jsCookies -->
+  <script type="text/javascript">
+    /*!
+ * JavaScript Cookie v2.1.2
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+if(function(factory){if("function"==typeof define&&define.amd)define(factory);else if("object"==typeof exports)module.exports=factory();else{var OldCookies=window.Cookies,api=window.Cookies=factory();api.noConflict=function(){return window.Cookies=OldCookies,api}}}(function(){function extend(){for(var i=0,result={};i<arguments.length;i++){var attributes=arguments[i];for(var key in attributes)result[key]=attributes[key]}return result}function init(converter){function api(key,value,attributes){var result;if("undefined"!=typeof document){if(arguments.length>1){if(attributes=extend({path:"/"},api.defaults,attributes),"number"==typeof attributes.expires){var expires=new Date;expires.setMilliseconds(expires.getMilliseconds()+864e5*attributes.expires),attributes.expires=expires}try{result=JSON.stringify(value),/^[\{\[]/.test(result)&&(value=result)}catch(e){}return value=converter.write?converter.write(value,key):encodeURIComponent(String(value)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),key=encodeURIComponent(String(key)),key=key.replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent),key=key.replace(/[\(\)]/g,escape),document.cookie=[key,"=",value,attributes.expires&&"; expires="+attributes.expires.toUTCString(),attributes.path&&"; path="+attributes.path,attributes.domain&&"; domain="+attributes.domain,attributes.secure?"; secure":""].join("")}key||(result={});for(var cookies=document.cookie?document.cookie.split("; "):[],rdecode=/(%[0-9A-Z]{2})+/g,i=0;i<cookies.length;i++){var parts=cookies[i].split("="),cookie=parts.slice(1).join("=");'"'===cookie.charAt(0)&&(cookie=cookie.slice(1,-1));try{var name=parts[0].replace(rdecode,decodeURIComponent);if(cookie=converter.read?converter.read(cookie,name):converter(cookie,name)||cookie.replace(rdecode,decodeURIComponent),this.json)try{cookie=JSON.parse(cookie)}catch(e){}if(key===name){result=cookie;break}key||(result[name]=cookie)}catch(e){}}return result}}return api.set=api,api.get=function(key){return api(key)},api.getJSON=function(){return api.apply({json:!0},[].slice.call(arguments))},api.defaults={},api.remove=function(key,attributes){api(key,"",extend(attributes,{expires:-1}))},api.withConverter=init,api}return init(function(){})}),"undefined"==typeof jsCookies&&"undefined"!=typeof Cookies)var jsCookies={get:function(c_name){return Cookies.get(c_name)},set:function(c_name,value,expiredays,expirehours,expiremins,expiresecs,options){var exdate=new Date;exdate.setDate(exdate.getDate()+(expiredays||0)),exdate.setHours(exdate.getHours()+(expirehours||0)),exdate.setMinutes(exdate.getMinutes()+(expiremins||0)),exdate.setSeconds(exdate.getSeconds()+(expiresecs||0));var set_expire_time=!(null==expiredays&&null==expiresecs&&null==expiremins&&null==expirehours),config=options||{};set_expire_time&&(config.expires=exdate),Cookies.set(c_name,value,config)},check:function(c_name){return!!Cookies.get(c_name)},destroy:function(c_name){Cookies.remove(c_name)}};
+//# sourceMappingURL=https://staging.hackerrank.net/assets/sourcemaps/jscookies-88896efbb43b944a89475f0d11049724.js.map
+  </script>
+
+<script type="text/javascript">
+  !function(){function getRandRange(min,max){return parseInt(Math.random()*(max-min))+min}function getRandChar(){var offset=getRandRange(0,35);return offset>25?(offset-26).toString():String.fromCharCode(97+offset)}function makeId(length){for(var text="",i=0;length>i;i++)text+=getRandChar();return text}function setSessionId(){key="session_id";var session_key=jsCookies.get(key);session_key?jsCookies.set(key,session_key,null,2,null,null,{secure:!0}):(epoch=(new Date).getTime(),rand_id=makeId(8),jsCookies.set(key,rand_id+"-"+epoch.toString(),null,2,null,null,{secure:!0})),setTimeout(setSessionId,6e4)}setSessionId()}();
+//# sourceMappingURL=https://staging.hackerrank.net/assets/sourcemaps/set_session-51b03f337d09782da69729476d69c39d.js.map
+</script>
+
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="https://hrcdn.net/">
+<link rel="dns-prefetch" href="https://d3keuzeb2crhkn.cloudfront.net/">
+<link rel="dns-prefetch" href="https://notifications.hackerrank.com/">
+<link rel="dns-prefetch" href="https://api.mixpanel.com/">
+<link rel="dns-prefetch" href="https://metrics.hackerrank.com/">
+<link rel="preconnect" href="https://sentry.io/">
+<link rel="dns-prefetch" href="https://sentry.io/">
+
+<!-- use the latest IE browser -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<!-- App Icon for iOS Devices -->
+<link rel="apple-touch-icon-precomposed" href="https://hrcdn.net/hackerrank/assets/apple-touch-icon-precomposed-5e8e592a0a1a387a1185089d13d65637.png">
+
+<!-- favicon -->
+<link rel="shortcut icon" type="image/png" href="https://hrcdn.net/hackerrank/assets/favicon-95dc36c7e91ed5f1841649303c027edb.png">
+
+<!-- generating meta tags -->
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="description" content="Join over 5 million developers in solving code challenges on HackerRank, one of the best ways to prepare for programming interviews.">
+<meta property="og:title" content="HackerRank">
+<meta property="og:image" content="https://hrcdn.net/og/default.jpg">
+<meta property="og:description" content="Join over 5 million developers in solving code challenges on HackerRank, one of the best ways to prepare for programming interviews.">
+<meta property="og:url" content="https://www.hackerrank.com/contests/101hack19/challenges/teleporters/submissions/code/1311251439">
+<meta property="og:site_name" content="HackerRank">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hackerrank">
+<meta name="twitter:url" content="https://www.hackerrank.com">
+<meta name="twitter:title" content="HackerRank">
+<meta property="fb:app_id" content="347499128655783">
+
+<link href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters/submissions/code/1311251439/" rel="canonical"><!-- ends meta tags generation -->
+
+<!-- CSRF Token -->
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="3PuGkS1nQpCXKkPNICTfMMogj1XtwD9N2MUhvmJU5RQgqaOMZZS/0FhasKMsG/qdJkP3zoyIxhqqkkKQ+aOZKg==">
+
+  <link rel="stylesheet" media="all" href="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/hackerrank_libraries-21fce5f00a5704ab97ea6e29f618ca7f.css">
+  <link rel="stylesheet" media="all" href="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/hackerrank-core2-975c828217223855cebbd46386dd1a0b.css">
+  <link rel="stylesheet" media="all" href="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/dashboard-31ccb1429be56880d06b0cbdb2f933e8.css">
+  <link rel="stylesheet" media="all" href="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/theme_m_patch-b0f413f3b8f39c3a93e8e63816584c94.css">
+
+
+<!-- Sentry -->
+<!--
+CDN distribution of raven.js looks for requirejs, but the module is anonymous.
+If we are using require.js and loading an anonymous module without require.js, it raises an error.
+https://github.com/getsentry/raven-js/issues/635
+https://github.com/getsentry/raven-js/issues/97
+-->
+  <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/raven-842e0dd9ae7063befec00a4841fc2792.js" id="raven" crossorigin="anonymous" async="async"></script>
+  <script type="text/javascript">
+    (function(window, queue, loaded, script) {
+
+      var raven_user_context = {
+      }
+      var raven_extra_context = {
+        loadTimestamp: 1556285576,
+        assetUrl: 'https://hrcdn.net',
+        cdnUrl: ''
+      }
+
+        raven_extra_context.mixpanel_token = '978ad322-7230-42d1-a0fe-1a2ae7082a46'
+
+      window.onerror = function e(message, file, lineNo, columnNo, error) {
+          if (loaded) return;
+          queue.push([message, file, lineNo, columnNo, error]);
+      };
+
+      window.onunhandledrejection = function e(error) {
+          if (loaded) return;
+          queue.push([
+              error.reason,
+          ]);
+      };
+
+      script.onreadystatechange = script.onload = function() {
+          if (loaded) return;
+          loaded = true;
+
+          Raven.config("https://6b2d52b23d5a4dd4bc44330335327c04@sentry.io/234162", {
+              release: '-',
+              ignoreUrls: [/cdn\.userty\.com/],
+              ignoreErrors: [
+                '$ is not defined',
+                'Error: Connection is disposed',
+                'Connection got disposed',
+                'A network error occurred',
+                'Model is disposed!',
+                'Invalid start index',
+              ],
+          }).install();
+          Raven.setUserContext(raven_user_context)
+          Raven.setExtraContext(raven_extra_context)
+          window.onunhandledrejection = function e(error) {
+              Raven.captureException(error.reason, {
+                  extra: {
+                      type: error.type,
+                  },
+              });
+          };
+
+          queue.forEach(function(error) {
+              Raven.captureException(error[4] || error[0], {
+                  extra: {
+                      file: error[1],
+                      line: error[2],
+                      col: error[3],
+                  },
+              });
+          });
+      };
+    }(window, [], false, document.getElementById('raven')));
+  </script>
+
+<!-- Google Analyitics Init -->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', "UA-45092266-1"]);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_gat._anonymizeIp']);
+    _gaq.push(['_setCampSourceKey', 'utm_source']);
+    _gaq.push(['_setCampMediumKey', 'utm_medium']);
+    _gaq.push(['_setCampContentKey', 'utm_keyword']);
+    _gaq.push(['_setCampTermKey', 'utm_keyword']);
+    _gaq.push(['_setCampNameKey', 'utm_campaign']);
+</script>
+
+<!-- Mixpanel Init -->
+<script type="text/javascript">
+    var mixpanel = mixpanel || [];
+</script>
+
+<!-- Heap Analytics Init -->
+<script type="text/javascript">
+    var heap = heap || [];
+</script>
+
+<script type="text/javascript">
+  (function(h) {
+    window.hr_metrics = h;
+    if (!h.loaded) {
+      var a = ['track', 'batch_track', 'app_track', 'externalService', 'init', 'batch_track_record', 'track_dwell_time', 'set_navigation_data'];
+      for (var i = 0; i < a.length; i++) {
+        if (!h[a[i]]) {h[a[i]] = function() {};}
+      }
+    }
+  })(window.hr_metrics || {});
+</script>
+
+<script type="text/javascript">
+    /**
+     * Protect window.console method calls, e.g. console is not defined on IE
+     * unless dev tools are open, and IE doesn't define console.debug
+     */
+(function() {
+    if (!window.console) {
+      window.console = {};
+    }
+    var m = ["log", "info", "warn", "error", "debug", "trace", "dir", "group", "groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd", "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"];
+    // define undefined methods as noops to prevent errors
+    for (var i = 0; i < m.length; i++) {
+        if (!window.console[m[i]]) {
+            window.console[m[i]] = function() {};
+        }
+    }
+})();
+</script>
+
+
+  <script type="text/javascript">
+    var pusher_app_key = 'a280047e3b323ccb1b65';
+  </script>
+
+<!-- Linkedin Insights -->
+
+
+<script>
+  dataLayer = [];
+</script>
+
+<!-- Google Tag Manager #1 -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer', 'GTM-5FXW96J');</script>
+<!-- End Google Tag Manager #1 -->
+
+
+    <!-- General Information -->
+    <title>Teleporters | 101 Hack November'14 Question | Contests | HackerRank</title>
+
+    <!--  TODO : This need to be configured from configuration file -->
+      <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://hrcdn.net/hackerrank/assets/compound/challenge-views-df83ba40e1d13cf4a42d15e145999daf.js" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/challenge-views-df83ba40e1d13cf4a42d15e145999daf.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://hrcdn.net/hackerrank/assets/compound/submission-views-57487fcadff4e2c73e72e5c554c163b3.js" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/submission-views-57487fcadff4e2c73e72e5c554c163b3.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://hrcdn.net/hackerrank/assets/codemirror_basic-b0da76e3e366336f599c6741d721dd67.js" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/codemirror_basic-b0da76e3e366336f599c6741d721dd67.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://hrcdn.net/hackerrank/assets/codemirror/mode/clike/clike-730a8140c63a08831b4b7153287a6f04.js" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/clike-730a8140c63a08831b4b7153287a6f04.js"></script><!-- base href="https://www.hackerrank.com/" -->
+
+    <script type="text/javascript">
+      var HR;
+      HR = window.HR || {};
+      HR.PREFETCH_DATA = {"metadata":{"asset_path":"https://hrcdn.net/hackerrank/assets","asset_host":"https://hrcdn.net","asset_host_path":"https://hrcdn.net/hackerrank","filepicker_key":"ApehXMbvXTWqWab7OmMr9z","pubsub_host":"https://pubsub.hackerrank.com","release_version":"0","landing_contest_slug":"101hack19","current_contest_namespace":"/contests/101hack19","using_contest_namespace":true},"slugs":{"101hack19":{"type":"contest"}},"contest":{"id":1845,"name":"101 Hack November'14","slug":"101hack19","created_at":"2014-11-19T10:24:45.000Z","updated_at":"2017-03-09T09:14:54.000Z","starttime":"2014-11-29T13:30:00.000Z","endtime":"2014-11-29T15:30:00.000Z","timezone":"PST","homepage":"","tagline":"","description":"101 Hack contest is back with its 19th edition! It's all about speed, accuracy and efficiency. Inside the contest are 5 challenges. You have exactly 120 minutes to solve them. Every second counts. \n\nHackerRank invites you to join the contest to compete against hackers from across the globe.","homepage_background_color":"","notification":null,"template_id":240,"expose_stats":null,"public":true,"team_event":false,"rating_category":"Algorithms","is_rating_updated":true,"leaderboard_backend":null,"leaderboard_format":"","primary_track_id":3,"college_public":null,"rated":null,"is_multi_round":false,"parent_contest_id":null,"primary_tag_id":3081,"started":true,"ended":true,"epoch_endtime":1417275000,"epoch_starttime":1417267800,"time_left":-139010576.6260779,"hide_difficulty":null,"has_tracks":null,"archived":true,"leaderboard_type":"country","kind":null,"leaderboard_freeze_time":null,"show_penalty":null,"track":{"id":3,"name":"Algorithms","slug":"algorithms","priority":14,"descriptions":"The true test of problem solving: when one realizes that time and memory aren't infinite.\n","rewards_system_enabled":true},"hide_navigation":null,"contest_broadcast":null,"hide_leaderboard":null,"hide_submissions":null,"leaderboard_out_of_sync":null,"leaderboard_out_of_sync_message":null,"challenges_count":5,"show_participants_info":null,"custom_leaderboard_column_name":null,"disable_forum":null,"disable_fsi":null,"has_codesprint_reg_page":null,"hidden":null,"comment_live_sync":null,"company_associated_contest":null,"limited_participants":null,"leaderboard_broadcast_message":null,"qualification_rule_type":null,"qualification_rule_value":null,"qualification_rule_msg":null,"migration_status":null,"migration_disabled":null,"testers_contest":null,"time_limited_contest":false,"hacker_timelimit":null,"school_leaderboard_enabled":false,"organization_type":null,"organization_name":null,"effective_time_left":-139010576.62871543,"effective_epoch_endtime":1417275000},"messages":[],"profile":{},"timestamp":1556285576,"tracks":[{"id":24,"slug":"tutorials","name":"Tutorials","chapters":[{"id":146,"name":"30 Days of Code","slug":"30-days-of-code","hidden":false},{"id":147,"name":"10 Days of Statistics","slug":"10-days-of-statistics","hidden":false},{"id":148,"name":"10 Days of Javascript","slug":"10-days-of-javascript","hidden":false}],"selected":2},{"id":3,"slug":"algorithms","name":"Algorithms","chapters":[{"id":43,"name":"Warmup","slug":"warmup","hidden":false},{"id":108,"name":"Implementation","slug":"implementation","hidden":false},{"id":34,"name":"Strings","slug":"strings","hidden":false},{"id":38,"name":"Sorting","slug":"arrays-and-sorting","hidden":false},{"id":36,"name":"Search","slug":"search","hidden":false},{"id":33,"name":"Graph Theory","slug":"graph-theory","hidden":false},{"id":59,"name":"Greedy","slug":"greedy","hidden":false},{"id":35,"name":"Dynamic Programming","slug":"dynamic-programming","hidden":false},{"id":151,"name":"Constructive Algorithms","slug":"constructive-algorithms","hidden":false},{"id":30,"name":"Bit Manipulation","slug":"bit-manipulation","hidden":false},{"id":153,"name":"Recursion","slug":"recursion","hidden":false},{"id":47,"name":"Game Theory","slug":"game-theory","hidden":false},{"id":29,"name":"NP Complete","slug":"np-complete-problems","hidden":false},{"id":161,"name":"Debugging","slug":"algo-debugging","hidden":false}],"selected":2},{"id":17,"slug":"data-structures","name":"Data Structures","chapters":[{"id":134,"name":"Arrays","slug":"arrays","hidden":false},{"id":39,"name":"Linked Lists","slug":"linked-lists","hidden":false},{"id":96,"name":"Trees","slug":"trees","hidden":false},{"id":119,"name":"Balanced Trees","slug":"balanced-trees","hidden":false},{"id":97,"name":"Stacks","slug":"stacks","hidden":false},{"id":98,"name":"Queues","slug":"queues","hidden":false},{"id":99,"name":"Heap","slug":"heap","hidden":false},{"id":100,"name":"Disjoint Set","slug":"disjoint-set","hidden":false},{"id":113,"name":"Multiple Choice","slug":"multiple-choice","hidden":false},{"id":118,"name":"Trie","slug":"trie","hidden":false},{"id":32,"name":"Advanced","slug":"data-structures","hidden":false}],"selected":2},{"id":22,"slug":"mathematics","name":"Mathematics","chapters":[{"id":109,"name":"Fundamentals","slug":"fundamentals","hidden":false},{"id":52,"name":"Number Theory","slug":"number-theory","hidden":false},{"id":51,"name":"Combinatorics","slug":"combinatorics","hidden":false},{"id":55,"name":"Algebra","slug":"algebra","hidden":false},{"id":54,"name":"Geometry","slug":"geometry","hidden":false},{"id":53,"name":"Probability","slug":"probability","hidden":false},{"id":128,"name":"Linear Algebra Foundations","slug":"linear-algebra-foundations","hidden":false}],"selected":2},{"id":27,"slug":"c","name":"C","chapters":[{"id":154,"name":"Introduction","slug":"c-introduction","hidden":false},{"id":155,"name":"Conditionals and Loops","slug":"c-conditionals-and-loops","hidden":false},{"id":156,"name":"Arrays and Strings","slug":"c-arrays-and-strings","hidden":false},{"id":157,"name":"Functions","slug":"c-functions","hidden":false},{"id":158,"name":"Structs and Enums","slug":"c-structs-and-enums","hidden":false}],"selected":2},{"id":2,"slug":"ai","name":"Artificial Intelligence","chapters":[{"id":8,"name":"Bot Building","slug":"ai-introduction","hidden":false},{"id":9,"name":"A* Search","slug":"astar-search","hidden":false},{"id":10,"name":"Alpha Beta Pruning","slug":"alpha-beta-pruning","hidden":false},{"id":14,"name":"Combinatorial Search","slug":"combinatorial-search-theory","hidden":false},{"id":13,"name":"Games","slug":"richman-games","hidden":false},{"id":11,"name":"Statistics and Machine Learning","slug":"machine-learning","hidden":false},{"id":44,"name":"Digital Image Analysis","slug":"image-analysis","hidden":false},{"id":49,"name":"Natural Language Processing","slug":"nlp","hidden":false},{"id":129,"name":"Probability \u0026 Statistics - Foundations","slug":"statistics-foundations","hidden":false}],"selected":2},{"id":13,"slug":"cpp","name":"C++","chapters":[{"id":77,"name":"Introduction","slug":"cpp-introduction","hidden":false},{"id":76,"name":"Strings","slug":"cpp-strings","hidden":false},{"id":78,"name":"Classes","slug":"classes","hidden":false},{"id":116,"name":"STL","slug":"stl","hidden":false},{"id":127,"name":"Inheritance","slug":"inheritance","hidden":false},{"id":159,"name":"Debugging","slug":"cpp-debugging","hidden":false},{"id":152,"name":"Other Concepts","slug":"other-concepts","hidden":false}],"selected":2},{"id":15,"slug":"java","name":"Java","chapters":[{"id":80,"name":"Introduction","slug":"java-introduction","hidden":false},{"id":82,"name":"Strings","slug":"java-strings","hidden":false},{"id":83,"name":"BigNumber","slug":"bignumber","hidden":false},{"id":84,"name":"Data Structures","slug":"java-data-structure","hidden":false},{"id":85,"name":"Object Oriented Programming","slug":"oop","hidden":false},{"id":106,"name":"Exception Handling","slug":"handling-exceptions","hidden":false},{"id":136,"name":"Advanced","slug":"java-advanced","hidden":false}],"selected":2},{"id":12,"slug":"python","name":"Python","chapters":[{"id":73,"name":"Introduction","slug":"py-introduction","hidden":false},{"id":74,"name":"Basic Data Types","slug":"py-basic-data-types","hidden":false},{"id":75,"name":"Strings","slug":"py-strings","hidden":false},{"id":120,"name":"Sets","slug":"py-sets","hidden":false},{"id":121,"name":"Math","slug":"py-math","hidden":false},{"id":122,"name":"Itertools","slug":"py-itertools","hidden":false},{"id":123,"name":"Collections","slug":"py-collections","hidden":false},{"id":124,"name":"Date and Time","slug":"py-date-time","hidden":false},{"id":126,"name":"Errors and Exceptions","slug":"errors-exceptions","hidden":false},{"id":42,"name":"Classes","slug":"py-classes","hidden":false},{"id":125,"name":"Built-Ins","slug":"py-built-ins","hidden":false},{"id":87,"name":"Python Functionals","slug":"py-functionals","hidden":false},{"id":88,"name":"Regex and Parsing","slug":"py-regex","hidden":false},{"id":89,"name":"XML","slug":"xml","hidden":false},{"id":90,"name":"Closures and Decorators","slug":"closures-and-decorators","hidden":false},{"id":139,"name":"Numpy","slug":"numpy","hidden":false},{"id":160,"name":"Debugging","slug":"py-debugging","hidden":false}],"selected":2},{"id":14,"slug":"ruby","name":"Ruby","chapters":[{"id":72,"name":"Introduction","slug":"ruby-tutorials","hidden":false},{"id":86,"name":"Control Structures","slug":"control-structures","hidden":false},{"id":79,"name":"Arrays \u0026 Hashes","slug":"ruby-arrays","hidden":false},{"id":107,"name":"Enumerables","slug":"ruby-enumerables","hidden":false},{"id":112,"name":"Methods","slug":"ruby-methods","hidden":false},{"id":135,"name":"Strings","slug":"ruby-strings","hidden":false}],"selected":2},{"id":18,"slug":"sql","name":"SQL","chapters":[{"id":92,"name":"Basic Select","slug":"select","hidden":false},{"id":132,"name":"Advanced Select","slug":"advanced-select","hidden":false},{"id":95,"name":"Aggregation","slug":"aggregation","hidden":false},{"id":94,"name":"Basic Join","slug":"join","hidden":false},{"id":133,"name":"Advanced Join","slug":"advanced-join","hidden":false},{"id":143,"name":"Alternative Queries","slug":"alternative-queries","hidden":false}],"selected":2},{"id":16,"slug":"databases","name":"Databases","chapters":[{"id":91,"name":"Relational Algebra","slug":"relational-algebra","hidden":false},{"id":93,"name":"Indexes","slug":"indexes","hidden":false},{"id":117,"name":"OLAP","slug":"olap","hidden":false},{"id":101,"name":"Set and Algebra","slug":"set-and-algebra","hidden":false},{"id":130,"name":"NoSQL - XML, MapReduce","slug":"xpath-queries","hidden":false},{"id":131,"name":"Database Normalization","slug":"database-normalization","hidden":false}],"selected":2},{"id":21,"slug":"distributed-systems","name":"Distributed Systems","chapters":[{"id":103,"name":"Multiple Choice","slug":"distributed-mcq","hidden":false},{"id":104,"name":"Client Server","slug":"client-server","hidden":false},{"id":111,"name":"MapReduce Basics","slug":"mapreduce-basics","hidden":false}],"selected":2},{"id":6,"slug":"shell","name":"Linux Shell","chapters":[{"id":56,"name":"Bash","slug":"bash","hidden":false},{"id":57,"name":"Text Processing","slug":"textpro","hidden":false},{"id":114,"name":"Arrays in Bash","slug":"arrays-in-bash","hidden":false},{"id":115,"name":"Grep Sed Awk","slug":"grep-sed-awk","hidden":false}],"selected":2},{"id":5,"slug":"fp","name":"Functional Programming","chapters":[{"id":27,"name":"Introduction","slug":"intro","hidden":false},{"id":26,"name":"Recursion","slug":"fp-recursion","hidden":false},{"id":45,"name":"Functional Structures","slug":"ds","hidden":false},{"id":40,"name":"Memoization and DP","slug":"dp","hidden":false},{"id":50,"name":"Persistent Structures","slug":"persistent-ds","hidden":false},{"id":41,"name":"Ad Hoc","slug":"misc","hidden":false},{"id":46,"name":"Parsers","slug":"parsers","hidden":false},{"id":48,"name":"Interpreter and Compilers","slug":"compilers","hidden":false}],"selected":2},{"id":19,"slug":"regex","name":"Regex","chapters":[{"id":137,"name":"Introduction","slug":"re-introduction","hidden":false},{"id":141,"name":"Character Class","slug":"re-character-class","hidden":false},{"id":142,"name":"Repetitions","slug":"re-repetitions","hidden":false},{"id":140,"name":"Grouping and Capturing","slug":"grouping-and-capturing","hidden":false},{"id":144,"name":"Backreferences","slug":"backreferences","hidden":false},{"id":145,"name":"Assertions","slug":"assertions","hidden":false},{"id":138,"name":"Applications","slug":"re-applications","hidden":false}],"selected":2},{"id":26,"slug":"general-programming","name":"General Programming","chapters":[],"selected":2},{"id":20,"slug":"security","name":"Security","chapters":[{"id":102,"name":"Functions","slug":"functions","hidden":false},{"id":105,"name":"Terminology and Concepts","slug":"concepts","hidden":false},{"id":31,"name":"Cryptography","slug":"cryptography","hidden":false}],"selected":2}],"ab_tests":{"models":[{"id":122,"name":"react_migration","product":1,"variants":[{"id":372,"weight":0,"variant":"trm0"},{"id":373,"weight":1,"variant":"trm1"},{"id":374,"weight":1,"variant":"cnt1"},{"id":375,"weight":4,"variant":"trm2"},{"id":376,"weight":4,"variant":"cnt2"},{"id":377,"weight":5,"variant":"trm3"},{"id":378,"weight":5,"variant":"cnt3"},{"id":379,"weight":10,"variant":"trm4"},{"id":380,"weight":10,"variant":"cnt4"},{"id":381,"weight":10,"variant":"trm5"},{"id":382,"weight":10,"variant":"cnt5"},{"id":383,"weight":20,"variant":"trm6"},{"id":384,"weight":20,"variant":"cnt6"}],"hacker_variant":{"variant":"cnt4","forced":false}},{"id":182,"name":"ml-ctr-live-v2","product":1,"variants":[{"id":654,"weight":10,"variant":"control"},{"id":655,"weight":10,"variant":"treatment-open"},{"id":656,"weight":10,"variant":"treatment-click"},{"id":657,"weight":10,"variant":"variant1"},{"id":658,"weight":10,"variant":"variant2"},{"id":659,"weight":10,"variant":"variant3"},{"id":660,"weight":20,"variant":"variant4"},{"id":661,"weight":20,"variant":"variant5"}],"hacker_variant":{"variant":"treatment-click","forced":false}},{"id":220,"name":"live-autocomplete-linting-new","product":1,"variants":[{"id":840,"weight":10,"variant":"disabled_small"},{"id":841,"weight":40,"variant":"disabled_large"},{"id":842,"weight":10,"variant":"enabled_small"},{"id":843,"weight":40,"variant":"enabled_large"}],"hacker_variant":{"variant":"disabled_large","forced":false}},{"id":225,"name":"new-full-screen","product":1,"variants":[{"id":874,"weight":0,"variant":"trm0"},{"id":875,"weight":10,"variant":"trm1"},{"id":876,"weight":10,"variant":"cnt1"},{"id":877,"weight":20,"variant":"trm2"},{"id":878,"weight":20,"variant":"cnt2"},{"id":879,"weight":20,"variant":"trm3"},{"id":880,"weight":20,"variant":"cnt3"}],"hacker_variant":{"variant":"trm3","forced":false}},{"id":232,"name":"new-email-verification-flow","product":1,"variants":[{"id":929,"weight":0,"variant":"card0"},{"id":930,"weight":10,"variant":"card1"},{"id":931,"weight":10,"variant":"banner1"},{"id":932,"weight":10,"variant":"card2"},{"id":933,"weight":10,"variant":"banner2"},{"id":934,"weight":10,"variant":"card3"},{"id":935,"weight":10,"variant":"banner3"},{"id":936,"weight":10,"variant":"card4"},{"id":937,"weight":10,"variant":"banner4"},{"id":938,"weight":10,"variant":"card5"},{"id":939,"weight":10,"variant":"banner5"}],"hacker_variant":{"variant":"banner5","forced":false}},{"id":233,"name":"email-verification-card-flow","product":1,"variants":[{"id":940,"weight":0,"variant":"card0"},{"id":941,"weight":10,"variant":"card1"},{"id":942,"weight":10,"variant":"banner1"},{"id":943,"weight":10,"variant":"card2"},{"id":944,"weight":10,"variant":"banner2"},{"id":945,"weight":10,"variant":"card3"},{"id":946,"weight":10,"variant":"banner3"},{"id":947,"weight":10,"variant":"card4"},{"id":948,"weight":10,"variant":"banner4"},{"id":949,"weight":10,"variant":"card5"},{"id":950,"weight":10,"variant":"banner5"}],"hacker_variant":{"variant":"banner4","forced":false}},{"id":234,"name":"onboarding-with-monaco","product":1,"variants":[{"id":951,"weight":0,"variant":"treatment0"},{"id":952,"weight":10,"variant":"treatment1"},{"id":953,"weight":10,"variant":"control1"},{"id":954,"weight":20,"variant":"treatment2"},{"id":955,"weight":20,"variant":"control2"},{"id":956,"weight":20,"variant":"treatment3"},{"id":957,"weight":20,"variant":"control3"}],"hacker_variant":{"variant":"treatment3","forced":false}},{"id":235,"name":"full-screen-dark-mode","product":1,"variants":[{"id":958,"weight":0,"variant":"dark_mode0"},{"id":959,"weight":10,"variant":"dark_mode1"},{"id":960,"weight":10,"variant":"normal_mode1"},{"id":961,"weight":20,"variant":"dark_mode2"},{"id":962,"weight":20,"variant":"normal_mode2"},{"id":963,"weight":20,"variant":"dark_mode3"},{"id":964,"weight":20,"variant":"normal_mode3"}],"hacker_variant":{"variant":"dark_mode3","forced":false}}]},"in_maintenance_mode":false,"maintenance_details":{"notification_start":1495931400,"maintenance_start":1496017800,"maintenance_end":1496021400,"api_message":"We are performing scheduled maintenance on our servers. Please refer to https://updates.hackerrank.com/scheduled-maintenance-on-may-28th-2018-at-530pm-pt/ for more details."},"feature_feedback_list":[],"admin_su":null,"badge_map":{"algorithms":["problem-solving"],"data-structures":["problem-solving"],"cpp":["cpp"],"java":["java"],"python":["python"],"sql":["sql"],"c":["c"],"ruby":["ruby"],"30-days-of-code":["30-days-of-code"],"10-days-of-javascript":["10-days-of-javascript"],"10-days-of-statistics":["10-days-of-statistics"]},"feature_flags":{}};
+      HR.MANIFEST_HASH = "c04e9acc67ed173555da61d0b82388dc8168d9b2";
+    </script>
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.hackerrank.com/rest/blogs.rss">
+<style type="text/css">.fp__btn{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:inline-block;height:34px;padding:4px 30px 5px 40px;position:relative;margin-bottom:0;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:"Open Sans", sans-serif;font-size:12px;font-weight:600;line-height:1.42857143;color:#fff;text-align:center;white-space:nowrap;background:#ef4925;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAVCAYAAABLy77vAAAABGdBTUEAALGPC/xhBQAAAJRJREFUOBHNUcEWgCAIy14fbl9egK5MRarHQS7ocANmOCgWh1gdNERig1CgwPlLxkZuE80ndHlU+4Lda1zz0m01dSKtcz0h7qpQb7WR+HyrqRPxahzwwMqqkEVs6qnv+86NQAbcJlK/X+vMeMe7XcBOYaRzcbItUR7/8QgcykmElQrQPErnmxNxl2yyiwcgEvQUocIJaE6yERwqXDIAAAAASUVORK5CYII=");background-repeat:no-repeat;background-position:15px 6px;border:1px solid transparent;border-radius:17px}.fp__btn:hover{background-color:#d64533}.fp__btn::after{position:absolute;content:"";top:15px;right:14px;width:7px;height:4px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAABGdBTUEAALGPC/xhBQAAAGlJREFUCB1j/P//vw4DA4MiEKOD+0xAkatA/AJNBsS/ysTIyPgfyDgHxO+hCkD0Oag4RAhoPDsQm4NoqCIGBiBnAhBjAxNAkkxAvBZNFsQHuQesmxPIOQZVAKI54UZDFYgABbcBsQhMAgDIVGYSqZsn6wAAAABJRU5ErkJggg==");}.fp__btn:hover::after{background-position:0 -4px;}.fp__btn:active,.fp__btn:focus{outline:none}@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2){.fp__btn{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAqCAYAAADbCvnoAAAABGdBTUEAALGPC/xhBQAAAQFJREFUWAntWEESwjAIbBwfHl+upNoRNjKUJhk5kIvZQGG7bHOwPGltgdYtEJedShKyJnLHhEILz1Zi9HCOzFI7FUqFLAWseDgPdfeQ9QZ4b1j53nstnEJJyBqx20NeT1gEMB5uZG6Fzn5lV5UMp1ASQhMjdnvoqjewsYbDjcytEH5lsxULp1AS0sx8nJfVnjganf3NkVlKhVPIfQ9Zb6jF0atK3mNriXwpicPHvIeyr3sTDA53VgpgH8BvMu1ZCCz7ew/7MPwlE4CQJPNnQj2ZX4SYlEPbVpsvKFZ5TOwhcRoUTQiwwhVjArPEqVvRhMCneMXzDk9lwYphIwrZZOihF32oehMAa1qSAAAAAElFTkSuQmCC");background-size:18px 21px}.fp__btn::after{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAYAAAAmlE46AAAABGdBTUEAALGPC/xhBQAAANpJREFUKBWVkU8KglAYxJ/u3HuBwmUX8BqepKN4ka4RguDOVYu2QVCrhIJ6/caekqLiGxi+PzPD58PAWrszxmygD84h7hpePFLy1mEQBJamgvcVYXkqZXTR0LwpJWw0z0Ba6bymDcrI4kkp4EvzCNoVztNKfVATwoOiyx/NDup1SVqPQVBbDDeK3txBb9JuHfhNW3HWjZhDX+SGRAgPHkl5f0+kieBxRVieaPD5LGJ4WghLiwehbkBI4HUirF3S+SYrhhQ2f2H16aR5vMSYwbdjNtYXZ0J7cc70BXnFMHIGznzEAAAAAElFTkSuQmCC");background-size:7px 8px;}}</style></head>
+
+<body id="hr_v2" class="show-cookie-banner" itemscope="" itemtype="http://schema.org/WebPage">
+      <div class="cdn-error-view" style="display:none;">
+  <div class="error-box-wrap">
+    <div class="error-icon">
+      <svg x="0px" y="0px" width="80px" height="80px" viewBox="0 0 367.011 367.01" style="enable-background:new 0 0 367.011 367.01;" xml:space="preserve">
+        <g>
+         <g>
+          <path d="M365.221,329.641L190.943,27.788c-1.542-2.674-4.395-4.318-7.479-4.318c-3.084,0-5.938,1.645-7.48,4.318L1.157,330.584    c-1.543,2.674-1.543,5.965,0,8.639c1.542,2.674,4.395,4.318,7.48,4.318h349.65c0.028,0,0.057,0,0.086,0    c4.77,0,8.638-3.863,8.638-8.639C367.011,332.92,366.342,331.1,365.221,329.641z M23.599,326.266L183.464,49.381l159.864,276.885    H23.599z"></path>
+          <path d="M174.826,136.801v123.893c0,4.773,3.867,8.638,8.638,8.638c4.77,0,8.637-3.863,8.637-8.638V136.801    c0-4.766-3.867-8.637-8.637-8.637C178.693,128.165,174.826,132.036,174.826,136.801z"></path>
+          <path d="M183.464,279.393c-5.922,0-10.725,4.8-10.725,10.722s4.803,10.729,10.725,10.729c5.921,0,10.725-4.809,10.725-10.729    C194.189,284.193,189.386,279.393,183.464,279.393z"></path>
+         </g>
+        </g>
+      </svg>
+    </div>
+    <h2 class="error-title">Something went wrong!</h2>
+    <p class="error-message">Some error occured while loading page for you. Please try again.</p>
+    <div class="btn-wrap">
+      <a href="#" onclick="window.location.reload(true);"><button class="btn-reload">Reload</button></a>
+    </div>
+  </div>
+</div>
+<script>
+  if(typeof cdnLoaded !== 'undefined' && cdnLoaded === false){
+    document.querySelector('.cdn-error-view').style.display = 'block';
+  }
+</script>
+
+    <script type="text/template" id="navigation">
+    <% if(HR.util.showCookieBanner()) { %>
+        <div class="cookie-banner-wrapper navigation-banner">
+            <div class="cookie-d-flex container">
+                <div class="cookie-message msL">We use cookies to ensure you have the best browsing experience on our website.
+                    Please read our <a href="/privacy#cookies" target="_blank" class="cookie-link">cookie policy</a> for more information about how we use cookies.
+                </div>
+                <button class="ui-btn-secondary cookie-accept-btn"><span class="ui-text">Ok</span></button>
+            </div>
+        </div>
+    <% } %>
+    <div class="page-header-wrapper theme-m-section">
+        <nav class="community-header">
+            <div class="container">
+                <span class="nav-links theme-m-section"></span>
+                <span class="nav-buttons theme-m-section"></span>
+            </div>
+        </nav>
+    </div>
+</script>
+
+<script type="text/template" id="nav-links">
+    <ul class="nav-links">
+        <li class="nav-link-item logo-wrap">
+            <a href="/dashboard" class="nav_link backbone logo_mark js_logo_mark logo-link" data-analytics="NavBarLogo"><img id="feed-intro" class="logo-img-small" src="<%- asset_path('brand/h_mark_sm.svg') %>" alt=""/></a>
+        </li>
+        <li class="nav-link-item">
+            <a href="/dashboard" class="nav-link domains" data-analytics="NavBarDomains">
+              <span>PRACTICE</span>
+            </a>
+        </li>
+        <li class="nav-link-item">
+            <a href="/contests" class="nav-link contests" data-analytics="NavBarContests">
+              <span>COMPETE</span>
+            </a>
+        </li>
+        <li class="nav-link-item">
+            <a href="/jobs/search" class="nav-link" data-analytics="NavBarJobs">
+              <span>JOBS</span>
+              <i class="icon-circle js-jobs-notification navigation-highlight-icon hidden"></i>
+            </a>
+        </li>
+        <li class="nav-link-item">
+            <a href="/leaderboard" class="nav-link" data-analytics="NavBarLeaderboard" id='leaderboard-nav-link'>
+              <span>LEADERBOARD</span>
+            </a>
+        </li>
+    </ul>
+</script>
+
+<script type="text/template" id="nav-search">
+    <div class="hide-in-private-contest search-input input-icon">
+        <input type="text" id="search-text" class="new-search-query" autocomplete="off" data-analytics="NavBarSearchBox" placeholder="Search">
+        <i class="icon-search"></i>
+    </div>
+    <div class="hide-in-private-contest search-result hide">
+        <ul class="unstyled"></ul>
+    </div>
+</script>
+
+<script type="text/template" id="nav-buttons">
+    <ul class="pull-left psR">
+        <li class="hide-in-private-contest search-input-container input-icon main-hr-search" id="search-span">
+            <div class="search_form new-search theme-m-content"></div>
+        </li>
+    </ul>
+    <% if (profile && profile.isLoggedIn()) { %>
+        <ul class="pull-left nav-wrap mmL">
+
+            <li class="hide-in-private-contest notify_dropdown notify-dropdown dropdown message-dropdown theme-m-content" id="tab-profile-messages">
+                <a class="cursor backbone nav_link hr_nav_messages_link" data-toggle="dropdown" data-analytics="NavBarMessageIcon">
+                    <i class="icon-theme-m-message icon--single"></i>
+                    <span class="indicator number-indicator hr_messages_count hidden"></span>
+                </a>
+                <div class="dropdown-menu large theme-m-dropdown">
+                    <header class="psT psB text-center menu-header">
+                        <strong className="header-title">Messages</strong>
+                    </header>
+                        <div id="notify_messages" class="dropdown-body">
+                            <ul></ul>
+                        </div>
+                    <footer class="final text-center show-all">
+                        <a class="btn backbone show-all-link" href="/inbox" data-analytics="NavBarMessageShowAll">Show All</a>
+                    </footer>
+                </div>
+            </li>
+            <li class="dropdown notify_dropdown theme-m-content" id="tab-profile-notifs">
+                <a class="cursor backbone nav_link hr_nav_notifications_link" data-toggle="dropdown" data-analytics="NavBarNotificationsIcon">
+                    <i class="icon-theme-m-notification icon--single"></i>
+                    <span class="indicator number-indicator hr_notifications_count hidden"></span>
+                </a>
+                <div class="dropdown-menu large theme-m-dropdown" id="notify_broadcasts">
+                    <header class="psA">
+                        <strong>Notifications</strong>
+                        <a class="hr_archive_all archive pull-right" data-analytics="NavBarNotificationsArchiveAll"><i class="icon-folder-open"></i>Archive All</a>
+                    </header>
+                    <div class="clearfix dropdown-body">
+                        <ul class="hr_nav_notifications_list">
+                        </ul>
+                    </div>
+                    <footer class="final text-center show-all">
+                        <a class="btn backbone show-all-link" href="/notifications" data-analytics="NavBarNotificationsShowAll">Show All</a>
+                    </footer>
+                </div>
+            </li>
+            <li class="dropdown-auth">
+                <div class="dropdown theme-m-content profile-menu-item" id="profile-menu">
+                    <a class="backbone nav_link dropdown-toggle" href="" data-toggle="dropdown" data-analytics="NavBarProfileDropDown">
+                        <img src="<%= _profile.avatar %>" alt="" class="avatar" onerror="this.onerror=null; this.src='https://d3rpyts3de3lx8.cloudfront.net/hackerrank/assets/gravatar.jpg';">
+                        <span class="mmR profile-username"><%- _profile.username %></span>
+                        <i class="icon-down-open"></i>
+                    </a>
+                    <div class="dropdown-menu drop-list pull-right">
+                        <ul>
+                            <li class="hide-in-private-contest profile-nav-item"><a class="navigation_hackos hackos-count backbone" href="/<%- _profile.username %>/hackos" data-analytics="NavBarProfileDropDownHackos">Hackos: <span class="navigation_hackos-count"><%= _profile.hacko_amount %></span></a></li>
+                            <li class="hide-in-private-contest profile-nav-item">
+                                <a class="backbone" rel="tooltip" data-placement="left" href="/<%- _profile.username %>" data-analytics="NavBarProfileDropDownProfile">
+                                    Profile
+                                    <!-- NOTE also add title="x% complete" to profile link-->
+                                    <div class="ui-progress-bar theme-progress-bar">
+                                        <div class="progress-filler" style="width: <%= _profileProgress %>%;"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="hide-in-private-contest profile-nav-item"><a class="backbone" href="/settings" data-analytics="NavBarProfileDropDownSettings">Settings</a></li>
+                            <li class="hide-in-private-contest profile-nav-item"><a class="backbone" href="/challenges/bookmarks" data-analytics="NavBarDropDownBookmarks">Bookmarks</a></li>
+                            <% if (HR.ABTest && HR.ABTest.is_variant("hrc-code-snippets", "trm1")){ %>
+                                <li class="hide-in-private-contest profile-nav-item"><a href="/snippets" data-analytics="NavBarProfileDropDownCodeSnippets">Code Snippets</a></li>
+                            <% } %>
+                            <li class="hide-in-private-contest profile-nav-item"><a class="backbone" href="/network" data-analytics="NavBarProfileDropDownNetwork">Network</a></li>
+                            <li class="hide-in-private-contest profile-nav-item"><a class="backbone" href="/submissions" data-analytics="NavBarProfileDropDownSubmissions">Submissions</a></li>
+                            <li class="hide-in-private-contest profile-nav-item"><a class="backbone" href="/administration" data-analytics="NavBarProfileDropDownAdministration">Administration</a></li>
+                            <li class="profile-nav-item"><a class="logout-button" data-analytics="NavBarProfileDropDownLogout">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    <% } %>
+</script>
+
+    <script type="text/template" id="breadcrumb">
+    <% var counter = 0; %>
+    <div class="content-header">
+        <div class="container">
+            <div class="clearfix">
+                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="pull-left mdT msB pjT bcrumb">
+                    <% var breadcrumb_level = 0; var levelValKeys = _.keys(level_values);%>
+                    <% for (var index in level_values) { %>
+                      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <% if (counter==0) {
+                             counter = counter + 1;
+                           } else { %>
+                             <i class="icon-right-open mmL"></i>
+                        <% } %>
+                        <a itemprop="item" href="<%= level_values[index].url %>" class="backbone"
+                           data-analytics="Breadcrumb" data-attr1="<%- level_values[index].text %>"
+                           data-attr2="<%= index %>" data-attr7="<%= breadcrumb_level += 1 %>"><span itemprop="name"><%- level_values[index].text %></span></a>
+                        <meta itemprop="position" content="<%- breadcrumb_level %>" />
+                      </li>
+                    <% } %>
+                </ol>
+                 <div class="pull-right hide domain-scores">
+                    <div class="pull-left badge-progress">
+                    </div>
+                    <div class="pull-right pdT brcumb-points">
+                        <span class="zeta bold">Points: </span><span class="bold domain-score"></span>
+                        <span class="domain-rank-span">
+                            <span class="zeta bold">Rank: </span><span class="bold msR domain-rank "></span>
+                        </span>
+                    </div>
+                 </div>
+                <div class="social-share-wrap-2 hide"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+    <div id="wrapper" class="theme-m-content" style="min-height: 892px;">
+        <div id="navigation">
+    
+        <div class="cookie-banner-wrapper navigation-banner">
+            <div class="cookie-d-flex container">
+                <div class="cookie-message msL">We use cookies to ensure you have the best browsing experience on our website.
+                    Please read our <a href="https://www.hackerrank.com/privacy#cookies" target="_blank" class="cookie-link">cookie policy</a> for more information about how we use cookies.
+                </div>
+                <button class="ui-btn-secondary cookie-accept-btn"><span class="ui-text">Ok</span></button>
+            </div>
+        </div>
+    
+    <div class="page-header-wrapper theme-m-section">
+        <nav class="community-header">
+            <div class="container">
+                <span class="nav-links theme-m-section">
+    <ul class="nav-links">
+        <li class="nav-link-item logo-wrap">
+            <a href="https://www.hackerrank.com/dashboard?h_r=logo" class="nav_link backbone logo_mark js_logo_mark logo-link" data-analytics="NavBarLogo"><img id="feed-intro" class="logo-img-small" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/h_mark_sm-9c05999c62674028552f4e813728e591.svg" alt=""></a>
+        </li>
+        <li class="nav-link-item">
+            <a href="https://www.hackerrank.com/dashboard" class="nav-link domains" data-analytics="NavBarDomains">
+              <span>PRACTICE</span>
+            </a>
+        </li>
+        <li class="nav-link-item">
+            <a href="https://www.hackerrank.com/contests" class="nav-link contests active" data-analytics="NavBarContests">
+              <span>COMPETE</span>
+            </a>
+        </li>
+        <li class="nav-link-item">
+            <a href="https://www.hackerrank.com/jobs/search" class="nav-link" data-analytics="NavBarJobs">
+              <span>JOBS</span>
+              <i class="icon-circle js-jobs-notification navigation-highlight-icon hidden"></i>
+            </a>
+        </li>
+        <li class="nav-link-item">
+            <a href="https://www.hackerrank.com/leaderboard" class="nav-link" data-analytics="NavBarLeaderboard" id="leaderboard-nav-link">
+              <span>LEADERBOARD</span>
+            </a>
+        </li>
+    </ul>
+</span>
+                <span class="nav-buttons theme-m-section">
+    <ul class="pull-left psR">
+        <li class="hide-in-private-contest search-input-container input-icon main-hr-search" id="search-span">
+            <div class="search_form new-search theme-m-content">
+    <div class="hide-in-private-contest search-input input-icon">
+        <input type="text" id="search-text" class="new-search-query ui-autocomplete-input" autocomplete="off" data-analytics="NavBarSearchBox" placeholder="Search">
+        <i class="icon-search"></i>
+    </div>
+    <div class="hide-in-private-contest search-result hide" style="display: block;">
+        <ul class="unstyled"></ul>
+    </div>
+</div>
+        </li>
+    </ul>
+    
+</span>
+            </div>
+        </nav>
+    </div>
+</div>
+        <div id="side-navigation"></div>
+        <div id="verifyaccount">
+</div>
+        <div id="ajax-msg-wrap"><div id="ajax-msg" style="margin-left: -53.6667px; display: none;"><span class="ajax-loader"></span><span class="ajax-msg">Error Occured</span></div></div>
+        <!--<div id="countdowntimer" style="display: none;"></div>-->
+        <div id="breadcrumb" style="display: block;">
+    
+    <div class="content-header">
+        <div class="container">
+            <div class="clearfix">
+                <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="pull-left mdT msB pjT bcrumb">
+                    
+                    
+                      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        
+                        <a itemprop="item" href="https://www.hackerrank.com/contests" class="backbone" data-analytics="Breadcrumb" data-attr1="All Contests" data-attr2="global" data-attr7="1"><span itemprop="name">All Contests</span></a>
+                        <meta itemprop="position" content="1">
+                      </li>
+                    
+                      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        
+                             <i class="icon-right-open mmL"></i>
+                        
+                        <a itemprop="item" href="https://www.hackerrank.com/contests/101hack19/challenges" class="backbone" data-analytics="Breadcrumb" data-attr1="101 Hack November'14" data-attr2="contest" data-attr7="2"><span itemprop="name">101 Hack November'14</span></a>
+                        <meta itemprop="position" content="2">
+                      </li>
+                    
+                      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                        
+                             <i class="icon-right-open mmL"></i>
+                        
+                        <a itemprop="item" href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters" class="backbone" data-analytics="Breadcrumb" data-attr1="Teleporters" data-attr2="challenge" data-attr7="3"><span itemprop="name">Teleporters</span></a>
+                        <meta itemprop="position" content="3">
+                      </li>
+                    
+                </ol>
+                 <div class="pull-right hide domain-scores" style="display: none;">
+                    <div class="pull-left badge-progress">
+                    </div>
+                    <div class="pull-right pdT brcumb-points">
+                        <span class="zeta bold">Points: </span><span class="bold domain-score"></span>
+                        <span class="domain-rank-span">
+                            <span class="zeta bold">Rank: </span><span class="bold msR domain-rank "></span>
+                        </span>
+                    </div>
+                 </div>
+                <div class="social-share-wrap-2 hide"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div id="flash"></div>
+        <div id="followbanner"></div>
+        <div id="submission-success-messages"></div>
+        <div id="contestwide-broadcast"></div>
+        <div id="content" class="main_content"><div class="challenge-view"><div>
+   
+    <div class="challenge-header"><div class="container">
+    <div class="mdT mmB span10">
+        <div class="clearfix">
+            <h2 class="hr_tour-challenge-name pull-left mlT">
+                Teleporters
+                
+                
+            </h2>
+            
+            
+            <div class="pull-right challenge-title-note msL">
+                <a rel="tooltip" data-original-title="Any further submissions will not be considered for leaderboard." id="locked-popover" class="active-link pull-right" data-analytics="ChallengeViewHeaderLeaderboardLocked" data-attr1="teleporters">
+                    <small class="badge alert"><i class="icon-lock"></i>locked</small>
+                </a>
+            </div>
+            
+            </div>
+            
+            <div class="clearfix mlB mmT">
+                <img src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/150x150.png" class="avatar pull-left msR" onerror="this.onerror=null; this.src='https://d3rpyts3de3lx8.cloudfront.net/hackerrank/assets/gravatar.jpg';" width="25" height="25">
+                <span class="small bold">by
+                    
+                        <a class="backbone color-blue" href="https://www.hackerrank.com/profile/zxqfd555" data-analytics="ChallengeViewHeaderAuthor" data-attr1="teleporters" data-attr2="zxqfd555">zxqfd555</a>
+                    
+                </span>
+            </div>
+            
+        </div>
+        
+    </div>
+
+            
+
+<div class="container">
+    <ul class="nav-tabs nav mlT">
+
+        <!-- Problem -->
+        <li id="problemTab" class="active">
+            <a class="hr-problem-link" href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters" data-analytics="ChallengeViewTab" data-attr1="teleporters" data-attr2="Problem">Problem</a>
+        </li>
+
+        <!-- Expert (Live) -->
+        
+
+        <!-- Submissions -->
+        
+            <li id="submissionsTab" class="">
+                <a class="hr-submissions-link" href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters/submissions" data-analytics="ChallengeViewTab" data-attr1="teleporters" data-attr2="Submissions">Submissions</a>
+            </li>
+        
+
+        <!-- Leadeboard -->
+        
+            <li id="leaderboardTab">
+                <a class="hr-leaderboard-link" href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters/leaderboard" data-analytics="ChallengeViewTab" data-attr1="teleporters" data-attr2="Leaderboard">Leaderboard</a>
+            </li>
+        
+
+        <!-- Discussion -->
+        
+            <li id="forumTab">
+                <a class="hr-forum-link" href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters/forum" data-analytics="ChallengeViewTab" data-attr1="teleporters" data-attr2="Discussions">Discussions</a>
+            </li>
+        
+
+        <!-- Editorial -->
+        
+        <li id="editorialTab">
+            <a class="hr-editorial-link" href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters/editorial" data-analytics="ChallengeViewTab" data-attr1="teleporters" data-attr2="Editorial">Editorial <i class="icon-lock"></i></a>
+        </li>
+        
+
+        <!-- Custom Pages -->
+        
+
+        <!-- Topics -->
+        
+    </ul>
+</div>
+</div>
+    <style></style>
+    <section class="challenge-interface">
+        <div class="challenge-body">
+          <div class="challenge-container-element challenge-container-elements-loading hidden">
+            <div class="gray block-center">
+              <div style="background: url(https://hrcdn.net/hackerrank/assets/hackerrank_spinner_64x64-d305605f2d7306772da0f86560bc1286.gif); height: 64px; width: 64px; display: inline-block;"></div>
+            </div>
+          </div>
+        <div class="challenge-body-elements-problem challenge-container-element"><div class="challenge-content"><div class="container fs-container">
+    <div class="row">
+        <div class="span-sm-11 hr_tour-problem-statement problem-statement">
+            
+            
+            
+            
+            <div class="content-text challenge-text mlB">
+                <div class="challenge_problem_statement"><div class="msB challenge_problem_statement_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p>ByteLand is a large country with a tree-like road system. It has <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-1-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.064ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 888.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path></g></svg></span> cities and <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-2-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="7.876ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 3390.9 1223.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><g transform="translate(389,0)"><path stroke-width="1" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path></g><g transform="translate(1500,0)"><path stroke-width="1" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g transform="translate(2500,0)"><path stroke-width="1" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g transform="translate(3001,0)"><path stroke-width="1" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></svg></span> unidirected roads. The capital of ByteLand is a city, numbered <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-3-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 500.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></svg></span>,
+ and all the roads go away from the capital. So people use these roads 
+to reach any city from the capital. But it is impossible to reach the 
+capital from a city by roads. </p>
+
+<p>To solve this problem, there is a system of teleporters. Each city has a teleporter in it. Each teleporter has a value of <em>strength</em>. Let's say, the <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-4-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="0.802ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 345.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></svg></span>-th one has the value of <em>strength</em> equal to <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-5-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.543ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 1094.8 1080.4" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><g transform="translate(750,-150)"><path stroke-width="1" transform="scale(0.707)" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></svg></span>. This means that by using the teleporter, you'll become <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-6-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.543ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 1094.8 1080.4" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><g transform="translate(750,-150)"><path stroke-width="1" transform="scale(0.707)" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></svg></span> cities close to the capital (the same as going <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-7-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.543ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 1094.8 1080.4" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><g transform="translate(750,-150)"><path stroke-width="1" transform="scale(0.707)" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></svg></span> roads in the capital direction). If the distance to the capital is less than <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-8-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.543ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 1094.8 1080.4" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><g transform="translate(750,-150)"><path stroke-width="1" transform="scale(0.707)" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></svg></span>, you'll simply move to the capital instead.</p>
+
+<p>The road system of ByteLand and the initial teleports' strengths will be given to you. You'll also be given <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-9-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.442ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 1051.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"></path></g></svg></span> queries about the teleport network in ByteLand. These queries will have one of the following forms:</p>
+
+<ul>
+<li><p><span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-10-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 500.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></svg></span> <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-11-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 852.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></svg></span> <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-12-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.773ex" height="2.009ex" style="vertical-align: -0.171ex;" viewBox="0 -791.3 763.5 865.1" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></svg></span> : The strength of the teleport in the city with the number <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-13-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 852.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></svg></span> becomes equal to <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-14-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.773ex" height="2.009ex" style="vertical-align: -0.171ex;" viewBox="0 -791.3 763.5 865.1" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></svg></span>;</p></li>
+<li><p><span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-15-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 500.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></svg></span> <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-16-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 852.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></svg></span> : Please output the minimal number of teleports that needs to be used to get from the city with the number <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-17-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 852.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></svg></span> to the capital. We can use only teleports in this query, but not the roads!</p></li>
+</ul></div></div></div><div class="challenge_input_format"><div class="msB challenge_input_format_title"><p><strong>Input Format</strong></p></div><div class="msB challenge_input_format_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p>The first line of input will contain two space-separated integers <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-1-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.064ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 888.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path></g></svg></span> and <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-2-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.442ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 1051.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"></path></g></svg></span>.</p>
+
+<p>The second line will contain <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-3-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.064ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 888.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path></g></svg></span> space separated integers <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-4-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="15.233ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 6558.6 1080.4" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><g transform="translate(750,-150)"><path stroke-width="1" transform="scale(0.707)" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g transform="translate(1204,0)"><path stroke-width="1" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g transform="translate(1649,0)"><path stroke-width="1" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><g transform="translate(750,-150)"><path stroke-width="1" transform="scale(0.707)" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g transform="translate(2853,0)"><path stroke-width="1" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g transform="translate(3299,0)"><path stroke-width="1" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g transform="translate(3744,0)"><path stroke-width="1" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g transform="translate(4189,0)"><path stroke-width="1" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g transform="translate(4634,0)"><path stroke-width="1" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g transform="translate(5079,0)"><path stroke-width="1" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><g transform="translate(750,-150)"><path stroke-width="1" transform="scale(0.707)" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path></g></g></g></svg></span> - the initial strengths of the teleports.</p>
+
+<p>The following <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-5-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="7.876ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 3390.9 1223.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><g transform="translate(389,0)"><path stroke-width="1" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path></g><g transform="translate(1500,0)"><path stroke-width="1" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g transform="translate(2500,0)"><path stroke-width="1" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g transform="translate(3001,0)"><path stroke-width="1" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></svg></span> lines will contain pairs of space separated positive integers <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-6-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 852.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></svg></span> and <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-7-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.773ex" height="2.009ex" style="vertical-align: -0.171ex;" viewBox="0 -791.3 763.5 865.1" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></svg></span> with the meaning that there is a road between the cities with the numbers <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-8-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.98ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 852.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></svg></span> and <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-9-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.773ex" height="2.009ex" style="vertical-align: -0.171ex;" viewBox="0 -791.3 763.5 865.1" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></svg></span>.</p>
+
+<p>Each of following <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-10-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="2.442ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 1051.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"></path></g></svg></span> lines will contain a query in one of the formats, described above.</p>
+
+<p><strong>Constraints</strong>  </p>
+
+<p>1 &lt;= N &lt;= 100000 <br>
+1 &lt;= M &lt;= 100000 <br>
+1 &lt;= A<sub>i</sub> &lt;= 10000</p></div></div></div><div class="challenge_output_format"><div class="msB challenge_output_format_title"><p><strong>Output Format</strong></p></div><div class="msB challenge_output_format_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p>For each query of the second type, output an answer on a separate line. </p></div></div></div><div class="challenge_sample_input"><div class="msB challenge_sample_input_title"><p><strong>Sample Input</strong></p></div><div class="msB challenge_sample_input_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><pre>5 2
+1 2 1 2 1
+1 2
+2 3
+3 4
+4 5
+2 4
+2 5
+</pre></div></div></div><div class="challenge_sample_output"><div class="msB challenge_sample_output_title"><p><strong>Sample Output</strong></p></div><div class="msB challenge_sample_output_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><pre>2
+3
+</pre></div></div></div><div class="challenge_explanation"><div class="msB challenge_explanation_title"><p><strong>Explanation</strong></p></div><div class="msB challenge_explanation_body"><div class="hackdown-content"><style id="MathJax_SVG_styles">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+</style><svg style="display: none;"><defs id="MathJax_SVG_glyphs"></defs></svg><p>In the first query, we jump two cities up and appear in the second city, then we jump once more and move to the capital.</p>
+
+<p>In the second query, we jump one city up and appear in the city <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-1-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 500.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g></svg></span>. From that city we need <span style="font-size: 100%; display: inline-block;" class="MathJax_SVG" id="MathJax-Element-2-Frame"><svg xlink="http://www.w3.org/1999/xlink" width="1.162ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 500.5 936.9" role="img" focusable="false"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><path stroke-width="1" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></svg></span> more teleportations to get to the capital (this is yet the first query).</p></div></div></div>
+            </div>
+            
+
+            
+        </div>
+
+        <aside class="span-sm-4 pull-right fullscreen-hide challenge-sidebar">
+            <div class="challenge-sidebar-container">
+
+<div class="social-share-wrap-2"><div class="social-share-view-2 social-buttons plR mlB pull-left full-width">
+  <a class="social-btn cursor facebook-share-btn msL inline-block txt-white">
+    <i class="icon-facebook"></i>
+  </a>
+
+  <a class="social-btn cursor twitter-share-btn msL inline-block txt-white txt-white">
+    <i class="icon-twitter"></i>
+  </a>
+
+  <a class="social-btn cursor linkedin-share-btn msL inline-block txt-white">
+    <i class="icon-linkedin"></i>
+  </a>
+</div>
+</div>
+
+<span class="header_countdowntimer"></span>
+
+<div class="countdowntimer"></div>
+
+
+
+
+
+<div class="sidebar_problem_difficulty">
+
+
+    <p class="bold zeta">Submissions:</p>
+    
+    <a href="https://www.hackerrank.com/contests/101hack19/challenges/teleporters/leaderboard" data-analytics="ChallengeViewHackerCount" data-attr1="teleporters">49</a>
+    
+
+
+    <div>
+        <p class="bold zeta">Max Score:</p>
+            <p class="sidebar_att">
+            
+            150
+            
+            </p>
+    </div>
+
+
+    <div>
+        
+          <p class="bold zeta">Difficulty: </p>
+          <p class="sidebar_att">
+              
+                  Expert
+              
+          </p>
+        
+    </div>
+
+
+</div>
+
+<div class="challenge-rating rating">
+  <p class="bold zeta">Rate This Challenge: </p>
+  
+    <i class="icon--single icon-star-empty cursor" data-analytics="RatedChallenge" data-attr7="1"></i>
+  
+    <i class="icon--single icon-star-empty cursor" data-analytics="RatedChallenge" data-attr7="2"></i>
+  
+    <i class="icon--single icon-star-empty cursor" data-analytics="RatedChallenge" data-attr7="3"></i>
+  
+    <i class="icon--single icon-star-empty cursor" data-analytics="RatedChallenge" data-attr7="4"></i>
+  
+    <i class="icon--single icon-star-empty cursor" data-analytics="RatedChallenge" data-attr7="5"></i>
+  
+  <span class="rating_reply color-alt-grey hidden psL">Thanks!</span>
+  <div class="rating_feedback hidden">
+    <p class="small color-alt-grey msT">How can we improve?</p>
+    <button class="btn btn-standard bb-rate-challenge msT" data-analytics="RatingFeedback">Let us know</button>
+  </div>
+</div>
+
+
+
+
+
+
+<div id="sidebar-more-options" class="hide">
+  <div class="mlB mlT">
+      <a class="challenge-sidebar-anchor pointer" href="https://www.hackerrank.com/rest/contests/101hack19/challenges/teleporters/download_pdf?language=English" target="_blank" id="pdf-link" data-analytics="ChallengeViewSidebarPDF" data-attr1="teleporters" style="color:#979faf;"><i class="icon-download"></i>Download problem statement</a>
+  </div>
+  <div class="mlB">
+    <a class="challenge-sidebar-anchor pointer" href="https://www.hackerrank.com/rest/contests/101hack19/challenges/teleporters/download_testcases" target="_blank" id="test-cases-link" data-analytics="ChallengeViewSidebarTestCases" data-attr1="teleporters" style="color:#979faf;"><i class="icon-download"></i>
+      
+        Download all test cases
+      
+    </a>
+  </div>
+  <div class="fullscreen-hide">
+      <a href="#" class="challenge-sidebar-anchor js-suggest-edits challenge_suggestion-toggle fullscreen-hide" data-analytics="ChallengeViewSuggestEdit" data-attr1="teleporters" style="color:#979faf;"><i class="icon-edit"></i>Suggest Edits</a>
+
+      <div class="challenge_suggestion fullscreen-hide row">
+          <div class="span16">
+              <div class="formgroup text-center">
+                  <div class="alert error hide"></div>
+                  <div class="alert success hide">Suggestion Sent!</div>
+              </div>
+              <form id="suggestion-form" class="hide challenge_suggestion-form fullscreen-hide" __bizdiag="-1696069907" __biza="WJ__">
+                  <p class="challenge_suggestion-header pdB">Thanks for helping us refine this problem statement. Please address your suggestions below. </p>
+                  <textarea id="suggestion" rows="10" width="100" class="tall challenge_suggestion-input"></textarea>
+                  <div class="challenge_suggestion-buttons access-buttons clearfix">
+                      <div class="pull-right mlB">
+                          <button class="btn btn-green js-suggestion-save pull-right" data-analytics="Submit Suggestion">Submit Suggestion</button>
+                          <button class="btn btn-text js-suggestion-cancel pull-right" data-analytics="Cancel Suggestion">Cancel</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="language-selector pmT">
+    
+        <div class="msB language-options">
+            <p class="bold small">Choose a translation</p><p>
+        </p></div>
+        <select class="translations">
+            
+                <option value="Russian"> Russian </option>
+            
+                <option value="Chinese"> Chinese </option>
+            
+            <option value="English" selected="selected"> English </option>
+        </select>
+    
+    <div class="psT hide small color-alt-grey" id="preference-msg">
+    <a class="language-preference btn btn-small msB" href="#">Set as default</a><br>
+    <p class="mjB">You can always change back later.</p>
+    </div>
+  </div>
+</div>
+<div class="msB"><a id="sidebar-more-button" class="challenge-sidebar-anchor pointer">More</a></div>
+
+
+
+
+</div></aside>
+    </div>
+</div>
+</div><div class="challenge-request"><div class="challenge-input codeeditor-wrapper container fs-container mlB"><div id="codeshell-wrapper">
+<div class="clearfix grey-header fixed-hand0 cap plL plR psT psB" style="position: relative;">
+  <div class="msT pull-left"><em id="status-text"></em></div>
+  
+  
+  <div class="pull-right">
+    
+    <div class="inline large lines inverse pull-right msT msL">
+      
+      
+      <a class="restorefullscreen force-hide active-link no-select">
+          <i class="icon-resize-small-alt icon--grey no-select"></i></a>
+      <a class="fullscreen active-link no-select" data-analytics="Switch to fullscreen"><i class="icon-resize-full-alt icon--grey no-select"></i></a>
+      
+      
+      
+      <a class="hide" style="display:none;"></a>
+      <div class="settings-editor" style="position:relative; margin-left: 0px;">
+        <a class="cursor no-select" data-analytics="CodeShellShowPreferences" id="show-preferences"><i class="icon-cog icon--grey no-select"></i></a>
+        <div id="pref-pane" style="position: absolute;right: -0.5em;top: 2em;z-index: 9;background: #fff;border: 1px solid #ddd;border-radius: 5px;padding: 10px;  width: 25em; display: none;">
+          <div style="position: absolute;width: 0;right: 0.8em;height: 0;border-left: 7px solid transparent;border-right: 7px solid transparent;border-bottom: 7px solid #ddd;top: -0.4em;"></div>
+          
+            <div class="formgroup horizontal">
+              <label class="span5">Editor Mode</label>
+              <div class="inline">
+                <div class="btn-group no-select">
+                  <a data-analytics="CodeShellEditorMode" data-attr1="Emacs" class="cursor emacs btn btn-small btn-white editor-mode-button no-select" data-editor="emacs">Emacs</a>
+                  <a data-analytics="CodeShellEditorMode" data-attr1="Normal" class="cursor default btn btn-small btn-white editor-mode-button no-select btn-primary" data-editor="sublime">Normal</a>
+                  <a data-analytics="CodeShellEditorMode" data-attr1="Vim" class="cursor vim btn btn-small btn-white editor-mode-button no-select" data-editor="vim">Vim</a>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="formgroup horizontal">
+              <label class="span5">Editor Theme</label>
+              <div class="inline">
+                <div class="btn-group no-select">
+                  <a data-analytics="CodeShellEditorTheme" data-attr1="Light" class="cursor light btn btn-small btn-white editor-theme-button no-select btn-primary" data-editor="light">Light</a>
+                  <a data-analytics="CodeShellEditorTheme" data-attr1="Dark" class="cursor dark btn btn-small btn-white editor-theme-button no-select" data-editor="dark">Dark</a>
+                </div>
+              </div>
+            </div>
+          
+          <div class="formgroup horizontal">
+            <label class="span5">Tab Spaces</label>
+            <div class="inline">
+              <div class="btn-group no-select">
+                <a data-analytics="CodeShellEditorSpace" data-attr1="2" class="cursor 2space btn btn-small btn-white editor-tabspace-button no-select" data-editor="2">2 spaces</a>
+                <a data-analytics="CodeShellEditorSpace" data-attr1="4" class="cursor 4space  btn btn-small btn-white editor-tabspace-button no-select btn-primary" data-editor="4">4 spaces</a>
+                <a data-analytics="CodeShellEditorSpace" data-attr1="8" class="cursor 8space btn btn-small btn-white editor-tabspace-button no-select" data-editor="8">8 spaces</a>
+              </div>
+            </div>
+          </div>
+          
+            <div class="formgroup horizontal">
+              <label class="span5">Intellisense
+              
+              <span class="js-tooltip" data-toggle="tooltip" data-placement="bottom" title="Available only for C, C++, Java, Python, JavaScript, Ruby, PHP, C# and Go" data-attr1="CodeCompletion">
+              
+              <i class="icon-info-circled fnt-sz-small txt-navy"></i>
+              </span></label>
+              <div class="inline">
+                <div class="btn-group no-select">
+                  <a data-analytics="CodeShellAutoComplete" data-attr1="Enable" class="cursor emacs btn btn-small btn-white editor-autocomplete-button no-select btn-primary" data-editor="true">Enable</a>
+                  <a data-analytics="CodeShellAutoComplete" data-attr1="Disable" class="cursor default btn btn-small btn-white editor-autocomplete-button no-select" data-editor="false">Disable</a>
+                </div>
+              </div>
+            </div>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="pull-right lang-placeholder">
+      <div class="dummy-lang-container hide"></div>
+      <div class="select2-container" id="s2id_select-lang"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>C++</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen1"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="select-lang" tabindex="-1" class="select2-offscreen" value="cpp">
+    </div>
+    
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<div class="hr_tour-code-solution movable-hand flex-row" style="display: flex;">
+  
+  <div class="code-checker">
+    <div id="notification-message" class="clearfix grey-header cap  hidden "> </div>
+    <div class="code-editors" style="max-height: 410px;">
+      
+       <div class="loading-mode" style="display: none;">Loading Editor... </div> 
+      <div class="code-body" style="display: block;">
+        
+       <textarea id="codeview" style="width: 100%; display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5px; left: 60px;"><textarea style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; outline: currentcolor none medium;" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" wrap="off"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="true"><div class="CodeMirror-sizer" style="margin-left: 55px; margin-bottom: -10px; border-right-width: 20px; min-height: 272px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div style="position: relative; outline: currentcolor none medium;" role="presentation"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>13</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 20.2833px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;" class="CodeMirror-activeline"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -55px; width: 55px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">1</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 9px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-meta">#include &lt;cmath&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-meta">#include &lt;cstdio&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-meta">#include &lt;vector&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-meta">#include &lt;iostream&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-meta">#include &lt;algorithm&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-keyword">using</span> <span class="cm-keyword">namespace</span> <span class="cm-def">std</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">9</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 9px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span class="cm-type">int</span> <span class="cm-def">main</span>() {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">10</div><div class="CodeMirror-gutter-elt" style="left: 45px; width: 9px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">    <span class="cm-comment">/* Enter your code here. Read input from STDIN. Print output to STDOUT */</span>   </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">    <span class="cm-keyword">return</span> <span class="cm-number">0</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -55px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 16px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 20px; width: 1px; border-bottom: 0px solid transparent; top: 272px;"></div><div class="CodeMirror-gutters" style="height: 292px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+       </div>
+      
+      <div class="clearfix"></div>
+    </div>
+    <div id="codeeditor-statusbar" class="clearfix psA codeeditor_statusbar">
+      <span id="statusbar-mode"></span>
+      <div class="pull-right">
+        <span id="statusbar-line">Line: 1</span>
+        <span id="statusbar-col">Col: 1</span>
+        <span id="statusbar-count"></span>
+      </div>
+    </div>
+  </div>
+</div><div class="clearfix pmR pmL pmB plT fixed-hand1 codeshell-footer">
+  <div class="pull-right">
+    
+    
+    <button class="btn bb-compile msR " data-analytics="Compile and Test">Run Code</button>
+    
+    
+    <button class="btn btn-primary bb-submit ans-submit" data-analytics="Submit Code">Submit Code</button>
+    
+    
+  </div>
+  <div class="pull-left inline">
+      
+      <button class="btn btn-text upload_file mlR" data-analytics="Upload File" type="button"><i class="icon-upload"></i>Upload Code as File</button>
+      
+      
+      
+      <div class="mmT">
+          <label for="customtestcase"><div class="custom-checkbox-v3"><input type="checkbox" id="customtestcase"><span></span></div><span class="lmT msL">Test against custom input</span></label>
+          
+          <textarea rows="5" id="custominput" style="display:none"></textarea>
+          
+      </div>
+      
+  </div>
+  
+</div></div><div id="submission-message"></div></div>
+</div><div class="challenge-response container fs-container"><h5 class="output-progress padded light-wrap hide mlT mlB psT" style="padding-top: 100px; padding-bottom: 100px; text-align: center;"></h5>
+<div class="output-area-wrap hide">
+  <div class="output-area mlT psT hide" id="output-area"></div>
+</div></div><div class="challenge-copyright"></div></div></div>
+    </section>
+</div>
+</div></div>
+        <div id="hacker"></div>
+    </div>
+    <div id="autocomplete-container" style="position:absolute; width: 330px; z-index: 2000; padding-top: 1px;"><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content theme-m-content" id="ui-id-3" tabindex="0" style="display: none;"></ul></div>
+    <footer class="page_footer">
+    <div>
+        <div class="text-center">
+            <p style="font-size: 14px; margin-top: 5px; margin-bottom: 0px;">
+              <span class="internal-links">
+                <a target="_blank" href="https://www.hackerrank.com/calendar?utm_source=website&amp;utm_medium=footer&amp;utm_campaign=website" class="calendar" data-analytics="FooterLinkCalendar">Contest Calendar</a>
+                |
+                <a target="_blank" href="https://www.hackerrank.com/interview/interview-preparation-kit?utm_source=website&amp;utm_medium=footer&amp;utm_campaign=website" class="interview-prep" data-analytics="FooterLinkCalendar">Interview Prep</a>
+                |
+                <a target="_blank" href="https://blog.hackerrank.com/" class="blog" data-analytics="FooterLinkBlog">Blog</a>
+                |
+                <a target="_blank" href="https://www.hackerrank.com/scoring" class="scoring" data-analytics="FooterLinkScoring">Scoring</a>
+                |
+                <a target="_blank" href="https://www.hackerrank.com/environment" class="environment" data-analytics="FooterLinkEnvironment">Environment</a>
+                |
+                <a target="_blank" href="https://www.hackerrank.com/faq" class="faq" data-analytics="FooterLinkFAQ">FAQ</a>
+                |
+              </span>
+              <a target="_blank" href="https://www.hackerrank.com/aboutus" data-analytics="FooterLinkAboutUs">About Us</a>
+              |
+              <a target="_blank" href="https://help.hackerrank.com/hc/en-us" data-analytics="FooterLinkSupport">Support</a>
+              |
+              <a target="_blank" href="https://www.hackerrank.com/careers" data-analytics="FooterLinkCareers">Careers</a>
+              |
+              <a target="_blank" href="https://www.hackerrank.com/terms-of-service" data-analytics="FooterLinkTermsOfService">Terms Of Service</a>
+              |
+              <a target="_blank" href="https://www.hackerrank.com/privacy" data-analytics="FooterLinkPrivacyPolicy">Privacy Policy</a>
+              |
+              <a href="https://www.hackerrank.com/support/feature" target="_blank" class="featureRequestButton" data-analytics="FooterLinkFeatureRequest">Request a Feature</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <ol id="hr_tour-intro-tour" class="hide">
+        <li data-class="hr_tour-challenge-name" data-options="tipLocation:bottom"><h5 class="walkthrough-header">Challenge Walkthrough</h5><span class="walkthrough-text">Let's walk through this sample challenge and explore the features of the code editor.</span><span class="walkthrough-progress">1 of 6</span></li>
+        <li data-class="hr_tour-problem-statement" data-options="tipLocation:top"><h5 class="walkthrough-header">Review the problem statement</h5><span class="walkthrough-text">Each
+ challenge has a problem statement that includes sample inputs and 
+outputs. Some challenges include additional information to help you out.</span><span class="walkthrough-progress">2 of 6</span></li>
+        <li data-class="hr_tour-select-language" data-options="tipLocation:left"><h5 class="walkthrough-header">Choose a language</h5><span class="walkthrough-text">Select the language you wish to use to solve this challenge.</span><span class="walkthrough-progress">3 of 6</span></li>
+        <li data-class="hr_tour-code-solution" data-options="tipLocation:top"><h5 class="walkthrough-header">Enter your code</h5><span class="walkthrough-text">Code your solution in our custom editor or code in your own environment and upload your solution as a file.</span><span class="walkthrough-progress">4 of 6</span></li>
+        <li data-class="hr_tour-compile-test" data-options="tipLocation:left"><h5 class="walkthrough-header">Test your code</h5><span class="walkthrough-text">You can compile your code and test it for errors and accuracy before submitting.</span><span class="walkthrough-progress">5 of 6</span></li>
+        <li data-class="hr_tour-submit-code" data-button="Done" data-options="tipLocation:left"><h5 class="walkthrough-header">Submit to see results</h5><span class="walkthrough-text">When you're ready, submit your solution! Remember, you can go back and refine your code anytime.</span><span class="walkthrough-progress">6 of 6</span></li>
+    </ol>
+    <ol id="hr_tour-intro-part-2-tour" class="hide">
+        <li data-class="hr_tour-leaderboard">Check your score</li>
+    </ol>
+    <script type="text/javascript">
+     // disable forum social interaction
+     HR.disable_fsi = false;
+    </script>
+
+    <script type="text/javascript">
+      // Setting up jobs constants for use in frontend
+      // Jobs visa constants - visa's accepted by company
+      HR.VISA_TYPE_NONE = 0
+      HR.VISA_TYPE_ALL = 1
+      HR.VISA_TYPE_US_RESIDENT = 2
+    </script>
+
+    <script type="text/javascript">
+      HR.REACT_ROUTE_CONFIG = {
+  "var1": [],
+  "var2": [],
+  "complete": [
+    "^/domains/?.*$",
+    "^/dashboard/?(\\?.*|$)",
+    "^/interview((\/|\\?).*|$)",
+    "^/contests/projecteuler(/(?!(judge/)?submissions).*)?$",
+    "^/contests/?((archived|college)(/\\d*)?)?/?(\\?.*|$)",
+    "^/terms-of-service/?(\\?.*|$)",
+    "^/faq-hacker-level/?(\\?.*|$)",
+    "^/privacy/?(\\?.*|$)",
+    "^/leaderboard((/|\\?).*|$)",
+    "^/work/tests((/|\\?).*|$)",
+    "^/work/settings((/|\\?).*|$)",
+    "^/work/settings/data-manager((/|\\?).*|$)",
+    "^/jobs/search/?(\\?.*|$)",
+    "^/jobs/dashboard/.+$",
+    "^/environment(\/?.*|$)",
+    "^/work/library((/|\\?).*|$)",
+    "^/work/role-based-assessments((/|\\?).*|$)",
+    "^/work/teams((/|\\?).*|$)",
+    "^/calendar/?(\\?.*|$)",
+    "^/snippets((/.*)|(\\?.*)|$)",
+    "^/feed/?(\\?.*|$)",
+    "^/challenges/([^/]+?)(?!/(topics))((/?\\?.*|$)|/.*)",
+    "^/404$",
+    "^/onboarding/?.*$",
+    "^/profile/.*$",
+    "^/scoring($|\\?|/).*",
+    "^/companies/.+$",
+    "^(/auth)?/(login|signup)((/.*)*|\\?.*)$",
+    "^/auth/(forgot_password|reset_password)/?(\\?.*|$)",
+    "^/[^/]*/activity/?(\\?.*|$)",
+    "^/work/sourcing($|\\?|/).*",
+    "^/work/404($|\\?|/).*"
+  ]
+}
+;
+      HR.CKEDITOR_URL = "https://hrcdn.net/ckeditor/v4.10.1.0/ckeditor.js"
+    </script>
+
+
+    
+  <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/base-4e953f9582ddc0e62ee5b02dbe2520ca.js"></script>
+
+
+
+    <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/hackerrank_libraries-0bb6d70922471fee4c199af1a03b337c.js" crossorigin="anonymous"></script>
+    <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/codeshell-cdffcdf1564c6416e1a2eb207a4521ce.js" crossorigin="anonymous"></script>
+    <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/hackerrank-1c3ec7c41db8fd29a51ae69b3ee7b463.js" crossorigin="anonymous"></script>
+    <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/set-manifest-c04e9acc67ed173555da61d0b82388dc8168d9b2.js" crossorigin="anonymous"></script>
+    <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/require-76e24a0ace8716757c96e986f7dc9e07.js" crossorigin="anonymous"></script>
+    <script src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/dashboard-183d9c4c0e5680a01b67b78570aa29f6.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- jsCookies -->
+
+
+<script type="text/javascript">
+  window.extern_script_delay = 0;
+  if (window.PRODUCT_NAMESPACE === 'hackerrank' && typeof($) === "function") {
+    $(window).on("load", function(){
+      if (('performance' in window) && ('timing' in window.performance)) {
+        dom_time = window.performance.timing.domInteractive - window.performance.timing.navigationStart;
+        if (dom_time > 12000) {
+          window.extern_script_delay = 3000;
+        } else if (dom_time > 7000) {
+          window.extern_script_delay = 2000;
+        } else if (dom_time > 6000) {
+          window.extern_script_delay = 1000;
+        }
+      }
+    });
+  }
+</script>
+
+<script>
+</script>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  $(window).on("load", function() {
+    setTimeout(function() {
+    (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    }, window.extern_script_delay);
+  });
+</script>
+
+<!-- Mixpanel -->
+<script type="text/javascript">
+  $(window).on("load", function() {
+    setTimeout(function() {
+    (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("bcb75af88bccc92724ac5fd79271e1ff");
+
+      mixpanel.init("86cf4681911d3ff600208fdc823c5ff5", {}, "jobs_test");
+    mixpanel.identify(jsCookies.get("hackerrank_mixpanel_token"));
+    }, window.extern_script_delay);
+  });
+</script>
+
+<script type="text/javascript">
+  if (window.dataLayer) {
+
+  }
+</script>
+
+
+    <!-- End of hackerrank Zendesk Widget script -->
+
+<!-- Filepicker -->
+<script type="text/javascript">
+  $(window).on("load", function() {
+    setTimeout(function() {
+    (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v2/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
+    filepicker.setKey("ApehXMbvXTWqWab7OmMr9z");
+    }, window.extern_script_delay);
+  });
+</script>
+
+<script type="text/javascript">
+  window._fbq = window._fbq || [];
+</script>
+
+<!-- bizible -->
+<script>
+  $(window).on("load", function() {
+    setTimeout(function() {
+    (function(d, t) {
+      var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      g.src = '//cdn.bizible.com/scripts/bizible.js';
+      s.parentNode.insertBefore(g, s);
+    }(document, 'script'));
+    }, window.extern_script_delay);
+  });
+</script>
+
+
+<script type="text/javascript">
+
+    !function(obj){window.hr_metrics=obj,obj.loaded=!0,obj.config=obj.config||{},obj._b=obj._b||[],obj.init=function(options){this.config=$.extend({product:null,use_cookie:!1,uid_cookie_key:null,session_cookie_key:null,session_id:null,uid_token:null,uid_token_cookie_key:null,uid:Math.floor(1e12*(1+Math.random())).toString(16),metrics_endpoint:null,batch_track_interval:2e3,enable_gtm:!1},this.config||{},options||{})},obj.get_session_id=function(){return this.config.session_id?this.config.session_id:this.config.session_cookie_key?$.cookie(this.config.session_cookie_key):null},obj.get_uid_data=function(){return this.config.use_cookie?{uid:$.cookie(this.config.uid_cookie_key),uid_token:$.cookie(this.config.uid_token_cookie_key)}:{uid:this.config.uid,uid_token:this.config.uid_token}},obj.get_session_params=function(){var session_params={session_landing_url:$.cookie("session_landing_url"),session_referrer:$.cookie("session_referrer"),session_referring_domain:$.cookie("session_referring_domain")};try{var utm_params=$.cookie("session_utm_params");utm_params&&(utm_params=JSON.parse(utm_params),session_params.session_utm_source=utm_params.s,session_params.session_utm_medium=utm_params.m,session_params.session_utm_campaign=utm_params.c)}catch(e){}return session_params},obj.track=function(event_name,event_value,attrs,use_beacon){var common_attrs={session_id:this.get_session_id()},attrs=$.extend({},attrs,common_attrs,this.get_session_params()),_tracking_data=$.extend({product:this.config.product,event_name:event_name,event_value:event_value,params:attrs},this.get_uid_data());this._post_tracking_data(_tracking_data,use_beacon),this._push_to_gtm(event_name,event_value,attrs)},obj.batch_track=function(event_name,event_value,attrs,use_beacon){this._EVENT_ARRAY=this._EVENT_ARRAY||[];var common_attrs={session_id:this.get_session_id()},attrs=$.extend({},attrs,common_attrs),_tracking_data={event_name:event_name,event_value:event_value,params:attrs};this._EVENT_ARRAY.push({time:(new Date).getTime(),url:document.location.href,track_data:_tracking_data}),this._event_batch_track_id||(this._event_batch_track_id=window.setInterval(function(that){return function(){that.batch_track_record()}}(this),this.config.batch_track_interval)),this._push_to_gtm(event_name,event_value,attrs)},obj.batch_track_record=function(use_beacon){if("object"==typeof this._EVENT_ARRAY&&this._EVENT_ARRAY.length>0){var _tracking_data_array=this._EVENT_ARRAY;this._EVENT_ARRAY=[];var _tracking_data=$.extend({product:this.config.product,batch_request:"true",current_time:(new Date).getTime(),data_array:JSON.stringify(_tracking_data_array),session_params:JSON.stringify(this.get_session_params())},this.get_uid_data());this._post_tracking_data(_tracking_data,use_beacon)}},obj._post_tracking_data=function(data,use_beacon){var metrics_endpoint=this.config.metrics_endpoint;if(use_beacon===!0&&"object"==typeof window.navigator&&"function"==typeof window.navigator.sendBeacon){var jsonContent="params_stream="+encodeURIComponent(JSON.stringify(data)),_json_blob=new Blob([jsonContent],{type:"application/x-www-form-urlencoded; charset=UTF-8"});window.navigator.sendBeacon(metrics_endpoint,_json_blob)}else $.ajax({type:"POST",url:metrics_endpoint,crossDomain:!0,xhrFields:{withCredentials:!0},beforeSend:function(xhr){return!0},data:data})},obj._push_to_gtm=function(event_name,event_value,attrs){this.config.enable_gtm&&window.dataLayer&&window.dataLayer.push({event:"track",eventName:event_name,eventValue:event_value,eventAttrs:attrs})},function(o){if(Array.isArray(o._b)){for(var i=0;i<o._b.length;i++){var e=o._b[i];o[e[0]]&&"function"==typeof o[e[0]]&&o[e[0]].apply(o,e[1])}o._b=[]}}(obj)}(window.hr_metrics||{});
+//# sourceMappingURL=https://staging.hackerrank.net/assets/sourcemaps/hr_metrics-ec12c440e5fad784865a8eea2be0bede.js.map
+
+  (function() {
+    hr_metrics.init({
+      product: 'hackerrank',
+      use_cookie: true,
+      uid_cookie_key: 'hackerrank_mixpanel_token',
+      uid_token_cookie_key: 'metrics_user_identifier',
+      session_cookie_key: 'session_id',
+      metrics_endpoint: 'https://metrics.hackerrank.com/metrics',
+      enable_gtm: true
+    });
+  })();
+
+  //tracking hrutm_ parameters
+  $(window).on("load", function() {
+    (function(){
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split('&');
+      var trackingData;
+      for(var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if(sParameterName[0] == 'utm_source') {
+          trackingData = decodeURIComponent(escape(sParameterName[1]));
+          hr_metrics.batch_track(trackingData.event_name, trackingData)
+        } else if (sParameterName[0] == 'ad-campaign' && sParameterName[1]=='Mkt1010415') {
+          if(typeof HR !== "undefined" && HR !== null && (!HR.PREFETCH_DATA.profile || !HR.PREFETCH_DATA.profile.created_at)){
+            document.cookie = "fb_ad_campaign_source="+sParameterName[1]+";path=/";
+          }
+        }
+      }
+    })();
+
+    if(typeof HR !== "undefined" && HR !== null && HR.PREFETCH_DATA && HR.PREFETCH_DATA.profile &&  HR.PREFETCH_DATA.profile.created_at) {
+      if($.cookie('fb_ad_campaign_source')) {
+        window._fbq.push(['track', '6023409928156', {'value':'0.01','currency':'USD'}]);
+        $.removeCookie('fb_ad_campaign_source', { path: '/' });
+      }
+    }
+  });
+</script>
+
+  <script type="text/javascript">
+    window.hr_metrics_extension_track = true;
+
+      !function(obj){window.hr_metrics=obj,obj.externalService=function(event_type,event_value,attrs,service){attrs="undefined"!=typeof attrs?attrs:{},attrs.session_id=this.get_session_id(),service="undefined"!=typeof service?service:"mixpanel:heap",external_services=service.split(":"),-1!=$.inArray("mixpanel",external_services)?mixpanel.push([event_type,event_value,attrs]):-1!=$.inArray("mixpanel_jobs",external_services)&&mixpanel.jobs_test&&mixpanel.jobs_test.push([event_type,event_value,attrs])},obj.app_track=function(key,attrs){window.APP_METRICS=window.APP_METRICS||[],common_attrs={uid:$.cookie("hackerrank_mixpanel_token")},attrs=$.extend({},attrs,common_attrs),window.APP_METRICS.push({key:key,meta_data:attrs}),window.app_track_interval_id||(window.app_track_interval_id=window.setInterval(hr_metrics._send_app_track_data,5e3))},obj._send_app_track_data=function(){if(window.APP_METRICS&&window.APP_METRICS.constructor===Array&&!(window.APP_METRICS.length<=0)){var track_data={data:window.APP_METRICS};window.APP_METRICS=[];var metrics_endpoint="https://metrics.hackerrank.com/app_metrics";window.HR&&window.HR.development&&(metrics_endpoint="/app_metrics"),"function"==typeof moment&&"function"==typeof moment.tz&&(track_data.local_timezone=moment.tz.guess()),track_data.default_cdn_url=jsCookies.get("default_cdn_url"),track_data.document_referrer=document.referrer,$.ajax({type:"POST",url:metrics_endpoint,crossDomain:!0,xhrFields:{withCredentials:!0},beforeSend:function(xhr){return!0},data:JSON.stringify(track_data),dataType:"json",contentType:"application/json"})}},obj.track_dwell_time=function(pathname,use_beacon){if(this._navigation_data&&this._navigation_data.page==pathname){var time_now=(new Date).getTime();this.batch_track("DwellTime",pathname,{attribute7:parseInt((time_now-(this._navigation_data.time||time_now))/1e3)},use_beacon)}},obj.set_navigation_data=function(pathname){this._navigation_data={page:pathname||document.location.pathname,time:(new Date).getTime()}},window.APP_METRIC_TRACKING_ENABLED&&"performance"in window&&"timing"in window.performance&&$(window).on("load",function(){setTimeout(function(){if(timing=window.performance.timing,obj={referring_url:window.location.pathname,fullLoadTime:timing.loadEventEnd-timing.navigationStart,loadTime:timing.loadEventEnd-timing.fetchStart,domReadyTime:timing.domComplete-timing.domInteractive,readyStart:timing.fetchStart-timing.navigationStart,redirectTime:timing.redirectEnd-timing.redirectStart,appcacheTime:timing.domainLookupStart-timing.fetchStart,unloadEventTime:timing.unloadEventEnd-timing.unloadEventStart,lookupDomainTime:timing.domainLookupEnd-timing.domainLookupStart,connectTime:timing.connectEnd-timing.connectStart,requestTime:timing.responseEnd-timing.requestStart,initDomTreeTime:timing.domInteractive-timing.responseEnd,loadEventTime:timing.loadEventEnd-timing.loadEventStart},"navigation"in window.performance&&"getEntries"in window.performance&&(obj.navigationType=window.performance.navigation.type,obj.navigationRedirectCount=window.performance.navigation.redirectCount,obj.fullLoadTime>8e3))try{var entries=window.performance.getEntries();entries[0].toJSON&&(obj.networkRequests=entries.map(function(e){return e.toJSON()}))}catch(e){}hr_metrics.app_track("page-load-metrics",obj)},1e3)}),$(window).on("load",function(){var _pathname=document.location.pathname,cdn_url_switched=jsCookies.get("cdn_url_switched");""!==cdn_url_switched&&jsCookies.destroy("cdn_url_switched"),hr_metrics.batch_track("PageLoad",_pathname+document.location.search,{attribute1:_pathname,attribute6:cdn_url_switched,cdn_url:jsCookies.get("cdn_url")})})}(window.hr_metrics||{}),function(){"function"==typeof $&&window.hr_metrics_extension_track&&$(window).on("load",function(){var _pathname=document.location.pathname;hr_metrics.track_dwell_time&&(hr_metrics.track_dwell_time(_pathname),hr_metrics.set_navigation_data()),$(window).on("beforeunload",function(){var _pathname=document.location.pathname;hr_metrics.batch_track("PageClose",_pathname+document.location.search,{attribute2:_pathname},!0),hr_metrics.track_dwell_time&&hr_metrics.track_dwell_time(_pathname,!0),window.typingTimeout&&(window.clearTimeout(window.typingTimeout),window.triggerTypingEvent&&window.typingEventEnabled&&window.triggerTypingEvent()),hr_metrics.batch_track_record(!0)})})}();
+//# sourceMappingURL=https://staging.hackerrank.net/assets/sourcemaps/hr_metrics_extension-6ecd694e73350fce9d2c892d5953c0e8.js.map
+  </script>
+
+<!-- Load Facebook SDK for JavaScript -->
+<script>
+;(function(){
+  // Function to have a list of functions to load on fbAsyncInit
+  var toLoad = []
+  window.fbReady = function(func){
+    if( typeof func === 'function') {
+      if( window.FB ) {
+        func.call(window)
+      } else {
+        toLoad.push(func)
+      }
+    }
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '347499128655783',
+      xfbml      : true,
+      version    : 'v2.5',
+      caption    : 'HackerRank.com',
+    });
+
+    // Execute all the fbAsyncInit functions
+    toLoad.forEach(function(func){
+      func.call(window)
+    })
+  };
+})();
+/*
+$(window).on("load", function() {
+  setTimeout(function() {
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }, window.extern_script_delay);
+});
+*/
+</script>
+<!-- Load Twitter SDK for JavaScript -->
+<script>
+window.twttr = (function() {
+  t = window.twttr || {};
+  if (typeof t.ready === 'undefined') {
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+  }
+  return t;
+})();
+$(window).on("load", function() {
+  setTimeout(function() {
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://platform.twitter.com/widgets.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'twitter-wjs'));
+  }, window.extern_script_delay);
+});
+</script>
+
+<script type="text/javascript">
+    if (typeof($) == "function") {
+        $(document).ready(function() {
+            function we_are_hiring() {
+                lines = [
+                    "===============================================================================",
+                    ",--.  ,--.              ,--.                 ,------.                 ,--.     ",
+                    "|  '--'  | ,--,--. ,---.|  |,-. ,---. ,--.--.|  .--. ' ,--,--.,--,--, |  |,-.  ",
+                    "|  .--.  |' ,-.  || .--'|     /| .-. :|  .--'|  '--'.'' ,-.  ||      \\|     /  ",
+                    "|  |  |  |\\ '-'  |\\ `--.|  \\  \\\\   --.|  |   |  |\\  \\ \\ '-'  ||  ||  ||  \\  \\  ",
+                    "`--'  `--' `--`--' `---'`--'`--'`----'`--'   `--' '--' `--`--'`--''--'`--'`--' ",
+                    "===============================================================================",
+                    "  You opened the console! Know some code, do you? Want to work for one of the  ",
+                    "  best startups around? https://www.hackerrank.com/careers                     ",
+                    "==============================================================================="
+                ]
+                for (i = 0; i < lines.length; i ++) {
+                    console.log(lines[i]);
+                }
+            }
+            setTimeout(we_are_hiring, 5000);
+            if(window.trackJs) {
+              trackJs.track("Page Loaded");
+            }
+        });
+    }
+</script>
+
+<!-- Some Black Magic for Internet Explorer -->
+
+<!--[if lt IE 10]>
+<script src="https://hrcdn.net/hackerrank/assets/jquery-plugins/jQuery.XDomainRequest-28488b2668d975b95331be79582a53fc.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js" type="text/javascript"></script>
+<![endif]-->
+
+<!-- Chrome Frame for IE6 -->
+<!--[if lt IE 7 ]>
+ <script src="https://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script><script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<script>
+    IE_BROWSER = true
+</script>
+<![endif]-->
+
+<!-- Track button clicks -->
+<script type="text/javascript">
+    $(document).on('click', 'a, button, input, select, i', null, function(e) {
+        var src = e.currentTarget, $src = $(e.currentTarget);
+        if ($src.attr('data-analytics')) {
+            action = 'Click'; data = $src.attr('data-analytics');
+        } else {
+            return;
+        }
+
+            hr_metrics.batch_track(action, data, (function() {
+                var params={};
+                for (var _i=1; _i<=12; ++_i){
+                    var _attr = 'data-attr'+_i;
+                    if ($src.attr(_attr)){
+                        params['attribute'+_i] = $src.attr(_attr);
+                }}
+                var attributes = src.attributes, attr_length = src.attributes.length;
+                for (var i = 0; i < attr_length; i++){
+                  var attribute = attributes[i];
+                  if (attribute.name.indexOf('data-attr-') === 0){
+                    param_name = attribute.name.substr('data-attr-'.length);
+                    if (param_name.length > 0) {
+                      params[param_name] = attribute.value;
+                    }
+                  }
+                }
+                return params;
+            })());
+        // google analytics
+        _gaq.push(['_trackEvent', 'Events' , action, data])
+    });
+
+    $(document).on('AnalyticsEvent', function(e) {
+        action = e.event_type || false
+        data = e.event_name || false
+
+        if (!action || !data)
+          return
+
+        params = {}
+        params['attribute1'] = e.event_value || ""
+        params['attribute7'] = e.integer_event_value
+
+        if (window.HR && window.HR.current_page)
+          params['attribute2'] = window.HR.current_page
+
+        if (window.HR && window.HR.current_contest)
+          params['attribute3'] = window.HR.current_contest.get('name')
+
+            hr_metrics.batch_track(action, data, params);
+        // google analytics
+        _gaq.push(['_trackEvent', 'Events' , action, data])
+    });
+</script>
+
+
+<!-- Google Tag Manager (noscript) #1 -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FXW96J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) #1 -->
+
+
+
+<div class="offline-ui offline-ui-up"><div class="offline-ui-content"></div><a href="" class="offline-ui-retry"></a></div><div class="offline-ui offline-ui-up"><div class="offline-ui-content"></div><a href="" class="offline-ui-retry"></a></div><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><iframe name="filepicker_comm_iframe" id="filepicker_comm_iframe" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/a.html" style="display: none;"></iframe><iframe name="fpapi_comm_iframe" id="fpapi_comm_iframe" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/a_002.html" style="display: none;"></iframe><iframe scrolling="no" allowtransparency="true" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/widget_iframe.html" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><img style="display: none;" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/ipv_002.gif"><link rel="stylesheet" href="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/animate-702952f12d9729d5ba7d2be8fc590d83.css" media="all"><img style="display: none;" src="Teleporters%20|%20101%20Hack%20November'14%20Question%20|%20Contests%20|%20HackerRank_files/ipv.gif"></body><!-- Load Jquery --></html>

@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html prefix="og: http://ogp.me/ns#" class=" js" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/cbgapi.loaded_0" async=""></script><script type="text/javascript" async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/recaptcha__en.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="A Computer Science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions.">
+<link rel="shortcut icon" href="https://www.geeksforgeeks.org/favicon.ico" type="image/x-icon">
+
+<meta name="theme-color" content="#0f9d58">
+
+<meta property="og:image" content="https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/osd.js"></script><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/ca-pub-9465609616171866.js"></script><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/show_ads_impl.js" id="google_shimpl"></script><script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/async-ads.js"></script><script type="text/javascript" async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/cse.js"></script><script type="text/javascript" async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/ga.js"></script><script type="text/javascript" async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/recaptcha__en.js"></script><script type="text/javascript" async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/cse.js"></script><script async="" type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/gpt.js"></script><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/require.js"></script>
+
+<title>Heavy Light Decomposition | Set 1 (Introduction) - GeeksforGeeks</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/a_010.html">
+<!--[if lt IE 9]>
+<script src="https://www.geeksforgeeks.org/wp-content/themes/iconic-one/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "GeeksforGeeks",
+        "url" : "https://www.geeksforgeeks.org/",
+        "logo" : "https://www.geeksforgeeks.org/gfgLogo.png",
+        "description" : "A computer science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions.",
+        "founder": [
+            {
+                "@type" : "Person",
+                "name" : "Sandeep Jain",
+                "url" : "https://in.linkedin.com/in/sandeep-jain-b3940815"
+            }
+        ],
+        "sameAs" : [ "https://www.facebook.com/geeksforgeeks.org/",
+            "https://twitter.com/geeksforgeeks",
+            "https://www.linkedin.com/company/1299009",
+            "https://www.youtube.com/geeksforgeeksvideos/"
+        ]
+    }
+</script>
+<script>
+
+    var arrPostCat = new Array();
+            arrPostCat.push('1762');
+        var tIds = "1762,2534,2033,1917";
+    var domain = 1;
+    var arrPost = new Array();
+    var post_id = "136588";
+    var post_type = "post";
+    var post_slug = window.location.href;
+    var ip = "35.158.136.93";
+    var post_title = "Heavy Light Decomposition | Set 1 (Introduction)";
+    var post_status = "publish";
+    var post_date = "2016-01-10 23:23:52";
+                            var isAdminLoggedIn = 0;
+        </script>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/a_010.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Heavy Light Decomposition | Set 1 (Introduction) - GeeksforGeeks">
+<meta property="og:description" content="Heavy Light decomposition (HLD) is one of the most used techniques in competitive programming. Example Problem: Let us understand Heavy-light decomposition (HLD) with the help… Read More »">
+<meta property="og:url" content="https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/">
+<meta property="og:site_name" content="GeeksforGeeks">
+<meta property="article:tag" content="array-range-queries">
+<meta property="article:tag" content="LCA">
+<meta property="article:tag" content="Segment-Tree">
+<meta property="article:section" content="Advanced Data Structure">
+<meta property="article:published_time" content="2016-01-10T23:23:52+00:00">
+<meta property="article:modified_time" content="2017-05-15T02:06:33+00:00">
+<meta property="og:updated_time" content="2017-05-15T02:06:33+00:00">
+<meta property="og:image" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld1.png">
+<meta property="og:image:secure_url" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld1.png">
+<meta property="og:image:width" content="811">
+<meta property="og:image:height" content="773">
+<meta property="og:image" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld2.png">
+<meta property="og:image:secure_url" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld2.png">
+<meta property="og:image:width" content="846">
+<meta property="og:image:height" content="842">
+<meta property="og:image" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld321.png">
+<meta property="og:image:secure_url" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld321.png">
+<meta property="og:image:width" content="746">
+<meta property="og:image:height" content="748">
+<meta property="og:image" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/Heavy-Light-Decompostion.png">
+<meta property="og:image:secure_url" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/Heavy-Light-Decompostion.png">
+<meta property="og:image:width" content="749">
+<meta property="og:image:height" content="821">
+<meta property="og:image" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld8.png">
+<meta property="og:image:secure_url" content="https://www.cdn.geeksforgeeks.org/wp-content/uploads/hld8.png">
+<meta property="og:image:width" content="733">
+<meta property="og:image:height" content="818">
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.geeksforgeeks.org\/","sameAs":[],"@id":"https:\/\/www.geeksforgeeks.org\/#organization","name":"GeeksforGeeks","logo":"http:\/\/www.geeksforgeeks.org\/wp-content\/uploads\/gfg_200X200-1.png"}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://www.geeksforgeeks.org/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="GeeksforGeeks » Feed" href="https://www.geeksforgeeks.org/feed/">
+<link rel="alternate" type="application/rss+xml" title="GeeksforGeeks » Comments Feed" href="https://www.geeksforgeeks.org/comments/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.geeksforgeeks.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="themonic-fonts-css" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/css_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="custom-style-css" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/gfg.css" type="text/css" media="all">
+<script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/jquery.js"></script>
+<script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var gfgObject = {"authUrl":"https:\/\/auth.geeksforgeeks.org\/","contributeUrl":"https:\/\/contribute.geeksforgeeks.org\/","utilUrl":"https:\/\/util.geeksforgeeks.org\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/gfg.js"></script>
+<link rel="https://api.w.org/" href="https://www.geeksforgeeks.org/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.cdn.geeksforgeeks.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.cdn.geeksforgeeks.org/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.8">
+<link rel="shortlink" href="https://www.geeksforgeeks.org/?p=136588">
+<link rel="alternate" type="application/json+oembed" href="https://www.geeksforgeeks.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fheavy-light-decomposition-set-1-introduction%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.geeksforgeeks.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fheavy-light-decomposition-set-1-introduction%2F&amp;format=xml">
+        <link rel="stylesheet" type="text/css" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/cookieconsent.css">
+        <script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/cookieconsent.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+              "background": "#3c404d",
+              "text": "#d6d6d6"
+            },
+            "button": {
+              "background": "#8bed4f"
+            }
+          },
+          "theme": "classic",
+            onStatusChange: function(status) {
+            
+            },
+            law: {
+              regionalLaw: false,
+            },
+            location: true,
+            "content": {
+            "message": "We use cookies to ensure you have the best browsing experience on our website. By using our site, you acknowledge that you have read and understood our <a href=\"https://www.geeksforgeeks.org/cookie-policy/\" class=\"cc-link\" target=\"_blank\">Cookie Policy</a> & ",
+            "link": "Privacy Policy",
+            "href": "/privacy-policy/"
+            },
+        cookie: {
+        name : "geeksforgeeks_consent_status",
+        }
+        })});
+    
+        </script>
+    <style>
+#wpadminbar{
+background: #ff0000 !important;
+}
+</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+<link rel="amphtml" href="https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/amp/"><link rel="icon" href="https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-100x100.png" sizes="32x32">
+<link rel="icon" href="https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png">
+<meta name="msapplication-TileImage" content="https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png">
+
+<script type="text/javascript">
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script type="text/javascript">
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/27823234/SP', [300, 250], 'div-gpt-ad-1458112424022-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<!-- AutoAds -->
+<script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-9465609616171866",
+enable_page_level_ads: true
+});
+</script>
+
+<style>
+.suggestArticleModal {
+display: none; 
+position: fixed; 
+z-index: 100; 
+padding-top: 100px; 
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto;
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4); 
+line-height: 3em;
+}
+
+.suggestArticleContent {
+width: 30% !important;
+background-color: #fefefe;
+margin: auto;
+padding: 2px;
+border: 1px solid #888;
+width: 80%;
+}
+.suggestArticleContent h5 {
+font-size: 1.3em;
+}
+.rowMain {
+line-height: 3em;
+}
+#updateSubmitButton {
+border-radius: 15px !important;
+background: #0f9d58 !important;
+color: white !important;
+padding: 12px 25px;
+cursor:pointer;
+}
+#updateArticleTitle {
+border-bottom: 1px solid #aaaaaa !important;
+width: 60%;
+}
+#updateArticleDescription {
+width: 60% !important;
+border-bottom: 1px solid #aaaaaa !important;
+}
+.suggestArticleModal button, .suggestArticleModal input, .suggestArticleModal textarea {
+border: 1px #cccc !important;
+background: bottom;
+}
+.getInput col s12 {
+    margin: 2em;
+}
+.closeModal {
+float: right;
+font-size: 22px;
+margin-right: .5em;
+margin-top: -5px;
+font-weight: bold;
+}
+.grecaptcha-badge { 
+visibility: hidden;
+}
+.closeModal:hover,
+.closeModal:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+.modal-fixed {
+text-align: center !important;;
+}
+.termsPolicy {
+font-size: 9px;
+color: grey;
+}
+.card-action_suggest {
+padding-bottom: 25px;
+}
+.row {
+margin-top: 12px;
+}
+.row label {
+font-size: 14px;
+}
+.getInput select {
+    width: 21em;
+}
+@media only screen and (max-width: 768px) {
+    .getInput select {
+        width: 80px;
+    }
+    .suggestArticleContent {
+        width: 80% !important;
+    }
+    .suggestArticleModal {
+        padding-top: 15px;
+    }/*
+    #updateArticleForm {
+        height: 240px;
+        overflow-y: auto;
+    }*/
+}
+@media only screen and (max-width: 1024px) {
+    #updateArticleForm {
+        min-height: 300px;
+        overflow-y: auto;
+    }
+    .suggestArticleContent {
+        margin-top:10px;
+        overflow-y: initial !important;
+    }
+}
+</style>
+
+<script type="text/javascript" async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/bsa.js"></script><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/cse_element__en.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/defaulten.css"><link type="text/css" rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/default.css"><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-control-cse{border-color:#FFFFFF;background-color:#FFFFFF}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#6AA84F}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#000000;background-color:#6AA84F;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhActive,.gsc-refinementHeader.gsc-refinementhActive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive,.gsc-refinementHeader.gsc-refinementhInactive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#006600}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#EC4E20}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#CA7700}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#006600}.gsc-cursor-page{color:#006600}a.gsc-trailing-more-results:link{color:#006600}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#000000}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#008000}.gs-webResult div.gs-visibleUrl-short{color:#008000}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-webResult.gsc-result.gsc-promotion{border-color:#336699;background-color:#FFFFFF}.gsc-completion-title{color:#006600}.gsc-completion-snippet{color:#000000}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#006600}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#EC4E20}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#CA7700}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#006600}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#000000}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#008000}.gcsc-find-more-on-google{color:#006600}.gcsc-find-more-on-google-magnifier{fill:#006600}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:0 9px}.gsib_a{padding:5px 9px 4px 9px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><link rel="preload" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/integrator_002.js" as="script"><script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/integrator_002.js"></script><link rel="preload" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/integrator.js" as="script"><script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/integrator.js"></script><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/pubads_impl_2019041801.js" async=""></script><script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/cse_element__en.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/defaulten.css"><link type="text/css" rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/default.css"><link rel="preload" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/show_ads_impl.js" as="script"><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-control-cse{border-color:#FFFFFF;background-color:#FFFFFF}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#6AA84F}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#000000;background-color:#6AA84F;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhActive,.gsc-refinementHeader.gsc-refinementhActive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-tabHeader.gsc-tabhInactive,.gsc-refinementHeader.gsc-refinementhInactive{color:#CCCCCC;border-color:#CCCCCC;background-color:#FFFFFF}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#FFFFFF;background-color:#FFFFFF}.gsc-webResult.gsc-result:hover,.gsc-imageResult:hover{border-color:#FFFFFF;background-color:#FFFFFF}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#006600}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#EC4E20}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#CA7700}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#006600}.gsc-cursor-page{color:#006600}a.gsc-trailing-more-results:link{color:#006600}.gs-webResult .gs-snippet,.gs-imageResult .gs-snippet,.gs-fileFormatType{color:#000000}.gs-webResult div.gs-visibleUrl,.gs-imageResult div.gs-visibleUrl{color:#008000}.gs-webResult div.gs-visibleUrl-short{color:#008000}.gs-webResult div.gs-visibleUrl-short{display:none}.gs-webResult div.gs-visibleUrl-long{display:block}.gs-promotion div.gs-visibleUrl-short{display:none}.gs-promotion div.gs-visibleUrl-long{display:block}.gsc-cursor-box{border-color:#FFFFFF}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#CCCCCC;background-color:#FFFFFF;color:#CCCCCC}.gsc-webResult.gsc-result.gsc-promotion{border-color:#336699;background-color:#FFFFFF}.gsc-completion-title{color:#006600}.gsc-completion-snippet{color:#000000}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#006600}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#EC4E20}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#CA7700}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#006600}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#000000}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#008000}.gcsc-find-more-on-google{color:#006600}.gcsc-find-more-on-google-magnifier{fill:#006600}</style><script id="_bsa_srv-CKYDL2JJ_0" type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/CKYDL2JJ.js"></script><script type="text/javascript" id="_bsap_js_785bf45b162de1c5511e8baa02854e5c" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/s_785bf45b162de1c5511e8baa02854e5c.js" async="async"></script><script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/pro.js" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/a.js" async="async"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="typeahead" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/typeahead.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bloodhound" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/bloodhound.js"></script><style></style></head>
+
+<body class="post-template-default single single-post postid-136588 single-format-standard custom-background custom-background-white custom-font-enabled"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-382972913 " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">We
+ use cookies to ensure you have the best browsing experience on our 
+website. By using our site, you acknowledge that you have read and 
+understood our <a href="https://www.geeksforgeeks.org/cookie-policy/" class="cc-link" target="_blank">Cookie Policy</a> &amp;  <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://www.geeksforgeeks.org/privacy-policy/" target="_blank">Privacy Policy</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got it!</a></div><!--googleon: all--></div>
+
+<!-- BuySellAds Ad Code -->
+<script type="text/javascript">
+(function(){
+var bsa = document.createElement('script');
+ bsa.type = 'text/javascript';
+ bsa.async = true;
+ bsa.src = '//s3.buysellads.com/ac/bsa.js';
+(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- End BuySellAds Ad Code -->
+
+<div id="page" style="position:relative;overflow: unset;z-index:2;" class="hfeed site">
+<header id="masthead" class="site-header" role="banner">
+    <div style="margin-bottom: 5px;">	
+    <div class="upper-header">
+        <div id="container-g4g-header">
+            <div id="MasterHead">
+                <div class="header-gfg-logo">
+                                <a href="https://www.geeksforgeeks.org/" title="GeeksforGeeks" rel="home"><img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/geeksforgeeks-6.png" alt="GeeksforGeeks"></a>
+
+                        </div>
+
+ <span class="responsive-custom-search">
+<script>
+  (function() {
+    var cx = '009682134359037907028:tj6eafkv_be';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table class="gsc-search-box" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table style="width: 100%; padding: 0px;" id="gs_id50" class="gstl_50 gsc-input" cellspacing="0" cellpadding="0"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" style="width: 100%; padding: 0px; border: medium none; margin: 0px; height: auto; background: rgb(255, 255, 255) url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) no-repeat scroll left center; text-indent: 48px; outline: currentcolor none medium;" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay"><div class="gsc-results-close-btn" tabindex="0"></div><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table class="gsc-above-wrapper-area-container" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td><td class="gsc-orderby-container"><div class="gsc-orderby-invisible"><div class="gsc-orderby-label gsc-inline-block">Sort by:</div><div class="gsc-option-menu-container gsc-inline-block"><div class="gsc-selected-option-container gsc-inline-block"><div class="gsc-selected-option">Relevance</div><div class="gsc-option-selector"></div></div><div class="gsc-option-menu-invisible"><div class="gsc-option-menu-item gsc-option-menu-item-highlighted"><div class="gsc-option">Relevance</div></div><div class="gsc-option-menu-item"><div class="gsc-option">Date</div></div></div></div></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table class="gsc-resultsHeader" cellspacing="0" cellpadding="0"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div class="gsc-modal-background-image" tabindex="0"></div></div></div></div>
+</span>
+
+<script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/api_002.js" async="" defer="defer"></script>
+                <div class="buttonsProfileSide">
+                    <div class="profile-buttons">
+    <a class="login-modal-btn ButtonLogin" href="https://auth.geeksforgeeks.org/?to=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/">Login</a>
+    </div><div class="masterhead-buttons">
+                            <a class="ButtonContribute" href="https://practice.geeksforgeeks.org/courses/" style="margin-bottom:5px;">Courses</a>
+                            <a class="ButtonContribute" href="https://contribute.geeksforgeeks.org/request-article/request-article.php" id="suggestArticle" type="button" style="margin-bottom:5px;cursor:pointer;">Suggest an Article</a> 
+
+    <!-- MODAL OPEN FOR SUGGESTING ARTICLE -->                  
+          
+    <div id="myModal" class="modal modal-fixed-footer modal-fixed suggestArticleModal">
+        <div class="modal-content suggestArticleContent">
+        <span class="close closeModal">×</span>
+        <h5>Suggest a Topic</h5>
+
+            <form id="updateArticleForm" method="POST">
+                <div class="row rowMain">
+                    <div class="col s12 ">
+                        <div class="card darken-1">
+                            <div class="card-content">
+
+                                    <div class="row">
+                                        <div class="input-field col s12 getInput">
+                                            <input name="articleTitle" id="updateArticleTitle" placeholder="Article Title" class="materialize-textarea validate" type="text" data-length="200" style="height: 34px;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12 getInput">
+                                            <textarea name="articleDescription" id="updateArticleDescription" placeholder="Please enter Article Description" class="materialize-textarea validate" style="height: 35px;"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label>Select a Category</label>
+                                        <div class="input-field col s12 getInput">
+                                            <select name="updateArticleCategory" id="updateArticleCategory" class="postform">
+	<option class="level-0" value="2557">Advanced Computer Subject</option>
+	<option class="level-0" value="1762">Advanced Data Structure</option>
+	<option class="level-0" value="1744">Algorithms</option>
+	<option class="level-0" value="2214">Algorithms Quiz</option>
+	<option class="level-0" value="1745">Analysis</option>
+	<option class="level-0" value="3665">AngularJS</option>
+	<option class="level-0" value="2200">Aptitude</option>
+	<option class="level-0" value="3">Arrays</option>
+	<option class="level-0" value="18">Articles</option>
+	<option class="level-0" value="2102">Articles</option>
+	<option class="level-0" value="1748">Backtracking</option>
+	<option class="level-0" value="1761">Binary Search Tree</option>
+	<option class="level-0" value="17">Bit Magic</option>
+	<option class="level-0" value="3616">Bootstrap</option>
+	<option class="level-0" value="1870">Branch and Bound</option>
+	<option class="level-0" value="2064">C</option>
+	<option class="level-0" value="2598">C Programs</option>
+	<option class="level-0" value="2206">C Quiz</option>
+	<option class="level-0" value="2842">C#</option>
+	<option class="level-0" value="3417">C# Programs</option>
+	<option class="level-0" value="2065">C++</option>
+	<option class="level-0" value="2599">C++ Programs</option>
+	<option class="level-0" value="2207">C++ Quiz</option>
+	<option class="level-0" value="3695">CAT</option>
+	<option class="level-0" value="1759">Combinatorial</option>
+	<option class="level-0" value="1790">Competitive Programming</option>
+	<option class="level-0" value="2059">Compiler Design</option>
+	<option class="level-0" value="2215">Compiler Design</option>
+	<option class="level-0" value="2051">Computer Networks</option>
+	<option class="level-0" value="2212">Computer Networks Quiz</option>
+	<option class="level-0" value="2539">Computer Organization &amp; Architecture</option>
+	<option class="level-0" value="2216">Computer Organization and Architecture</option>
+	<option class="level-0" value="2050">Computer Subject</option>
+	<option class="level-0" value="2134">CS – Placements</option>
+	<option class="level-0" value="3615">CSS</option>
+	<option class="level-0" value="2066">Data Structures</option>
+	<option class="level-0" value="2213">Data Structures</option>
+	<option class="level-0" value="2053">DBMS</option>
+	<option class="level-0" value="2211">DBMS Quiz</option>
+	<option class="level-0" value="2080">Design Pattern</option>
+	<option class="level-0" value="2135">DI – Placements</option>
+	<option class="level-0" value="2551">Difference Between</option>
+	<option class="level-0" value="2537">Digital Electronics &amp; Logic Design</option>
+	<option class="level-0" value="1750">Divide and Conquer</option>
+	<option class="level-0" value="1746">Dynamic Programming</option>
+	<option class="level-0" value="2540">Engineering Mathematics</option>
+	<option class="level-0" value="2202">Engineering Mathematics Questions</option>
+	<option class="level-0" value="2133">English – Placements</option>
+	<option class="level-0" value="1795">Experienced</option>
+	<option class="level-0" value="2005">Game Theory</option>
+	<option class="level-0" value="2209">GATE</option>
+	<option class="level-0" value="2055">GATE CS</option>
+	<option class="level-0" value="1710">GBlog</option>
+	<option class="level-0" value="1827">Geek on the Top</option>
+	<option class="level-0" value="2765">GeeksforGeeks Initiatives</option>
+	<option class="level-0" value="1754">Geometric</option>
+	<option class="level-0" value="67">GFacts</option>
+	<option class="level-0" value="3565">Go Language</option>
+	<option class="level-0" value="2068">Graph</option>
+	<option class="level-0" value="3630">GRE</option>
+	<option class="level-0" value="3631">GRE Quiz</option>
+	<option class="level-0" value="1747">Greedy</option>
+	<option class="level-0" value="3503">Hadoop</option>
+	<option class="level-0" value="1756">Hash</option>
+	<option class="level-0" value="1755">Heap</option>
+	<option class="level-0" value="3577">HTML</option>
+	<option class="level-0" value="1794">Internship</option>
+	<option class="level-0" value="1140">Interview Experiences</option>
+	<option class="level-0" value="2805">ISRO</option>
+	<option class="level-0" value="2058">Java</option>
+	<option class="level-0" value="2600">Java Programs</option>
+	<option class="level-0" value="2208">Java Quiz</option>
+	<option class="level-0" value="2629">JavaScript</option>
+	<option class="level-0" value="3617">JQuery</option>
+	<option class="level-0" value="3005">JS++</option>
+	<option class="level-0" value="8">Linked List</option>
+	<option class="level-0" value="2639">Linux-Unix</option>
+	<option class="level-0" value="3188">Machine Learning</option>
+	<option class="level-0" value="1753">Mathematical</option>
+	<option class="level-0" value="1760">Matrix</option>
+	<option class="level-0" value="66">MCQ</option>
+	<option class="level-0" value="4" selected="selected">Misc</option>
+	<option class="level-0" value="3654">Node.js</option>
+	<option class="level-0" value="2052">Operating Systems</option>
+	<option class="level-0" value="2210">Operating Systems Questions</option>
+	<option class="level-0" value="1749">Pattern Searching</option>
+	<option class="level-0" value="2942">Perl</option>
+	<option class="level-0" value="2988">PHP</option>
+	<option class="level-0" value="3155">PHP Programs</option>
+	<option class="level-0" value="2130">Placements</option>
+	<option class="level-0" value="5">Program Output</option>
+	<option class="level-0" value="2056">Programming Language</option>
+	<option class="level-0" value="1767">Project</option>
+	<option class="level-0" value="2063">Puzzles</option>
+	<option class="level-0" value="1789">Python</option>
+	<option class="level-0" value="2601">Python Programs</option>
+	<option class="level-0" value="2203">Python-Quizzes</option>
+	<option class="level-0" value="2204">QA – Placement Quizzes</option>
+	<option class="level-0" value="2131">QA – Placements</option>
+	<option class="level-0" value="1743">Queue</option>
+	<option class="level-0" value="2199">Quizzes</option>
+	<option class="level-0" value="1757">Randomized</option>
+	<option class="level-0" value="2132">Reasoning – Placements</option>
+	<option class="level-0" value="2060">Recursion</option>
+	<option class="level-0" value="2959">Ruby</option>
+	<option class="level-0" value="3502">Scala</option>
+	<option class="level-0" value="2078">School Programming</option>
+	<option class="level-0" value="1751">Searching</option>
+	<option class="level-0" value="2839">Software Engineering</option>
+	<option class="level-0" value="1752">Sorting</option>
+	<option class="level-0" value="2057">SQL</option>
+	<option class="level-0" value="1742">Stack</option>
+	<option class="level-0" value="7">Strings</option>
+	<option class="level-0" value="1788">Technical Scripter</option>
+	<option class="level-0" value="1799">TechTips</option>
+	<option class="level-0" value="2217">Theory of Computation</option>
+	<option class="level-0" value="2538">Theory of Computation &amp; Automata</option>
+	<option class="level-0" value="19">Tree</option>
+	<option class="level-0" value="2806">UGC-NET</option>
+	<option class="level-0" value="2628">Web Technologies</option>
+	<option class="level-0" value="2201">Web technologies Questions</option>
+</select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12 getInput">
+                                            <div style="display:inline-block" class="g-recaptcha" id="loginCaptchaSuggest" data-sitekey="6LexF0sUAAAAADiQjz9BMiSrqplrItl-tWYDSfWa"><div style="width: 304px; height: 78px;"><div><iframe src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/anchor.html" role="presentation" name="a-pt30mc5n8ljv" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+                                        </div>
+                                    </div> 
+                    
+                                    <div class="card-action card-action_suggest">
+                                        <button id="updateSubmitButton" type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- MODAL CLOSE -->
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+
+<div id="profile" style="float: right; margin-top: -1%;margin-right:1%;"></div>
+</div>
+</header></div>
+
+	
+    
+    <nav id="site-navigation" class="themonic-nav" role="navigation" style="width: 100%; position: fixed; top: 0px; z-index: 99998;">
+			<a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+			<div class="menu-iconic-container"><ul id="menu-top" class="nav-menu"><li id="menu-item-147519" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147519"><a href="https://www.geeksforgeeks.org/" class="reduceMenuHeight"><img style="width: 30px;vertical-align: middle;" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/gfg_transparent_white_small.png"></a></li>
+<li id="menu-item-141975" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-141975"><a href="http://www.geeksforgeeks.org/fundamentals-of-algorithms/" class="reduceMenuHeight">Algo ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-135030" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135030"><a href="http://www.geeksforgeeks.org/fundamentals-of-algorithms/#AnalysisofAlgorithms" class="reduceMenuHeight">Analysis of Algorithms</a></li>
+	<li id="menu-item-146823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-146823"><a href="http://www.geeksforgeeks.org/fundamentals-of-algorithms/" class="reduceMenuHeight">Topicwise ►</a>
+	<ul class="sub-menu">
+		<li id="menu-item-147774" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147774"><a href="http://www.geeksforgeeks.org/searching-algorithms/" class="reduceMenuHeight">Searching Algorithms</a></li>
+		<li id="menu-item-147773" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147773"><a href="http://www.geeksforgeeks.org/sorting-algorithms/" class="reduceMenuHeight">Sorting Algorithms</a></li>
+		<li id="menu-item-135041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135041"><a href="http://www.geeksforgeeks.org/graph-data-structure-and-algorithms/" class="reduceMenuHeight">Graph Algorithms</a></li>
+		<li id="menu-item-135040" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135040"><a href="http://www.geeksforgeeks.org/bitwise-algorithms/" class="reduceMenuHeight">Bit Algorithms</a></li>
+		<li id="menu-item-135034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135034"><a href="https://www.geeksforgeeks.org/algorithms-gq/pattern-searching/" class="reduceMenuHeight">Pattern Searching</a></li>
+		<li id="menu-item-135038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135038"><a href="http://www.geeksforgeeks.org/geometric-algorithms/" class="reduceMenuHeight">Geometric Algorithms</a></li>
+		<li id="menu-item-135039" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135039"><a href="http://www.geeksforgeeks.org/mathematical-algorithms/" class="reduceMenuHeight">Mathematical Algorithms</a></li>
+		<li id="menu-item-135042" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135042"><a href="http://www.geeksforgeeks.org/randomized-algorithms/" class="reduceMenuHeight">Randomized Algorithms</a></li>
+		<li id="menu-item-156520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156520"><a href="https://www.geeksforgeeks.org/game-theory/" class="reduceMenuHeight">Game Theory</a></li>
+	</ul>
+</li>
+	<li id="menu-item-146824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-146824"><a href="http://www.geeksforgeeks.org/fundamentals-of-algorithms/" class="reduceMenuHeight">Algorithm Paradigms ►</a>
+	<ul class="sub-menu">
+		<li id="menu-item-135032" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135032"><a href="http://www.geeksforgeeks.org/greedy-algorithms/" class="reduceMenuHeight">Greedy Algorithms</a></li>
+		<li id="menu-item-135033" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135033"><a href="http://www.geeksforgeeks.org/dynamic-programming/" class="reduceMenuHeight">Dynamic Programming</a></li>
+		<li id="menu-item-135037" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135037"><a href="http://www.geeksforgeeks.org/divide-and-conquer/" class="reduceMenuHeight">Divide and Conquer</a></li>
+		<li id="menu-item-135036" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135036"><a href="http://www.geeksforgeeks.org/backtracking-algorithms/" class="reduceMenuHeight">Backtracking</a></li>
+		<li id="menu-item-137933" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137933"><a href="https://www.geeksforgeeks.org/branch-and-bound-algorithm/" class="reduceMenuHeight">Branch &amp; Bound</a></li>
+	</ul>
+</li>
+	<li id="menu-item-146911" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146911"><a href="http://www.geeksforgeeks.org/fundamentals-of-algorithms/" class="reduceMenuHeight">All Algorithms</a></li>
+</ul>
+</li>
+<li id="menu-item-142016" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-142016"><a href="http://www.geeksforgeeks.org/data-structures/" class="reduceMenuHeight">DS  ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-135054" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135054"><a href="http://www.geeksforgeeks.org/array-data-structure/" class="reduceMenuHeight">Array</a></li>
+	<li id="menu-item-135045" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135045"><a href="http://www.geeksforgeeks.org/data-structures/linked-list/" class="reduceMenuHeight">LinkedList</a></li>
+	<li id="menu-item-135046" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135046"><a href="http://www.geeksforgeeks.org/stack-data-structure/" class="reduceMenuHeight">Stack</a></li>
+	<li id="menu-item-135047" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135047"><a href="http://www.geeksforgeeks.org/queue-data-structure/" class="reduceMenuHeight">Queue</a></li>
+	<li id="menu-item-146827" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-146827"><a href="http://www.geeksforgeeks.org/data-structures/" class="reduceMenuHeight">Tree based DS ►</a>
+	<ul class="sub-menu">
+		<li id="menu-item-135048" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135048"><a href="http://www.geeksforgeeks.org/binary-tree-data-structure/" class="reduceMenuHeight">Binary Tree</a></li>
+		<li id="menu-item-135049" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135049"><a href="http://www.geeksforgeeks.org/binary-search-tree-data-structure/" class="reduceMenuHeight">Binary Search Tree</a></li>
+		<li id="menu-item-135050" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135050"><a href="http://www.geeksforgeeks.org/heap-data-structure/" class="reduceMenuHeight">Heap</a></li>
+	</ul>
+</li>
+	<li id="menu-item-135051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135051"><a href="http://www.geeksforgeeks.org/hashing-data-structure/" class="reduceMenuHeight">Hashing</a></li>
+	<li id="menu-item-135052" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135052"><a href="http://www.geeksforgeeks.org/graph-data-structure-and-algorithms/" class="reduceMenuHeight">Graph</a></li>
+	<li id="menu-item-135053" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135053"><a href="http://www.geeksforgeeks.org/advanced-data-structures/" class="reduceMenuHeight">Advanced Data Structure</a></li>
+	<li id="menu-item-135055" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135055"><a href="http://www.geeksforgeeks.org/matrix/" class="reduceMenuHeight">Matrix</a></li>
+	<li id="menu-item-147716" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147716"><a href="http://www.geeksforgeeks.org/string-data-structure/" class="reduceMenuHeight">Strings</a></li>
+	<li id="menu-item-135056" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135056"><a href="http://www.geeksforgeeks.org/data-structures/" class="reduceMenuHeight">All Data Structures</a></li>
+</ul>
+</li>
+<li id="menu-item-147478" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-147478"><a href="http://www.geeksforgeeks.org/category/program-output/" class="reduceMenuHeight">Languages ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-135006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135006"><a href="https://www.geeksforgeeks.org/c-programming-language/" class="reduceMenuHeight">C</a></li>
+	<li id="menu-item-135007" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135007"><a href="https://www.geeksforgeeks.org/c-plus-plus/" class="reduceMenuHeight">C++</a></li>
+	<li id="menu-item-135012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135012"><a href="https://www.geeksforgeeks.org/java/" class="reduceMenuHeight">Java</a></li>
+	<li id="menu-item-137004" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137004"><a href="https://www.geeksforgeeks.org/python-programming-language/" class="reduceMenuHeight">Python</a></li>
+	<li id="menu-item-255267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-255267"><a href="https://www.geeksforgeeks.org/csharp-programming-language/" class="reduceMenuHeight">C#</a></li>
+	<li id="menu-item-182096" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-182096"><a href="https://www.geeksforgeeks.org/php/" class="reduceMenuHeight">PHP</a></li>
+	<li id="menu-item-275863" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-275863"><a href="https://www.geeksforgeeks.org/javascript-tutorial/" class="reduceMenuHeight">JavaScript</a></li>
+	<li id="menu-item-278493" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-278493"><a href="https://www.geeksforgeeks.org/jquery-tutorials/" class="reduceMenuHeight">jQuery</a></li>
+	<li id="menu-item-135016" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135016"><a href="http://www.geeksforgeeks.org/sql-tutorial/" class="reduceMenuHeight">SQL</a></li>
+	<li id="menu-item-251185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-251185"><a href="https://www.geeksforgeeks.org/html-tutorials/" class="reduceMenuHeight">HTML</a></li>
+	<li id="menu-item-251186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-251186"><a href="https://www.geeksforgeeks.org/css-tutorials/" class="reduceMenuHeight">CSS</a></li>
+	<li id="menu-item-140854" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-140854"><a title="http://www.geeksforgeeks.org/category/program-output/" href="https://www.geeksforgeeks.org/category/program-output/" class="reduceMenuHeight">Program Output</a></li>
+</ul>
+</li>
+<li id="menu-item-142017" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-142017"><a href="http://www.geeksforgeeks.org/about/interview-corner/" class="reduceMenuHeight">Interview  ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-141326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-141326"><a href="https://www.geeksforgeeks.org/company-preparation/" class="reduceMenuHeight">Company Prep</a></li>
+	<li id="menu-item-137171" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137171"><a href="http://www.geeksforgeeks.org/interview-preparation-for-software-developer/" class="reduceMenuHeight">Top Topics</a></li>
+	<li id="menu-item-137172" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137172"><a href="https://practice.geeksforgeeks.org/company-tags" class="reduceMenuHeight">Practice Company Questions</a></li>
+	<li id="menu-item-137173" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137173"><a href="http://www.geeksforgeeks.org/about/interview-corner/" class="reduceMenuHeight">Interview Experiences</a></li>
+	<li id="menu-item-137174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137174"><a href="https://www.geeksforgeeks.org/experienced-interview-experiences-company-wise/" class="reduceMenuHeight">Experienced Interviews</a></li>
+	<li id="menu-item-137175" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137175"><a href="https://www.geeksforgeeks.org/internship-interview-experiences-company-wise/" class="reduceMenuHeight">Internship Interviews</a></li>
+	<li id="menu-item-137176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137176"><a href="http://www.geeksforgeeks.org/category/competitive-programming/" class="reduceMenuHeight">Competitive Programming</a></li>
+	<li id="menu-item-147581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147581"><a href="http://www.geeksforgeeks.org/software-design-patterns/" class="reduceMenuHeight">Design Patterns</a></li>
+	<li id="menu-item-137186" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137186"><a href="http://geeksquiz.com/quiz-corner/" class="reduceMenuHeight">Multiple Choice Quizzes</a></li>
+</ul>
+</li>
+<li id="menu-item-137178" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-137178"><a href="http://www.geeksforgeeks.org/student-corner/" class="reduceMenuHeight">Students  ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-137183" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137183"><a href="http://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks/" class="reduceMenuHeight">Campus Ambassador Program</a></li>
+	<li id="menu-item-204869" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204869"><a href="https://www.geeksforgeeks.org/computer-science-projects/" class="reduceMenuHeight">Project</a></li>
+	<li id="menu-item-137179" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137179"><a href="http://www.geeksforgeeks.org/geek-of-the-month/" class="reduceMenuHeight">Geek of the Month</a></li>
+	<li id="menu-item-281809" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-281809"><a href="https://www.geeksforgeeks.org/campus-geek-of-the-month/" class="reduceMenuHeight">Campus Geek of the Month</a></li>
+	<li id="menu-item-137570" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137570"><a href="http://geeksquiz.com/placements/" class="reduceMenuHeight">Placement Course</a></li>
+	<li id="menu-item-137180" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137180"><a href="http://www.geeksforgeeks.org/category/competitive-programming/" class="reduceMenuHeight">Competitive Programming</a></li>
+	<li id="menu-item-137181" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137181"><a href="http://www.geeksforgeeks.org/testimonials/" class="reduceMenuHeight">Testimonials</a></li>
+	<li id="menu-item-138863" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-138863"><a href="http://www.geeksforgeeks.org/category/geek-on-the-top/" class="reduceMenuHeight">Geek on the Top</a></li>
+	<li id="menu-item-141974" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141974"><a href="http://www.geeksforgeeks.org/careers/" class="reduceMenuHeight">Careers</a></li>
+	<li id="menu-item-137378" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-137378"><a href="http://www.geeksforgeeks.org/internship/" class="reduceMenuHeight">Internship</a></li>
+	<li id="menu-item-147457" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147457"><a href="http://www.geeksforgeeks.org/school-programming/" class="reduceMenuHeight">School Programming</a></li>
+</ul>
+</li>
+<li id="menu-item-146712" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-146712"><a href="https://www.geeksforgeeks.org/gate-cs-notes-gq/" class="reduceMenuHeight">GATE ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-146714" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146714"><a href="http://www.geeksforgeeks.org/gate-cs-notes-gq/" class="reduceMenuHeight">GATE Notes</a></li>
+	<li id="menu-item-146713" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146713"><a href="http://www.geeksforgeeks.org/gate-corner-2-gq/" class="reduceMenuHeight">GATE CS Corner</a></li>
+	<li id="menu-item-146715" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146715"><a href="http://www.geeksforgeeks.org/lmns-gq/" class="reduceMenuHeight">Last Minute Notes</a></li>
+	<li id="menu-item-146717" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146717"><a href="https://www.geeksforgeeks.org/gate-cs-2019-important-dates-and-links/" class="reduceMenuHeight">GATE 2019</a></li>
+	<li id="menu-item-146716" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146716"><a href="http://www.geeksforgeeks.org/original-gate-previous-year-question-papers-cse-and-it-gq/" class="reduceMenuHeight">GATE Official Papers</a></li>
+	<li id="menu-item-211326" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-211326"><a href="https://www.geeksforgeeks.org/isro-cs-preparation/" class="reduceMenuHeight">ISRO CS Exam</a></li>
+	<li id="menu-item-211327" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-211327"><a href="https://www.geeksforgeeks.org/ugc-net-cs-preparation/" class="reduceMenuHeight">UGC NET Papers</a></li>
+	<li id="menu-item-211328" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-211328"><a href="https://www.geeksforgeeks.org/ugc-net-cs-notes-according-to-syllabus-of-paper-ii/" class="reduceMenuHeight">UGC NET CS Paper II</a></li>
+	<li id="menu-item-215230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215230"><a href="https://www.geeksforgeeks.org/ugc-net-cs-notes-according-to-syllabus-of-paper-iii-core-group/" class="reduceMenuHeight">UGC NET CS Paper III</a></li>
+</ul>
+</li>
+<li id="menu-item-146718" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-146718"><a href="http://www.geeksforgeeks.org/articles-on-computer-science-subjects-gq/" class="reduceMenuHeight">CS Subjects ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-203861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-203861"><a href="https://www.geeksforgeeks.org/gate-cs-notes-gq/" class="reduceMenuHeight">Core Subjects  ►</a>
+	<ul class="sub-menu">
+		<li id="menu-item-146727" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146727"><a href="http://www.geeksforgeeks.org/engineering-mathematics-tutorials/" class="reduceMenuHeight">Engg. Mathematics</a></li>
+		<li id="menu-item-146729" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146729"><a href="http://www.geeksforgeeks.org/operating-systems/" class="reduceMenuHeight">Operating Systems</a></li>
+		<li id="menu-item-146721" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146721"><a href="http://www.geeksforgeeks.org/computer-network-tutorials/" class="reduceMenuHeight">Computer Networks</a></li>
+		<li id="menu-item-146724" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146724"><a href="http://www.geeksforgeeks.org/dbms/" class="reduceMenuHeight">DBMS</a></li>
+		<li id="menu-item-146720" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146720"><a href="http://www.geeksforgeeks.org/compiler-design-tutorials/" class="reduceMenuHeight">Compiler Design</a></li>
+		<li id="menu-item-146730" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146730"><a href="http://www.geeksforgeeks.org/theory-of-computation-automata-tutorials/" class="reduceMenuHeight">Theory of Computation</a></li>
+		<li id="menu-item-146726" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146726"><a href="http://www.geeksforgeeks.org/digital-electronics-logic-design-tutorials/" class="reduceMenuHeight">Digital Electronics</a></li>
+		<li id="menu-item-146722" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146722"><a href="http://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/" class="reduceMenuHeight">Computer Organization &amp; Architecture</a></li>
+		<li id="menu-item-213498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-213498"><a href="https://www.geeksforgeeks.org/software-engineering/" class="reduceMenuHeight">Software Engineering</a></li>
+		<li id="menu-item-200760" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-200760"><a href="https://www.geeksforgeeks.org/microprocessor-tutorials/" class="reduceMenuHeight">Microprocessor</a></li>
+	</ul>
+</li>
+	<li id="menu-item-147831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147831"><a href="http://www.geeksforgeeks.org/web-technology/" class="reduceMenuHeight">Web Technology</a></li>
+	<li id="menu-item-147512" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147512"><a href="http://www.geeksforgeeks.org/advanced-computer-subjects-tutorials/" class="reduceMenuHeight">Advanced Topics</a></li>
+	<li id="menu-item-203862" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-203862"><a href="https://www.geeksforgeeks.org/machine-learning/" class="reduceMenuHeight">Machine Learning</a></li>
+	<li id="menu-item-204870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204870"><a href="https://www.geeksforgeeks.org/computer-graphics-2/" class="reduceMenuHeight">Computer Graphics</a></li>
+	<li id="menu-item-146725" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146725"><a href="http://www.geeksforgeeks.org/category/geeksquiz/articles-gq/difference-gq/" class="reduceMenuHeight">What’s Difference?</a></li>
+</ul>
+</li>
+<li id="menu-item-140855" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-140855"><a href="http://quiz.geeksforgeeks.org/quiz-corner/" class="reduceMenuHeight">Quizzes ▼</a>
+<ul class="sub-menu">
+	<li id="menu-item-146748" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-146748"><a href="http://www.geeksforgeeks.org/quizzes-on-programming-languages-gq/" class="reduceMenuHeight">Languages ►</a>
+	<ul class="sub-menu">
+		<li id="menu-item-146743" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146743"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#C%20Programming%20Mock%20Tests" class="reduceMenuHeight">C</a></li>
+		<li id="menu-item-146745" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146745"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#C++%20Programming%20Mock%20Tests" class="reduceMenuHeight">C++</a></li>
+		<li id="menu-item-146746" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146746"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Java%20Programming%20Mock%20Tests" class="reduceMenuHeight">Java</a></li>
+		<li id="menu-item-146747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146747"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Python%20Programming%20Mock%20Tests" class="reduceMenuHeight">Python</a></li>
+	</ul>
+</li>
+	<li id="menu-item-146825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-146825"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Data%20Structures%20Mock%20Tests" class="reduceMenuHeight">CS Subjectwise ►</a>
+	<ul class="sub-menu">
+		<li id="menu-item-146731" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146731"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Data%20Structures%20Mock%20Tests" class="reduceMenuHeight">Data Structures</a></li>
+		<li id="menu-item-146732" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146732"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Algorithms%20Mock%20Tests" class="reduceMenuHeight">Algorithms</a></li>
+		<li id="menu-item-146733" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146733"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Operating%20Systems%20Mock%20Tests" class="reduceMenuHeight">Operating Systems</a></li>
+		<li id="menu-item-146734" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146734"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#DBMS%20Mock%20Tests" class="reduceMenuHeight">DBMS</a></li>
+		<li id="menu-item-146735" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146735"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Compiler%20Design%20Mock%20Tests" class="reduceMenuHeight">Compiler Design</a></li>
+		<li id="menu-item-146736" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146736"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Computer%20Networks%20Mock%20Tests" class="reduceMenuHeight">Computer Networks</a></li>
+		<li id="menu-item-146737" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146737"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Theory%20of%20Computation%20Mock%20Tests" class="reduceMenuHeight">Theory of Computation</a></li>
+		<li id="menu-item-146738" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146738"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Computer%20Organization%20and%20Architecture" class="reduceMenuHeight">Computer Organization</a></li>
+		<li id="menu-item-146739" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146739"><a href="http://www.geeksforgeeks.org/software-engineering-gq/" class="reduceMenuHeight">Software Engineering</a></li>
+	</ul>
+</li>
+	<li id="menu-item-146740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146740"><a href="http://www.geeksforgeeks.org/html-and-xml-gq/" class="reduceMenuHeight">HTML &amp; XML</a></li>
+	<li id="menu-item-146741" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146741"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Engineering%20Mathematics" class="reduceMenuHeight">Engg. Mathematics</a></li>
+	<li id="menu-item-146742" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146742"><a href="http://www.geeksforgeeks.org/quiz-corner-gq/#Aptitude%20Mock%20Tests" class="reduceMenuHeight">Aptitude</a></li>
+</ul>
+</li>
+<li id="menu-item-135367" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-135367"><a href="https://www.geeksforgeeks.org/category/guestblogs/" class="reduceMenuHeight">GBlog</a></li>
+<li id="menu-item-141885" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141885"><a href="http://www.geeksforgeeks.org/puzzles/" class="reduceMenuHeight">Puzzles</a></li>
+<li id="menu-item-141816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141816"><a href="https://practice.geeksforgeeks.org/" class="reduceMenuHeight">Practice</a></li>
+</ul><select class="selectnav" id="selectnav1"><option value="" selected="selected">Menu</option><option value="https://www.geeksforgeeks.org/"></option><option value="http://www.geeksforgeeks.org/fundamentals-of-algorithms/">Algo ▼</option><option value="http://www.geeksforgeeks.org/fundamentals-of-algorithms/#AnalysisofAlgorithms">- Analysis of Algorithms</option><option value="http://www.geeksforgeeks.org/fundamentals-of-algorithms/">- Topicwise ►</option><option value="http://www.geeksforgeeks.org/searching-algorithms/">-- Searching Algorithms</option><option value="http://www.geeksforgeeks.org/sorting-algorithms/">-- Sorting Algorithms</option><option value="http://www.geeksforgeeks.org/graph-data-structure-and-algorithms/">-- Graph Algorithms</option><option value="http://www.geeksforgeeks.org/bitwise-algorithms/">-- Bit Algorithms</option><option value="https://www.geeksforgeeks.org/algorithms-gq/pattern-searching/">-- Pattern Searching</option><option value="http://www.geeksforgeeks.org/geometric-algorithms/">-- Geometric Algorithms</option><option value="http://www.geeksforgeeks.org/mathematical-algorithms/">-- Mathematical Algorithms</option><option value="http://www.geeksforgeeks.org/randomized-algorithms/">-- Randomized Algorithms</option><option value="https://www.geeksforgeeks.org/game-theory/">-- Game Theory</option><option value="http://www.geeksforgeeks.org/fundamentals-of-algorithms/">- Algorithm Paradigms ►</option><option value="http://www.geeksforgeeks.org/greedy-algorithms/">-- Greedy Algorithms</option><option value="http://www.geeksforgeeks.org/dynamic-programming/">-- Dynamic Programming</option><option value="http://www.geeksforgeeks.org/divide-and-conquer/">-- Divide and Conquer</option><option value="http://www.geeksforgeeks.org/backtracking-algorithms/">-- Backtracking</option><option value="https://www.geeksforgeeks.org/branch-and-bound-algorithm/">-- Branch &amp; Bound</option><option value="http://www.geeksforgeeks.org/fundamentals-of-algorithms/">- All Algorithms</option><option value="http://www.geeksforgeeks.org/data-structures/">DS ▼</option><option value="http://www.geeksforgeeks.org/array-data-structure/">- Array</option><option value="http://www.geeksforgeeks.org/data-structures/linked-list/">- LinkedList</option><option value="http://www.geeksforgeeks.org/stack-data-structure/">- Stack</option><option value="http://www.geeksforgeeks.org/queue-data-structure/">- Queue</option><option value="http://www.geeksforgeeks.org/data-structures/">- Tree based DS ►</option><option value="http://www.geeksforgeeks.org/binary-tree-data-structure/">-- Binary Tree</option><option value="http://www.geeksforgeeks.org/binary-search-tree-data-structure/">-- Binary Search Tree</option><option value="http://www.geeksforgeeks.org/heap-data-structure/">-- Heap</option><option value="http://www.geeksforgeeks.org/hashing-data-structure/">- Hashing</option><option value="http://www.geeksforgeeks.org/graph-data-structure-and-algorithms/">- Graph</option><option value="http://www.geeksforgeeks.org/advanced-data-structures/">- Advanced Data Structure</option><option value="http://www.geeksforgeeks.org/matrix/">- Matrix</option><option value="http://www.geeksforgeeks.org/string-data-structure/">- Strings</option><option value="http://www.geeksforgeeks.org/data-structures/">- All Data Structures</option><option value="http://www.geeksforgeeks.org/category/program-output/">Languages ▼</option><option value="https://www.geeksforgeeks.org/c-programming-language/">- C</option><option value="https://www.geeksforgeeks.org/c-plus-plus/">- C++</option><option value="https://www.geeksforgeeks.org/java/">- Java</option><option value="https://www.geeksforgeeks.org/python-programming-language/">- Python</option><option value="https://www.geeksforgeeks.org/csharp-programming-language/">- C#</option><option value="https://www.geeksforgeeks.org/php/">- PHP</option><option value="https://www.geeksforgeeks.org/javascript-tutorial/">- JavaScript</option><option value="https://www.geeksforgeeks.org/jquery-tutorials/">- jQuery</option><option value="http://www.geeksforgeeks.org/sql-tutorial/">- SQL</option><option value="https://www.geeksforgeeks.org/html-tutorials/">- HTML</option><option value="https://www.geeksforgeeks.org/css-tutorials/">- CSS</option><option value="https://www.geeksforgeeks.org/category/program-output/">- Program Output</option><option value="http://www.geeksforgeeks.org/about/interview-corner/">Interview ▼</option><option value="https://www.geeksforgeeks.org/company-preparation/">- Company Prep</option><option value="http://www.geeksforgeeks.org/interview-preparation-for-software-developer/">- Top Topics</option><option value="https://practice.geeksforgeeks.org/company-tags">- Practice Company Questions</option><option value="http://www.geeksforgeeks.org/about/interview-corner/">- Interview Experiences</option><option value="https://www.geeksforgeeks.org/experienced-interview-experiences-company-wise/">- Experienced Interviews</option><option value="https://www.geeksforgeeks.org/internship-interview-experiences-company-wise/">- Internship Interviews</option><option value="http://www.geeksforgeeks.org/category/competitive-programming/">- Competitive Programming</option><option value="http://www.geeksforgeeks.org/software-design-patterns/">- Design Patterns</option><option value="http://geeksquiz.com/quiz-corner/">- Multiple Choice Quizzes</option><option value="http://www.geeksforgeeks.org/student-corner/">Students ▼</option><option value="http://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks/">- Campus Ambassador Program</option><option value="https://www.geeksforgeeks.org/computer-science-projects/">- Project</option><option value="http://www.geeksforgeeks.org/geek-of-the-month/">- Geek of the Month</option><option value="https://www.geeksforgeeks.org/campus-geek-of-the-month/">- Campus Geek of the Month</option><option value="http://geeksquiz.com/placements/">- Placement Course</option><option value="http://www.geeksforgeeks.org/category/competitive-programming/">- Competitive Programming</option><option value="http://www.geeksforgeeks.org/testimonials/">- Testimonials</option><option value="http://www.geeksforgeeks.org/category/geek-on-the-top/">- Geek on the Top</option><option value="http://www.geeksforgeeks.org/careers/">- Careers</option><option value="http://www.geeksforgeeks.org/internship/">- Internship</option><option value="http://www.geeksforgeeks.org/school-programming/">- School Programming</option><option value="https://www.geeksforgeeks.org/gate-cs-notes-gq/">GATE ▼</option><option value="http://www.geeksforgeeks.org/gate-cs-notes-gq/">- GATE Notes</option><option value="http://www.geeksforgeeks.org/gate-corner-2-gq/">- GATE CS Corner</option><option value="http://www.geeksforgeeks.org/lmns-gq/">- Last Minute Notes</option><option value="https://www.geeksforgeeks.org/gate-cs-2019-important-dates-and-links/">- GATE 2019</option><option value="http://www.geeksforgeeks.org/original-gate-previous-year-question-papers-cse-and-it-gq/">- GATE Official Papers</option><option value="https://www.geeksforgeeks.org/isro-cs-preparation/">- ISRO CS Exam</option><option value="https://www.geeksforgeeks.org/ugc-net-cs-preparation/">- UGC NET Papers</option><option value="https://www.geeksforgeeks.org/ugc-net-cs-notes-according-to-syllabus-of-paper-ii/">- UGC NET CS Paper II</option><option value="https://www.geeksforgeeks.org/ugc-net-cs-notes-according-to-syllabus-of-paper-iii-core-group/">- UGC NET CS Paper III</option><option value="http://www.geeksforgeeks.org/articles-on-computer-science-subjects-gq/">CS Subjects ▼</option><option value="https://www.geeksforgeeks.org/gate-cs-notes-gq/">- Core Subjects  ►</option><option value="http://www.geeksforgeeks.org/engineering-mathematics-tutorials/">-- Engg. Mathematics</option><option value="http://www.geeksforgeeks.org/operating-systems/">-- Operating Systems</option><option value="http://www.geeksforgeeks.org/computer-network-tutorials/">-- Computer Networks</option><option value="http://www.geeksforgeeks.org/dbms/">-- DBMS</option><option value="http://www.geeksforgeeks.org/compiler-design-tutorials/">-- Compiler Design</option><option value="http://www.geeksforgeeks.org/theory-of-computation-automata-tutorials/">-- Theory of Computation</option><option value="http://www.geeksforgeeks.org/digital-electronics-logic-design-tutorials/">-- Digital Electronics</option><option value="http://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/">-- Computer Organization &amp; Architecture</option><option value="https://www.geeksforgeeks.org/software-engineering/">-- Software Engineering</option><option value="https://www.geeksforgeeks.org/microprocessor-tutorials/">-- Microprocessor</option><option value="http://www.geeksforgeeks.org/web-technology/">- Web Technology</option><option value="http://www.geeksforgeeks.org/advanced-computer-subjects-tutorials/">- Advanced Topics</option><option value="https://www.geeksforgeeks.org/machine-learning/">- Machine Learning</option><option value="https://www.geeksforgeeks.org/computer-graphics-2/">- Computer Graphics</option><option value="http://www.geeksforgeeks.org/category/geeksquiz/articles-gq/difference-gq/">- What’s Difference?</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/">Quizzes ▼</option><option value="http://www.geeksforgeeks.org/quizzes-on-programming-languages-gq/">- Languages ►</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#C%20Programming%20Mock%20Tests">-- C</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#C++%20Programming%20Mock%20Tests">-- C++</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Java%20Programming%20Mock%20Tests">-- Java</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Python%20Programming%20Mock%20Tests">-- Python</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Data%20Structures%20Mock%20Tests">- CS Subjectwise ►</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Data%20Structures%20Mock%20Tests">-- Data Structures</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Algorithms%20Mock%20Tests">-- Algorithms</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Operating%20Systems%20Mock%20Tests">-- Operating Systems</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#DBMS%20Mock%20Tests">-- DBMS</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Compiler%20Design%20Mock%20Tests">-- Compiler Design</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Computer%20Networks%20Mock%20Tests">-- Computer Networks</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Theory%20of%20Computation%20Mock%20Tests">-- Theory of Computation</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Computer%20Organization%20and%20Architecture">-- Computer Organization</option><option value="http://www.geeksforgeeks.org/software-engineering-gq/">-- Software Engineering</option><option value="http://www.geeksforgeeks.org/html-and-xml-gq/">- HTML &amp; XML</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Engineering%20Mathematics">- Engg. Mathematics</option><option value="http://www.geeksforgeeks.org/quiz-corner-gq/#Aptitude%20Mock%20Tests">- Aptitude</option><option value="https://www.geeksforgeeks.org/category/guestblogs/">GBlog</option><option value="http://www.geeksforgeeks.org/puzzles/">Puzzles</option><option value="https://practice.geeksforgeeks.org/">Practice</option></select></div>		</nav><!-- #site-navigation -->
+		<div class="clear"></div>
+	<!-- #masthead -->
+<button id="scrollTopBtn" title="Scroll to Top" type="button" class="btn btn-success" style="display: inline-block; opacity: 1;">▲</button>
+	<div id="main" class="wrapper">
+
+<!-- Following 2 files are included for Article Feedback Project 'GFGSW-556' -->
+<link href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/icon.css" rel="stylesheet">
+<script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/materialize.js"></script>
+
+<div class="leftSideBarParent">
+    <div class="leftSideBar">
+        <ul class="leftBarList"><li><a href="https://www.geeksforgeeks.org/heavy-light-decomposition-set-2-implementation/">Heavy Light Decomposition | Set 2 (Implementation)</a></li><li><a href="https://www.geeksforgeeks.org/fibonacci-heap-insertion-and-union/">Fibonacci Heap - Insertion and Union</a></li><li><a href="https://www.geeksforgeeks.org/sort-the-array-of-strings-according-to-alphabetical-order-defined-by-another-string/">Sort the array of strings according to alphabetical order defined by another string</a></li><li><a href="https://www.geeksforgeeks.org/some-theorems-on-trees/">Some Basic Theorems on Trees</a></li><li><a href="https://www.geeksforgeeks.org/remove-minimum-elements-from-either-side-such-that-2min-becomes-more-than-max-set-2/">Remove minimum elements from either side such that 2*min becomes more than max | Set 2</a></li><li><a href="https://www.geeksforgeeks.org/number-of-subarrays-have-bitwise-or-k/">Number of subarrays have bitwise OR &gt;= K</a></li><li><a href="https://www.geeksforgeeks.org/counting-inversions-in-an-array-using-segment-tree/">Counting inversions in an array using segment tree</a></li><li><a href="https://www.geeksforgeeks.org/count-of-words-that-are-present-in-all-the-given-sentences/">Count of words that are present in all the given sentences</a></li><li><a href="https://www.geeksforgeeks.org/range-sum-queries-and-update-with-square-root/">Range Sum Queries and Update with Square Root</a></li><li><a href="https://www.geeksforgeeks.org/optimal-sequence-for-avl-tree-insertion-without-any-rotations/">Optimal sequence for AVL tree insertion (without any rotations)</a></li><li><a href="https://www.geeksforgeeks.org/count-pairs-a-b-such-that-a-has-x-and-b-has-y-number-of-set-bits-and-ab-c/">Count pairs (A, B) such that A has X and B has Y number of set bits and A+B = C</a></li><li><a href="https://www.geeksforgeeks.org/range-and-update-sum-queries-with-factorial/">Range and Update Sum Queries with Factorial</a></li><li><a href="https://www.geeksforgeeks.org/given-an-array-and-two-integers-l-and-r-find-the-kth-largest-element-in-the-range-l-r/">Given an array and two integers l and r, find the kth largest element in the range [l, r]</a></li><li><a href="https://www.geeksforgeeks.org/range-queries-to-find-number-of-sub-arrays-with-a-given-xor/">Range Queries to Find number of sub-arrays with a given xor</a></li><li><a href="https://www.geeksforgeeks.org/range-queries-to-count-1s-in-a-subarray-after-flip-operations/">Range queries to count 1s in a subarray after flip operations</a></li><li><a href="https://www.geeksforgeeks.org/queries-for-composite-numbers-in-subarray-with-point-updates/">Queries for Composite numbers in subarray (With Point Updates)</a></li><li><a href="https://www.geeksforgeeks.org/program-to-implement-run-length-encoding-using-linked-lists/">Program to implement Run Length Encoding using Linked Lists</a></li><li><a href="https://www.geeksforgeeks.org/find-a-pair-from-the-given-array-with-maximum-ncr-value/">Find a pair from the given array with maximum nCr value</a></li><li><a href="https://www.geeksforgeeks.org/lazy-propagation-in-segment-tree-set-2/">Lazy Propagation in Segment Tree | Set 2</a></li><li><a href="https://www.geeksforgeeks.org/find-triplet-such-that-number-of-nodes-connecting-these-triplets-is-maximum/">Find triplet such that number of nodes connecting these triplets is maximum</a></li><li><a href="https://www.geeksforgeeks.org/queries-to-update-a-given-index-and-find-gcd-in-range/">Queries to update a given index and find gcd in range</a></li><li><a href="https://www.geeksforgeeks.org/introduction-to-r-tree/">Introduction to R-tree</a></li></ul>
+    <div class="promotional" style="margin-top:15px;max-width:300px;">
+    <script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+    <!-- GfG-LeftBar -->
+    <ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="1800357638" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+    </div><div class="promotional" style="margin-top:15px;"><a target="_blank" href="https://practice.geeksforgeeks.org/courses/java-backend-development?utm_source=geeksforgeeks&amp;utm_medium=referral&amp;utm_campaign=JB_May_25"><img style="width: 100%;" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/JB_Bottom_left.png"></a></div>    </div>
+</div> 
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+                        							 	<article id="post-136588" class="post-136588 post type-post status-publish format-standard hentry category-advanced-data-structure tag-array-range-queries tag-lca tag-segment-tree"><div id="userActionsIcon" class="tooltip clear" onclick="scrollToUserActionsDiv()"><i class="material-icons">perm_identity</i><span class="tooltiptext">User Actions</span></div>
+				<header class="entry-header">
+						<h1 class="entry-title">Heavy Light Decomposition | Set 1 (Introduction)</h1>
+				
+						</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Heavy Light decomposition (HLD) is one of the <a href="https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/">most used techniques in competitive programming</a>.</p>
+<p><strong>Example Problem:</strong> Let us understand Heavy-light decomposition (HLD) with the help of below example.</p>
+<p>Suppose we have <strong>an unbalanced tree (not necessarily a Binary Tree) of n nodes</strong>, and we have to perform operations on the tree to answer a number of queries, each can be of one of the two types:</p><br>
+        <script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+          <!-- post_top_responsive -->
+          <ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="4501693235" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:898px;height:90px;" width="898" height="90" frameborder="0"></iframe></ins></ins></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br>
+            
+<ol>
+<li><strong>change(a, b)</strong>: Update weight of the a<sup>th</sup> edge to b.</li>
+<li><strong>maxEdge(a, b)</strong>: Print the maximum edge weight on the path from node a to node b. For example maxEdge(5, 10) should print 25.</li>
+</ol>
+<p>Assume that nodes are numbered from 1 to n. There must be <strong>n-1 edges</strong>.
+ Edge weights are natural numbers. Also assume that both type of queries
+ are interspersed (approximately equal in number), and hence no type can
+ be sidelined to compromise on complexity.</p>
+<p><a href="https://www.geeksforgeeks.org/wp-content/uploads/hld1.png"><img class="aligncenter  wp-image-136476" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/hld1.png" alt="hld1" srcset="https://www.geeksforgeeks.org/wp-content/uploads/hld1.png 811w, https://www.geeksforgeeks.org/wp-content/uploads/hld1-300x286.png 300w, https://www.geeksforgeeks.org/wp-content/uploads/hld1-660x629.png 660w" sizes="(max-width: 358px) 100vw, 358px" width="358" height="341"></a></p>
+<p><strong>Simple Solution:</strong> A Simple solution is to traverse the complete tree for any query. Time complexity of every query in this solution is O(n).</p>
+<p></p><center><strong>HLD Based Solution:</strong></center><br>
+Upon careful observation of the two operations, we realize that we have seen them somewhere. Eureka! <a href="https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/">Segment Trees</a>. A <a href="https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/">Segment Tree</a> can be used to perform both types in O(log(n)). But wait! A <a href="https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/">Segment Tree</a>
+ can be built from a one-dimensional array / chain (set of nodes linked 
+one after another), and what we have here is a tree. So, can we reduce 
+the tree to chains?<p></p><br>
+        <script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+          <!-- post_top_responsive -->
+          <ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="4501693235" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:898px;height:90px;" width="898" height="90" frameborder="0"></iframe></ins></ins></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br>
+            
+<p>The HLD based solution discussed in the post takes O(log<sup>2</sup>(n)) for maxEdge() and O(log n) for change().</p>
+<p><strong>Size</strong> of a node x is number of nodes in subtree 
+rooted with the node x. Here is an image showing subtree sizes of each 
+node written on top of them:<br>
+<a href="https://www.geeksforgeeks.org/wp-content/uploads/hld2.png"><img class="aligncenter  wp-image-136479" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/hld2.png" alt="hld2" srcset="https://www.geeksforgeeks.org/wp-content/uploads/hld2.png 846w, https://www.geeksforgeeks.org/wp-content/uploads/hld2-100x100.png 100w, https://www.geeksforgeeks.org/wp-content/uploads/hld2-660x657.png 660w" sizes="(max-width: 348px) 100vw, 348px" width="348" height="346"></a></p>
+<p><strong>HLD of a rooted tree is a method of decomposing the vertices 
+of the tree into disjoint chains (no two chains share a node), to 
+achieve important asymptotic time bounds for certain problems involving 
+trees.</strong></p>
+<p align="left">HLD can also be seen as <b>‘coloring</b>’ of the tree’s edges. The ‘Heavy-Light’ comes from the way we <b>segregate </b>edges. We use <b>size of the subtrees</b> rooted at the nodes as our criteria.</p>
+<p>An edge is <strong>heavy</strong> if size(v) &gt; size(u) where u is any sibling of v. If they come out to be equal, we pick any one such v as special.</p>
+<p><a href="https://www.geeksforgeeks.org/wp-content/uploads/hld321.png"><img class="aligncenter  wp-image-136480" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/hld321.png" alt="hld3" width="362" height="364"></a></p>
+<p><u><strong>change(u, v) operation:</strong></u><br>
+Since <a href="https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/">Segment Tree</a> is used as underlying data structure to represent individual chains, change is done using update of <a href="https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/">segment tree</a>. So the <em><strong>time complexity of change</strong></em> operation is O(Log n).</p>
+<p><u><strong>maxEdge(u, v) operation:</strong></u></p><br>
+        <script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+          <!-- post_top_responsive -->
+          <ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="4501693235" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><ins id="aswift_4_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0px;width:898px;height:90px;" width="898" height="90" frameborder="0"></iframe></ins></ins></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <br>
+            
+<ol>
+<ol>
+<li>We first find LCA of two nodes. Say node u is 11 and node v is 9. Their LCA is node 1.</li>
+<li>Then we crawl up the tree from node u to the lca. If node u and lca 
+belong to the same chain, we find the maximum from the range that 
+represents the edges between them using segment tree. Else, we find the 
+maximum from the chain to which u belongs, then change chains and repeat
+ while we are not in the same chain.</li>
+<li>We repeat the same step (as step 2) from v to lca and return maximum of two weights.</li>
+</ol>
+</ol>
+<p>As per our example above, let’s take u as node 11 and v as node 9. 
+LCA is node 1. We move from node 11 to node 1, and we change chains 
+once. When we change chains, we shift from our queried node to the 
+parent of head of the chain to which it belongs (11 changes to 8 here). 
+Similarly node 9 to node 3 queried (including the light edge), and chain
+ changed (node changed to 1).</p>
+<p><a href="https://www.geeksforgeeks.org/wp-content/uploads/Heavy-Light-Decompostion.png"><img class="aligncenter wp-image-138057" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/Heavy-Light-Decompostion.png" alt="Heavy Light Decompostion" srcset="https://www.geeksforgeeks.org/wp-content/uploads/Heavy-Light-Decompostion.png 749w, https://www.geeksforgeeks.org/wp-content/uploads/Heavy-Light-Decompostion-274x300.png 274w, https://www.geeksforgeeks.org/wp-content/uploads/Heavy-Light-Decompostion-660x723.png 660w" sizes="(max-width: 354px) 100vw, 354px" width="354" height="388"></a></p>
+<p><a href="https://www.geeksforgeeks.org/wp-content/uploads/hld8.png"><img class="aligncenter  wp-image-136503" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/hld8.png" alt="hld8" srcset="https://www.geeksforgeeks.org/wp-content/uploads/hld8.png 733w, https://www.geeksforgeeks.org/wp-content/uploads/hld8-269x300.png 269w, https://www.geeksforgeeks.org/wp-content/uploads/hld8-660x737.png 660w" sizes="(max-width: 354px) 100vw, 354px" width="354" height="395"></a></p>
+<p><em><strong>Time Complexity of maxEdge</strong></em> is O(log<sup>2</sup>(n)). Querying maximum of a chain takes O(log(n)) time as chains are represented using <a href="https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/">Segment Tree</a> and there are at-most O(log(n)) chains.</p>
+<p><strong>How is the number of chains O(log(n))?</strong><br>
+All chains are connected by a light edge (see above examples). So the 
+number of chains is bounded by number of light edges on any path. If we 
+follow a light edge from the root, the subtree rooted at the resulting 
+vertex has at most n/2 size. If we repeat, we land at a vertex with 
+subtree size at most n/4, and so on. We conclude that <span style="color: #252525;"><b>number of light edges on any path from root to leaf is at most log(n)</b> (Source: <a href="http://wcipeg.com/wiki/Heavy-light_decomposition"><span style="color: #1155cc;"><u>wcipeg</u></span></a>)</span></p>
+<p>The main idea of Heavy Light Decomposition of a unbalanced tree is to
+ club vertices of long (or heavy) paths together in chains so that these
+ linear chains can be queried in O(Log n) time using a data structure 
+like Segment Tree.</p>
+<p>In the <a href="https://www.geeksforgeeks.org/heavy-light-decomposition-set-2-implementation/">next article</a>,
+ segment tree representation of chains in more detail and implementation
+ of HLD solution for the problem is discussed as example.</p>
+<p><a href="https://www.geeksforgeeks.org/heavy-light-decomposition-set-2-implementation/">Heavy Light Decomposition | Set 2 (Implementation)</a></p>
+<p>This article is contributed by <strong>Yash Varyani</strong>. Please write comments if you find anything incorrect, or you want to share more information about the topic discussed above</p>
+<br><script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+          <!-- post_bottom_responsive -->
+          <ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="8385097921" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><ins id="aswift_5_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:898px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0px;width:898px;height:90px;" width="898" height="90" frameborder="0"></iframe></ins></ins></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+          <br>
+            <div id="personalNoteDiv" class="clear hideIt">
+    <div class="personalNoteHeader clear">
+        <span class="noteHeaderText">My Personal Notes</span>
+        <span class="hideNotesDivIcon"><i class="material-icons personalNotesIcon">arrow_drop_up</i></span>
+    </div>
+    <div class="collapsableDivPersonalNotes">
+        <textarea maxlength="5000" id="enteredPersonalNote" class="personalNoteStyle" placeholder="Add your personal notes here! (max 5000 chars)"></textarea>
+        <div class="saveNoteDiv">
+            <span class="processSaveNote"></span>
+            <button class="savePersonalNoteButton" onclick="saveUserPersonalNote()">Save</button>
+        </div>
+    </div>
+</div><div class="recommendedPostsDiv"><h2 style="font-size:20px; color: #838383">Recommended Posts:</h2><ul><li><a href="https://www.geeksforgeeks.org/heavy-light-decomposition-set-2-implementation/">Heavy Light Decomposition | Set 2 (Implementation)</a></li><li><a href="https://www.geeksforgeeks.org/sqrt-square-root-decomposition-technique-set-1-introduction/">Sqrt (or Square Root) Decomposition Technique  |  Set 1 (Introduction)</a></li><li><a href="https://www.geeksforgeeks.org/mos-algorithm-query-square-root-decomposition-set-1-introduction/">MO's Algorithm (Query Square Root Decomposition) | Set 1 (Introduction)</a></li><li><a href="https://www.geeksforgeeks.org/centroid-decomposition-of-tree/">Centroid Decomposition of Tree</a></li><li><a href="https://www.geeksforgeeks.org/range-minimum-query-for-static-array/">Range Minimum Query (Square Root Decomposition and Sparse Table)</a></li><li><a href="https://www.geeksforgeeks.org/sqrt-square-root-decomposition-set-2-lca-tree-osqrth-time/">Sqrt (or Square Root) Decomposition | Set 2 (LCA of Tree in O(sqrt(height)) time)</a></li><li><a href="https://www.geeksforgeeks.org/aa-trees-set-1-introduction/">AA Trees | Set 1 (Introduction)</a></li><li><a href="https://www.geeksforgeeks.org/introduction-to-r-tree/">Introduction to R-tree</a></li><li><a href="https://www.geeksforgeeks.org/b-tree-set-1-introduction-2/">B-Tree | Set 1 (Introduction)</a></li><li><a href="https://www.geeksforgeeks.org/wavelet-trees-introduction/">Wavelet Trees | Introduction</a></li><li><a href="https://www.geeksforgeeks.org/decision-tree-introduction-example/">Decision Tree Introduction with example</a></li><li><a href="https://www.geeksforgeeks.org/gomory-hu-tree-introduction/">Gomory-Hu Tree | Set 1 (Introduction)</a></li><li><a href="https://www.geeksforgeeks.org/skip-list/">Skip List | Set 1 (Introduction)</a></li><li><a href="https://www.geeksforgeeks.org/self-organizing-list-set-1-introduction/">Self Organizing List | Set 1 (Introduction)</a></li><li><a href="https://www.geeksforgeeks.org/fibonacci-heap-set-1-introduction/">Fibonacci Heap | Set 1 (Introduction)</a></li></ul></div><script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+      <!-- post_bottom_responsive -->
+      <ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="8385097921" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_6_expand" style="display: inline-table; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 898px; background-color: transparent;"><ins id="aswift_6_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 898px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;border:0px;width:898px;height:90px;" width="898" height="90" frameborder="0"></iframe></ins></ins></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+      <br>
+      <br>
+      
+					
+		<footer class="entry-meta">
+    <span><b>Article Tags : </b><div class="practiceButton"><a href="https://www.geeksforgeeks.org/category/advanced-data-structure/" rel="category tag">Advanced Data Structure</a></div></span><span><div class="practiceButton"><a href="https://www.geeksforgeeks.org/tag/array-range-queries/" rel="tag">array-range-queries</a></div><div class="practiceButton"><a href="https://www.geeksforgeeks.org/tag/lca/" rel="tag">LCA</a></div><div class="practiceButton"><a href="https://www.geeksforgeeks.org/tag/segment-tree/" rel="tag">Segment-Tree</a></div></span>
+           	<div class="no-p-tag" style="text-align:left;"><b style="color: #757575;">Practice Tags : </b><div class="practiceButton"><a href="https://practice.geeksforgeeks.org/topics/Segment-Tree">Segment-Tree</a></div></div><br><div id="improveArticle" style="float: right;cursor: pointer;"></div>        <div class="plugins upvoteArticle">
+         <div>
+         <i class="material-icons upvoteIcon login-modal-btn" title="Upvote">thumb_up</i><br> 
+                <span class="upvoteText">2</span></div>
+                <div class="plugins" style="text-align:right;">
+        <div pid="136588" ptitle="Heavy Light Decomposition | Set 1 (Introduction)" id="markPlugin">
+            <div class="lists">
+            <input id="todo" type="checkbox" class="mark">
+            <label class="checkbox" for="todo">To-do</label>
+            <input id="done" type="checkbox" class="mark">
+            <label class="checkbox" for="done">Done</label>
+            </div></div>
+    <div class="difficultyRating" pid="136588" ptitle="Heavy Light Decomposition | Set 1 (Introduction)" id="ratePlugin">
+            <div class="techno dropdown">
+            <span id="rating_box" class="avg-rating level-4">4</span>
+            <br>
+            <br>
+             
+                 <span id="vote_count">Based on <b>31</b> vote(s)</span>
+                    <div class="markRating dropdown-content">
+            <input rating="1" type="button" class="box basic login-modal-btn" value="Basic">
+            <input rating="2" type="button" class="box easy login-modal-btn" value="Easy">
+            <input rating="3" type="button" class="box medium login-modal-btn" value="Medium">
+            <input rating="4" type="button" class="box hard login-modal-btn" value="Hard">
+            <input rating="5" type="button" class="box expert login-modal-btn" value="Expert">
+        </div>
+        <span class="process"></span>
+        </div></div>
+        </div>
+        <div class="plugins userActionButtons">
+        <div pid="136588" ptitle="Heavy Light Decomposition | Set 1 (Introduction)" id="feedbackButtonDiv" style="display:inline-block"><button class="feedbackButton modal-trigger" onclick="showFeedbackModal()" data-target="modalWindow" data-backdrop="static" data-keyboard="false">Feedback/ Suggest Improvement</button><button class="feedbackButton login-modal-btn">Add Notes</button><button class="feedbackButton login-modal-btn">Improve Article</button></div>
+        <div pid="136588" ptitle="Heavy Light Decomposition | Set 1 (Introduction)" id="addNoteButtonDiv" style="display:inline-block"></div>
+        <div pid="136588" ptitle="Heavy Light Decomposition | Set 1 (Introduction)" id="improveArticleButtonDiv" style="display:inline-block"></div>
+        </div>
+<div class="common-bottom">Please write to us at contribute@geeksforgeeks.org to report any issue with the above content.</div>          	
+					</div></footer><!-- .entry-meta -->
+	</div></article><!-- #post -->
+
+
+
+
+<!-- Added on 29 Oct 2015 for next and previous from same category -->
+
+<nav class="nav-single">
+
+ <div class="assistive-text">Post navigation</div>
+    <span class="nav-previous"><div class="col-md-12 prev">Previous</div> <i class="material-icons">first_page</i> <a href="https://www.geeksforgeeks.org/count-inversions-of-size-three-in-a-give-array/" rel="prev"> Count Inversions of size three in a given array</a></span>
+ 
+    <span class="nav-next"><div class="col-md-12 next">Next</div> <i class="material-icons">last_page</i> <a href="https://www.geeksforgeeks.org/heavy-light-decomposition-set-2-implementation/" rel="next">Heavy Light Decomposition | Set 2 (Implementation) </a> </span>
+
+				</nav><!-- .nav-single -->
+<!--
+<script type="text/javascript">
+	
+				arrPost.push('');
+	
+		   <?php// } ?>
+
+</script>
+-->
+
+
+
+<div id="author" name="Sandeep Jain"></div>
+<br><br>
+
+<style type="text/css">
+ 
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
+#share-buttons a:hover {
+	text-decoration: none;
+}
+</style>
+
+
+<div id="share-buttons" style="display:none">
+   
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/" target="_blank" title="Share on Facebook">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/facebook.png" alt="Facebook">
+    </a>
+    
+    <!-- Google+ -->
+    <a href="https://plus.google.com/share?url=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/" target="_blank" title="Share on Google">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/google.png" alt="Google">
+    </a>
+    
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/" target="_blank" title="Share on LinkedIn">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/linkedin.png" alt="LinkedIn">
+    </a>
+    
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/&amp;text=Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)&amp;hashtags=GeeksforGeeks" target="_blank" title="Share on Twitter">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/twitter.png" alt="Twitter">
+    </a>
+
+    <!-- Pinterest -->
+    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" title="Share on Pinterest">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/pinterest.png" alt="Pinterest">
+    </a>
+    
+    <!-- Reddit -->
+    <a href="http://reddit.com/submit?url=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/&amp;title=Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)" target="_blank" title="Share on Reddit">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/reddit.png" alt="Reddit">
+    </a>
+    
+    <!-- StumbleUpon-->
+    <a href="http://www.stumbleupon.com/submit?url=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/&amp;title=Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)" target="_blank" title="Share on StumbleUpon">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/stumbleupon.png" alt="StumbleUpon">
+    </a>
+    
+    <!-- Tumblr-->
+    <a href="http://www.tumblr.com/share/link?url=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/&amp;title=Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)" target="_blank" title="Share on Tumblr">
+        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/tumblr.png" alt="Tumblr">
+    </a>
+   
+</div>
+
+<br><br>
+<div id="ide_link">
+<p>Writing code in comment? Please use <a href="https://ide.geeksforgeeks.org/">ide.geeksforgeeks.org</a>, generate link and share the link here.</p>
+</div>
+<br>
+<div style="display:flex">
+<button id="comment" class="action-button" style="width:45%;cursor: pointer;margin-right:10%;box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0);border-color: #4cb96b;border-radius: 4px;">Load Comments</button>
+<button id="share" class="action-button" onclick="document.getElementById('share-buttons').style.display='block';this.style.display='none';" style="width:45%;cursor: pointer;margin-right:10%;box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0);border-color: #4cb96b;border-radius: 4px;">Share this post!</button>
+
+</div>
+
+<div id="disqus_thread"></div>
+
+					</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="text-11" class="widget widget_text">			<div class="textwidget"><p><script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="4402736037" data-adsbygoogle-status="done"><ins id="aswift_7_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_7_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_7" name="aswift_7" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><br>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+		</aside><div class="widget widget_text">            <a href="https://practice.geeksforgeeks.org/courses?utm_source=geeksforgeeks&amp;utm_medium=referral&amp;utm_campaign=GfG_courses_banner" target="_blank">
+            <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/GCW_GC_Top_Right.png" alt="auto" width="auto" height="auto">
+            </a>
+            </div>                    <div class="rightSideBarParent">
+                    <div class="leftSideBar rightSideBar">
+                    <div class="rightbar_lefthead"> </div>
+                    <div class="rightbar_head">Most popular articles</div>
+                    <div class="rightbar_righthead"> </div>
+                    <ul class="leftBarList">
+                        <li><a href="https://www.geeksforgeeks.org/amazon-interview-experience-sde-ll/" target="_blank">Amazon Interview Experience SDE ll</a></li><li><a href="https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/" target="_blank">Must Do Coding Questions for Companies like Amazon, Microsoft, Adobe, ...</a></li><li><a href="https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/" target="_blank">StringBuilder Class in Java with Examples</a></li><li><a href="https://www.geeksforgeeks.org/html-course-starting-the-project-creating-directories/" target="_blank">HTML Course - Starting the Project | Creating Directories</a></li><li><a href="https://www.geeksforgeeks.org/make-all-numbers-of-an-array-equal/" target="_blank">Make all numbers of an array equal</a></li>                    </ul>  
+                    </div>
+                    </div><br>
+                    <aside id="text-4" class="widget widget_text">			<div class="textwidget"><script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- ResponsiveRightBarMay16 -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="7089558833" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_8_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:461px;background-color:transparent;"><ins id="aswift_8_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:461px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_8" name="aswift_8" style="left:0;position:absolute;top:0;border:0px;width:461px;height:280px;" width="461" height="280" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</aside> 
+                <div class="rightSideBarParent">
+                    <div class="leftSideBar rightSideBar"> 
+                    <div class="rightbar_lefthead"> </div>
+                    <div class="rightbar_head">Most Visited Articles</div>
+                    <div class="rightbar_righthead"> </div>
+                    <ul class="leftBarList">
+                    <li><a href="https://www.geeksforgeeks.org/amazon-interview-experience-sde-on-campus-2019/" target="_blank">Amazon Interview Experience SDE (On Campus 2019)</a></li><li><a href="https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/" target="_blank">Implement a stack using singly linked list</a></li><li><a href="https://www.geeksforgeeks.org/amazon-interview-experience-sde-1-2-5-years-experienced/" target="_blank">Amazon Interview Experience  SDE 1 (2.5 Years Experienced)</a></li><li><a href="https://www.geeksforgeeks.org/functions-of-operating-system/" target="_blank">Functions of Operating System</a></li><li><a href="https://www.geeksforgeeks.org/min-heap-in-java/" target="_blank">Min Heap in Java</a></li>                    </ul>  
+                    </div>
+                    </div><br>
+                    <aside id="text-7" class="widget widget_text">			<div class="textwidget"><script async="" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/adsbygoogle.js"></script>
+<!-- GfGSideBottomResponsive -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9465609616171866" data-ad-slot="5749413230" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_9_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:461px;background-color:transparent;"><ins id="aswift_9_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:461px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_9" name="aswift_9" style="left:0;position:absolute;top:0;border:0px;width:461px;height:280px;" width="461" height="280" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</aside><div class="widget widget_text">                <a href="https://practice.geeksforgeeks.org/courses/geeks-classes?utm_source=geeksforgeeks&amp;utm_medium=referral&amp;utm_campaign=GC_May_04" target="_blank">
+                <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/GC_Bottom_Right.png" width="auto" height="auto">
+                </a>
+                </div><aside id="text-9" class="widget widget_text">			<div class="textwidget"><!-- BuySellAds Zone Code -->
+<div id="bsap_1304848" class="bsap bsap_1304848" data-serve="CVSIE53W">
+<style type="text/css">
+div.bsap_1304848{width:100%;display:block;}div.bsap_1304848 a{width:300px;}div.bsap_1304848 a img{padding:0;}div.bsap_1304848 a em{font-style:normal;}div.bsap_1304848 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1304848 img{border:0;clear:right;}
+div.bsap_1304848 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1304848 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}
+div.bsap_1304848 iframe{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1304848 a{line-height:100%;}div.bsap_1304848 a.adhere{width:300px;height:250px;line-height:2000%;}html>body div.bsap_1304848 a.adhere{width:298px;height:248px;}div.bsap_1304848 img.s{height:0;width:0;}div.bsap_1304848{line-height:9px;}div.bsap_1304848 .bsap_adhere a{height:19px !important;width:298px !important;font-size:10px;background:#f1f1f1;border:1px solid #e1e1e1;border-top:none;border-radius: 0 0 2px 2px;line-height:16px;}.bsap_backfillframe{border:0;}
+</style>
+<!-- no ad -->
+
+<div class="bsap_adhere">
+
+<a href="http://www.buysellads.com/buy/detail/269492/zone/1304848?utm_source=site_269492&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1304848" class="">Advertise Here</a>
+
+</div>
+
+
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+<!-- End BuySellAds Zone Code --></div>
+		</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+  <footer>
+    <div id="container-g4g-footer">
+
+        <div id="footer">
+            <div class="logo">
+                <ul class="gfg-logo-ul">
+                    <li>
+                      <a href="https://www.geeksforgeeks.org/">
+                        <img src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/GeeksforGeeksLogoFooterSmall.png" alt="GeeksforGeeks">
+                      </a>
+                    </li>
+                </ul>
+                <ul class="social-ul">
+                     <li>5th Floor, A-118,</li>
+                     <li>Sector-136, Noida, Uttar Pradesh - 201305</li>
+                     <li>feedback@geeksforgeeks.org</li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><b>COMPANY</b></li>
+                    <li><a href="https://www.geeksforgeeks.org/about/">About Us</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/careers/">Careers</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/about/contact-us/">Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-column">
+                <ul>
+                    <li><b>LEARN</b></li>
+                    <li><a href="https://www.geeksforgeeks.org/fundamentals-of-algorithms/">Algorithms</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/data-structures/">Data Structures</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/category/program-output/">Languages</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/articles-on-computer-science-subjects-gq/">CS Subjects</a></li>
+                    <li><a href="https://www.youtube.com/geeksforgeeksvideos/">Video Tutorials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><b>PRACTICE</b></li>
+                    <li><a href="https://practice.geeksforgeeks.org/company-tags/">Company-wise</a></li>
+                    <li><a href="https://practice.geeksforgeeks.org/topic-tags/">Topic-wise</a></li>
+                    <li><a href="https://practice.geeksforgeeks.org/contests/">Contests</a></li>
+                    <li><a href="https://practice.geeksforgeeks.org/subjective-page.php">Subjective Questions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><b>CONTRIBUTE</b>
+                    </li><li><a href="https://www.geeksforgeeks.org/contribute/">Write an Article</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/write-interview-experience/">Write Interview Experience</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/internship/">Internships</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/how-to-contribute-videos-to-geeksforgeeks/">Videos</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom-div footer-bottom-social">
+    <ul class="social-ul" style="padding-left: 0px;">
+                    <li>
+                        <a class="social-link" href="https://www.facebook.com/GeeksforGeeks-316764689022/timeline/"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://in.linkedin.com/company/geeksforgeeks"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://play.google.com/store/apps/details?id=free.programming.programming&amp;hl=en"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://twitter.com/geeksforgeeks"><div class="social-img-div"></div></a>
+                        <a class="social-link" href="https://www.youtube.com/geeksforgeeksvideos"><div class="social-img-div"></div></a>
+                    </li>
+                </ul>
+  </div>
+  <div class="footer-bottom-div">
+            @geeksforgeeks, <a style="color:#fff !important" href="https://creativecommons.org/licenses/by-sa/4.0/">Some rights reserved</a>
+        </div>
+
+    </div>
+</footer>
+<!-- #page -->
+
+<script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/wp-embed.js"></script>
+
+<style>
+.eventLink{
+border: 1px solid #868686;
+background-color: #e0e0e0;
+padding: 10px;
+box-shadow: none;
+display: block;
+text-align: center;
+color: #555 !important;
+font-size: 14px;
+font-weight: bold;
+}
+</style>
+
+<script type="text/javascript">
+// below changes to be added in gfg.js in future.
+// load comment button click when page scroll to it and positioned ad in mobile view.
+flag=0;jQuery(window).scroll(function(){if(jQuery('#comment').length !=0 ){var hT=jQuery('#comment').offset().top,hH=jQuery('#comment').outerHeight(),wH=jQuery(window).height(),wS=jQuery(this).scrollTop();if(wS>(hT+hH-wH-70)&&!flag){jQuery('#comment').click();flag=1}}});
+/*var temp_width=jQuery(window).width();if(temp_width<468){if(jQuery('article').length>1){jQuery(jQuery('.responsiveAd')).insertAfter('article:eq(2)');jQuery('.rectangleAd').hide()}
+else if(jQuery('#practiceLinkDiv').length>0){jQuery(jQuery('.responsiveAd')).insertAfter('#practiceLinkDiv');jQuery('.rectangleAd').css('width','')}else{jQuery('.responsiveAd').hide();jQuery('.rectangleAd').css('width','')}}
+*/
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12148232-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/monetization.js"></script>
+<script>
+(function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+        _bsa.init('fancybar', 'C6ADVKE', 'placement:geeksforgeeks');
+    }
+})();
+</script>
+
+
+
+
+
+
+<div class="hiddendiv common" style="font-size: 16px; font-family: sans-serif; line-height: 19px; padding: 8px 10px; width: 927.5px;"><br></div><table style="width: 215px; display: none; top: 26px; left: 478px; position: absolute;" class="gstl_50 gssb_c" cellspacing="0" cellpadding="0"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" frameborder="0"></iframe></ins></ins></ins><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/bframe.html" style="width: 100%; height: 100%;" name="c-pt30mc5n8ljv" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" frameborder="0"></iframe></div></div><iframe id="google_osd_static_frame_6209885396636" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/a.json"></script><div class="modal-container"><style>
+.login-modal-div{
+display:none;
+}
+</style>
+<link rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/loginModal.css">
+<link rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/font-awesome.css">
+<link rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/bootstrap-social.css">
+<script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/api.js" async="" defer="defer"></script>
+<script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/platform.js" gapi_processed="true"></script>
+<link rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/css.css">
+<link rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/icon.css">
+<link rel="stylesheet" href="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/typeahead.css">
+<div class="spinner-loading-overlay"></div>
+<div class="login-modal-div" style="display: none;">
+  <div class="modal-content">
+    <div class="close-div"><span class="close">×</span></div>
+    <div class="white-bg center modal-header">
+      <div class="login-register-div">
+        <input id="tab1" type="radio" name="tabs" checked="checked">
+        <label class="tab-label" for="tab1">Sign In</label>
+      
+        <input id="tab2" type="radio" name="tabs">
+        <label class="tab-label" for="tab2">Sign Up</label>
+
+        <section id="content1">
+          <form method="POST" class="login-form" id="Login">
+            <input type="hidden" name="reqType" value="Login">
+            <div class="modal-form-group">
+              <div class="extra"></div>
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">account_circle</i>
+              <input name="user" id="luser" required="required" type="text" class="modal-form-input" placeholder="Username or email">
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">lock</i>
+              <input name="pass" id="password" type="password" required="required" class="modal-form-input" placeholder="Password">
+            </div>
+            <div class="modal-form-group left">
+              <input name="rem" type="hidden" value="false">
+              <input name="to" type="hidden" value="https://auth.geeksforgeeks.org/?to=https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/">
+              <input name="rem" type="checkbox" checked="checked">
+              <label class="modal-form-label" for="remember">Remember me</label>
+              <a class="pull-right forgot-link">Forgot Password</a>
+            </div>
+	    <div class="modal-form-group left" style="display:none;">
+              <center><div id="loginCaptcha"><div style="width: 304px; height: 78px;"><div><iframe src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/anchor_002.html" role="presentation" name="a-oq4hgqgci2s0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response-2" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div></center>
+	    </div>
+            <button class="btn btn-green signin-button" type="submit">Sign In</button>
+          </form>
+        </section>
+        <section id="content2">
+          <form method="POST" class="login-form" id="Register">
+            <input type="hidden" name="reqType" value="Register">
+            <div class="modal-form-group">
+              <div class="extra"></div>
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">email</i>
+              <input name="email" id="email" type="email" required="required" class="modal-form-input" placeholder="E-mail">
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">lock</i>
+              <input name="pass" id="reg-password" type="password" required="required" class="modal-form-input" placeholder="Password">
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">business</i>
+              <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input autocomplete="off" type="text" class="modal-form-input typeahead tt-hint" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: rgb(255, 255, 255) none repeat scroll 0% 0%;" readonly="readonly" spellcheck="false" tabindex="-1" dir="ltr"><input name="institute" id="organization" autocomplete="off" required="required" type="text" class="modal-form-input typeahead tt-input" placeholder="Institution/Organization" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;" aria-activedescendant="" aria-owns="organization_listbox" role="combobox" aria-readonly="true" aria-autocomplete="list"><span role="status" aria-live="polite" style="position: absolute; padding: 0px; border: 0px none; height: 1px; width: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap;"></span><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;RobotoDraft&quot;, &quot;Roboto&quot;, &quot;Helvetica Neue, Helvetica, Arial&quot;, sans-serif; font-size: 14.6667px; font-style: normal; font-variant: normal; font-weight: 500; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><div role="listbox" class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div role="presentation" class="tt-dataset tt-dataset-0"></div></div></span>
+            </div>
+            <div class="modal-form-group">
+              <center><div id="registerCaptcha"><div style="width: 304px; height: 78px;"><div><iframe src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/anchor_003.html" role="presentation" name="a-bzbjb69hbxlr" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div></center>
+            </div>
+            <button class="btn btn-green signup-button" type="submit">Sign Up</button>
+          </form>
+        </section>
+        <div class="social-signin-div">
+          <div class="social-divider">
+            <span>or</span>
+          </div>
+          <div class="google-div social-div pull-left">
+            <a id="glogin" href="javascript:void(0)" class="btn btn-social btn-google">
+              <span class="fa fa-google"></span>Google
+            </a>
+          </div>
+          <div class="facebook-div social-div">
+            <a id="fblogin" class="btn btn-social btn-facebook">
+              <span class="fa fa-facebook"></span>Facebook
+            </a>  
+          </div>
+	  <div style="padding: 10px 0px;font-size: 14px;font-weight: 500;padding-top: 20px;"><a href="https://www.geeksforgeeks.org/why-create-an-account-on-geeksforgeeks/" style="color: #0f9d58;" target="_blank">Why Create an Account?</a></div>
+          <div class="tnc-div">
+              By creating this account, you agree to our <a href="https://www.geeksforgeeks.org/privacy-policy/" target="_blank">Privacy Policy</a> &amp; <a href="https://www.geeksforgeeks.org/cookie-policy/" target="_blank">Cookie Policy</a>.
+          </div>
+        </div>
+      </div>
+      <div class="forgot-div">
+        <form class="login-form" id="Forgot">
+          <input type="hidden" name="reqType" value="Forgot">
+          <div class="modal-form-group">
+            <div class="extra"></div>
+          </div>
+          <div class="modal-form-group">
+            <p class="left">Please enter your email address or userHandle.</p>
+          </div>
+          <div class="modal-form-group">
+            <i class="input-icon material-icons">account_circle</i>
+            <input name="user" id="fuser" type="text" class="modal-form-input" placeholder="Username/Email">
+          </div>
+          <div class="modal-form-group">
+            <center><div id="forgotCaptcha"><div style="width: 304px; height: 78px;"><div><iframe src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/anchor_004.html" role="presentation" name="a-p61m9eselynr" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response-3" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div></center>
+          </div>
+          <div class="modal-form-group left">
+            <a class="login-link">Back to Login</a>
+          </div>
+          <button class="btn btn-green center reset-button" type="submit">Reset Password</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+//google captch initialization for register/forgot section.
+  var captchaSiteKey = '6LexF0sUAAAAADiQjz9BMiSrqplrItl-tWYDSfWa';
+  var forgotWidgetId;
+  var registerWidgetId;
+  var loginWidgetId;
+  var onloadCallback = function() {
+      // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+      // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+      registerWidgetId = grecaptcha.render('registerCaptcha', {
+        'sitekey' : captchaSiteKey,
+      });
+      loginWidgetId = grecaptcha.render('loginCaptcha', {
+        'sitekey' : captchaSiteKey,
+      });
+      forgotWidgetId = grecaptcha.render('forgotCaptcha', {
+        'sitekey' : captchaSiteKey
+      });
+  };
+
+</script>
+<script src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/loginModal-1.js"></script>
+</div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/bframe_002.html" style="width: 100%; height: 100%;" name="c-bzbjb69hbxlr" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" frameborder="0"></iframe></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/bframe_003.html" style="width: 100%; height: 100%;" name="c-oq4hgqgci2s0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" frameborder="0"></iframe></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/bframe_004.html" style="width: 100%; height: 100%;" name="c-p61m9eselynr" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" frameborder="0"></iframe></div></div><iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin allow-storage-access-by-user-activation" style="position: absolute; width: 1px; height: 1px; left: -9999px; top: -9999px; right: -9999px; bottom: -9999px; display: none;" aria-hidden="true" frame-border="0" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/iframe.html"></iframe><script type="text/javascript" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/geoip2.js"></script></body><iframe id="google_esf" name="google_esf" src="Heavy%20Light%20Decomposition%20|%20Set%201%20(Introduction)%20-%20GeeksforGeeks_files/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-9465609616171866"></iframe></html>
+<!-- Dynamic page generated in 0.664 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-04-25 18:31:59 -->
+<!-- Compression = gzip -->
