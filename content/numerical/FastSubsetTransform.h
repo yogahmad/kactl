@@ -8,55 +8,43 @@
  * where $\oplus$ is one of AND, OR, XOR. The size of $a$ must be a power of two.
  * Time: O(N \log N)
  * Status: tested
+ * Usage: N should be in the form 1<<X
  */
 #pragma once
 
-void FWHT(vi &P,int bits ,bool inverse = false) { //FWHT xor on vector P
-	int x = 1<<bits ,u,v;
-    for (int len = 1; 2 * len <= x ; len <<= 1)
-        for (int i = 0; i < x; i += 2 * len)
-            for (int j = 0; j < len; j++){
-                u = P[i + j] ;
-                v = P[i + len + j] ;
-                P[i + j] = (u + v)%mod ;
-                P[i + len + j] = (u - v + mod)%mod ;
-            }
-    if (inverse){
-	int xinv = pmod(x,mod-2) ;
-	for (int i = 0; i < x ; i++) P[i] = ((ll)P[i]*(ll)xinv)%mod ;
-     }
-}
-FWHT(P,16); 
-	FN(i,1<<16) P[i] = pmod(P[i],N) ; //pmod(x,y)=x^y
-FWHT(P,16,true);
-void to_transform(ll dim, ll *data) { // and transform
-    ll len, i, j, u, v;
-    for (len = 1; 2 * len <= dim; len <<= 1) {
-        for (i = 0; i < dim; i += 2 * len) {
-            for (j = 0; j < len; j++) {
-                u = data[i + j];
-                v = data[i + len + j];
-                data[i + j] = v;
-                data[i + len + j] = (u + v);
-                moddo(data[i + len + j]);
-            }
-        }
-    }
-}
-void inv_transform(ll dim, ll *data) {
-    ll len, i, j, u, v;
-    for (len = 1; 2 * len <= dim; len <<= 1) {
-        for (i = 0; i < dim; i += 2 * len) {
-            for (j = 0; j < len; j++) {
-                u = data[i + j];
-                v = data[i + len + j];
-                data[i + j] = mod - u + v;
-                data[i + len + j] = u;
-                moddo(data[i + j]);
-            }
-        }
-    }
-}
-And matrices : {0 1; 1 1;} Or matrices : {1 1; 1 0}  
-inv And : {-1 1; 1 0}  inv Or : {0 1; 1 -1}
-                                      
+template <typename T>
+struct FWT {
+	void fwt(vector<T>&io, int n,int t) {
+		for (int d = 1; d < n; d <<= 1) {
+			for (int i = 0, m = d<<1; i < n; i += m) {
+				for (int j = 0; j < d; j++) { /// Don't forget modulo if required
+					T x = io[i+j], y = io[i+j+d];
+					if(t==0)io[i+j] = (x+y)%MOD, io[i+j+d] = (x+MOD-y)%MOD;	// xor
+					else if(t==1)io[i+j] = (x+y)%MOD; // and
+					else io[i+j+d] = (x+y)%MOD; // or
+				}
+			}
+		}
+	}
+	void ufwt(vector<T>&io, int n,int t) {
+		for (int d = 1; d < n; d <<= 1) {
+			for (int i = 0, m = d<<1; i < n; i += m) {
+				for (int j = 0; j < d; j++) { /// Don't forget modulo if required
+					T x = io[i+j], y = io[i+j+d];
+					 /// Modular inverse if required here
+					if(t==0)io[i+j] = (x+y)*dua%MOD, io[i+j+d] = (x-y+MOD)*dua%MOD; // xor
+					else if(t==1)io[i+j] = (x-y+MOD)%MOD; // and
+					else io[i+j+d] = (y-x+MOD)%MOD; // or
+				}
+			}
+		}
+	}
+	// a, b are two polynomials and n is size which is power of two
+	void convolution(vector<T>&a, vector<T>&b, int n,int t) {
+		fwt(a, n,t);
+		fwt(b, n,t);
+		for (int i = 0; i < n; i++)
+			a[i] = a[i]*b[i]%MOD;
+		ufwt(a, n,t);
+	}
+};

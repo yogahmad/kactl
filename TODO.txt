@@ -4,3 +4,6 @@ Remove unnecessary cheatsheet..
 
 Add geometry line swap sort by cross product..
 Max-flow-min-cut (Image segmentation and Project Selection problem)
+
+
+UPDATE Fri, October 25
