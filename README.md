@@ -6,6 +6,12 @@ It consists of 25 pages of copy-paste:able code, for use in ACM-ICPC-style progr
 See [kactl.pdf](https://github.com/kth-competitive-programming/kactl/blob/master/kactl.pdf) for the final, browsable version,
 and [content/](https://github.com/kth-competitive-programming/kactl/tree/master/content) for raw source code.
 
+## Installations
+
+Install tex-live-extra
+make veryclean
+make kactl
+
 ## Aspirations
 
 KACTL algorithms should be: useful, short, fast enough, readable, and if relevant, easy to modify.
