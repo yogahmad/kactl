@@ -5,19 +5,27 @@
  * Description: Represents a forest of unrooted trees. You can add and remove
  * edges (as long as the result is still a forest), and check whether
  * two nodes are in the same tree.
+ * Aggregate path is work on node, not on edge.
+ * To make it work on edge, for each edge (u,v), add (u, e) and (e, v). 
  * Time: All operations take amortized O(\log N).
- * Status: Fuzz-tested a bit for N <= 20
+ * Usage: LinkCut graph(n+2);
  */
 #pragma once
 
 struct Node { // Splay tree. Root's pp contains tree's parent.
 	Node *p = 0, *pp = 0, *c[2];
 	bool flip = 0;
-	Node() { c[0] = c[1] = 0; fix(); }
+	// path length aggregate
+	int dist = 1;
+	Node() { dist = 1; c[0] = c[1] = 0; fix(); }
 	void fix() {
 		if (c[0]) c[0]->p = this;
 		if (c[1]) c[1]->p = this;
 		// (+ update sum of subtree elements etc. if wanted)
+		// below is for path length aggregate
+		dist = 1;
+		if (c[0]) dist += c[0]->dist;
+		if (c[1]) dist += c[1]->dist;
 	}
 	void push_flip() {
 		if (!flip) return;
