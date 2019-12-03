@@ -15,27 +15,42 @@
  */
 #pragma once
 
-vi val, comp, z, cont;
-int Time, ncomps;
-template<class G, class F> int dfs(int j, G& g, F f) {
-	int low = val[j] = ++Time, x; z.push_back(j);
-	trav(e,g[j]) if (comp[e] < 0)
-		low = min(low, val[e] ?: dfs(e,g,f));
-
-	if (low == val[j]) {
-		do {
-			x = z.back(); z.pop_back();
-			comp[x] = ncomps;
-			cont.push_back(x);
-		} while (x != j);
-		f(cont); cont.clear();
-		ncomps++;
+void dfs(int now) {
+	s.push(now); Time++;
+	onstack[now] = true;
+	index[now] = Time;
+	lowlink[now] = Time;
+	visited[now] = true;
+	
+	for(int i = 0; i < G[now].size(); i++) {
+		int next = G[now][i];
+		if (!visited[next]) {
+			dfs(next);
+			lowlink[now] = min(lowlink[now], lowlink[next]);
+		} else if (onstack[next]) {
+			lowlink[now] = min(lowlink[now], index[next]);
+		}
 	}
-	return val[j] = low;
+	
+	if (lowlink[now] == index[now]) {
+		int mini = 1e9;
+		int cnt = 0;
+		int cur;
+		do {
+			cur = s.top(); s.pop();
+			onstack[cur] = false;
+			if (cost[cur] < mini) mini = cost[cur], cnt = 0;
+			if (cost[cur] == mini) cnt++;
+		} while(cur != now);
+		
+		mincost += mini;
+		ways = (ways * (LL)cnt)%MOD;
+	}
 }
-template<class G, class F> void scc(G& g, F f) {
-	int n = sz(g);
-	val.assign(n, 0); comp.assign(n, -1);
-	Time = ncomps = 0;
-	rep(i,0,n) if (comp[i] < 0) dfs(i, g, f);
+
+for(int i = 1; i <= n; i++) {
+	if (!visited[i]) {
+		dfs(i);
+	}
 }
+	

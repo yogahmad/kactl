@@ -52,6 +52,58 @@ What is the minimum of total cost? final position of f2N trucks should be at bot
 \kactlimport{DivideAndConquerDP.h}
 \kactlimport{KnuthDP.h}
 
+\subsection{Slope Trick Narrow Rectangle}
+Define \texttt{dp[i][x]}: the minimum cost to move the first i rectangles such that the last (the i-th) rectangle’s
+leftmost coordinate is x. This will lead to a solution for partial score.
+Now, see \texttt{dp[i]} as a function: it returns \texttt{dp[i][x]} for given x. It turns out that this function is a polyline
+consisting of 2i + 3 sections, and the slopes of the sections are $ -i - 1, -i, . . . , i, i + 1 $ from left to right.
+Thus, this polyline can be represented using 2i + 3 integers $l0, l1, ..., li, r0, r1, ..., ri, c$.
+\begin{itemize}
+	\item In the interval $(-\infty, li]$, the slope of the polyline is $-i - 1$.
+	\item In the interval $[li, li-1]$, the slope of the polyline is $-i$.
+	\item · · ·
+	\item In the interval $[l1, l0]$, the slope of the polyline is $-1$.
+	\item In the interval $[l0, r0]$, the polyline is constant, and the value is $c$.
+	\item In the interval $[r0, r1]$, the slope of the polyline is $1$.
+	\item · · ·
+	\item In the interval $[ri-1, ri]$, the slope of the polyline is $i$.
+	\item In the interval $[ri,\infty)$, the slope of the polyline is $i + 1$.
+\end{itemize}
+
+Now we compute the polylines in the order $dp[0], dp[1], . . . , dp[N]$. We should keep two sets (or priority
+queues) representing ${l0,...,li}$ and ${r0,...,ri}$ meanwhile, and the solution works in $O(NlogN)$. 
+
+\kactlimport{NarrowRectangle.h}
+
+\subsection{Slope Trick Explanation}
+Define $f_{i}(x)$ as the minimum number of moves to change the first $i$ elements into a non-decreasing sequence such that $ai \leq x$.
+It is easy to see that by definition we have the recurrences:
+$f_{i}(X) = min_{Y \leq X}(|a_{i}-Y|)$ when $i=1$
+and
+$f_{i}(X) = min_{Y \leq X}(f_{i-1}+|a_{i}-Y|)$
+
+Now, note that $f_{i}(X)$ is non-increasing, since it is at most the minimum among all the values of f for smaller X by definition. We store a set of integers that denotes where the function fi change slopes. More formally, we consider the function $g_{i}(X) = f_{i}(X+1)-f_{i}(X)$. The last element of the set will be the smallest j such that $g_{i}(j)=0$, the second last element will be the smallest j such that $g_{i}(j)=-1$, and so on. 
+(note that the set of slope changing points is bounded).
+
+Let $Opt(i)$ denote a position where $f_{i}(X)$ achieves its minimum. (i.e. $g_{i}(Opt(i)) = 0$) The desired answer will be $f_{n}(Opt(n))$. We'll see how to update these values quickly.
+
+There are two cases to consider: \\
+Case 1: $Opt(i-1) \leq a_{i}$ \\
+Here, the slope at every point before ai decreases by 1. Thus, we push ai into the slope array as this indicates that we decreases the slope at all the slope changing points by 1, 
+and the slope changing point for $slope=0$ is ai, i.e. $Opt(i) = a_{i}$. Thus, this case is settled. \\
+
+Case 2: $Opt(i-1) > a_{i}$ \\
+Now, we insert $a_{i}$ into the set, since it decreases the slope at all the slope changing points before $a_{i}$ by 1. 
+Furthermore, we insert $a_{i}$ again because it increases the slope at the slope changing points between $a_{i}$ and $Opt(i-1)$ by 1.
+Now, we can just take $Opt(i) = Opt(i-1)$ since the slope at $Opt(i-1)$ is still 0. Finally, we remove $Opt(i-1)$
+from the set because it's no longer the first point where the slope changes to 0. 
+(it's the previous point where the slope changes to $-1$ and the slope now becomes 0 because of the addition of $a_{i}$)
+Thus, the set of slope changing points is maintained. We have $f_{i}(Opt(i)) = f_{i-1}(Opt(i-1))+|Opt(i-1)-a_{i}|$.
+Thus, we can just use a priority queue to store the slope changing points and it is easy to see that the priority queue can handle all these operations efficiently (in $O(log N)$ time).
+
+
+\kactlimport{SimpleSlopeTrick.h}
+
 % \section{Debugging tricks}
 % \begin{itemize}
 % 	\item \texttt{signal(SIGSEGV, [](int) \{ \_Exit(0); \});} converts segfaults into Wrong Answers.
