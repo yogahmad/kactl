@@ -120,6 +120,17 @@ Thus, we can just use a priority queue to store the slope changing points and it
 	\item \texttt{c = x\&-x, r = x+c; (((r\^{}x) >> 2)/c) | r} is the next number after \texttt{x} with the same number of bits set.
 	\item \texttt{ rep(b,0,K) rep(i,0,(1 << K)) if (i \& 1 << b) D[i] += D[i\^{}(1 << b)]; } computes all sums of subsets.
 \end{itemize}
+
+BIT Range Sum Update \\ 
+Update Query \\
+Update(BITree1, l, val) \\ 
+Update(BITree1, r+1, -val) \\ 
+UpdateBIT2(BITree2, l, val*(l-1)) \\ 
+UpdateBIT2(BITree2, r+1, -val*r) \\
+
+Range Sum \\
+getSum(BITTree1, k) *k) - getSum(BITTree2, k) \\ 
+
 % \subsection{Pragmas}
 % \begin{itemize}
 % 	\item \lstinline{#pragma GCC optimize ("Ofast")} will make GCC auto-vectorize for loops and optimizes floating points better (assumes associativity and turns off denormals).
