@@ -75,6 +75,8 @@ queues) representing ${l0,...,li}$ and ${r0,...,ri}$ meanwhile, and the solution
 
 \kactlimport{NarrowRectangle.h}
 
+a\\
+
 \subsection{Slope Trick Explanation}
 Define $f_{i}(x)$ as the minimum number of moves to change the first $i$ elements into a non-decreasing sequence such that $ai \leq x$.
 It is easy to see that by definition we have the recurrences:
@@ -99,7 +101,7 @@ Now, we can just take $Opt(i) = Opt(i-1)$ since the slope at $Opt(i-1)$ is still
 from the set because it's no longer the first point where the slope changes to 0. 
 (it's the previous point where the slope changes to $-1$ and the slope now becomes 0 because of the addition of $a_{i}$)
 Thus, the set of slope changing points is maintained. We have $f_{i}(Opt(i)) = f_{i-1}(Opt(i-1))+|Opt(i-1)-a_{i}|$.
-Thus, we can just use a priority queue to store the slope changing points and it is easy to see that the priority queue can handle all these operations efficiently (in $O(log N)$ time).
+Thus, we can just use a priority queue to store the slope changing points and it is easy to see that the priority queue can handle all these operations efficiently (in $O(log N)$ time). \\
 
 
 \kactlimport{SimpleSlopeTrick.h}
