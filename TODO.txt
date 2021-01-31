@@ -6,4 +6,6 @@ Add geometry line swap sort by cross product..
 Max-flow-min-cut (Image segmentation and Project Selection problem)
 
 
+https://ideone.com/4VodS8 CRT
+
 UPDATE Fri, October 25
